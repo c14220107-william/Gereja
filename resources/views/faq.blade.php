@@ -76,7 +76,7 @@
                 <label for="question" class="block text-left text-gray-700 font-semibold mb-2">Pertanyaan</label>
                 <textarea id="question" name="question" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis pertanyaan Anda di sini"></textarea>
             </div>
-            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700 transition duration-300">Kirim Pertanyaan bacot</button>
+            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700 transition duration-300">Kirim Pertanyaan</button>
         </form>
     </div>
 </section>
