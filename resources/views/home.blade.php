@@ -9,7 +9,7 @@
         <div class="relative z-10 text-center">
             <h1 class="text-6xl font-bold">Selamat Datang di Gereja Kami</h1>
             <p class="mt-4 text-2xl">Tempat untuk bertumbuh dalam iman dan kasih.</p>
-            <a href="#tentang" class="mt-8 inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100">Pelajari Lebih Lanjut</a>
+            <a href="#tentang" class="mt-8 inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100">Tentang Kami</a>
         </div>
     </section>
     {{-- About Section --}}

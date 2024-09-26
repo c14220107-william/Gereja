@@ -31,6 +31,7 @@
             <form action="#" method="POST" class="mt-4">
                 <input type="date" name="dedication_date" required class="border rounded p-2 w-full mb-2">
                 <input type="text" name="nama_anak" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="nomor_telp" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
                 <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
                 <input type="date" name="tanggal-lahir" required class="border rounded p-2 w-full mb-2">
                 <input type="text" name="nama_ayah" placeholder="Nama Ayah" required class="border rounded p-2 w-full mb-2">
@@ -51,6 +52,8 @@
                 <input type="checkbox" id="childDedication3" name="services2" value="childDedication3" class="mr-2" onclick="toggleInput('childDedicationInput5','childDedicationInput6')">
                 <label for="childDedication3" class="text-gray-700">Apakah Suami&Istri sudah mengurus akte pernikahan di catatan sipil?</label>
                 <input type="text" id="childDedicationInput5" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Nomor Piagam Pernikahan Gereja"> <input type="date" id="childDedicationInput6" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
+                <p></p>
+                <input type="file" required class="border rounded p-2 w-full mb-2">
 
                 
 
@@ -64,13 +67,31 @@
 
     <!-- Modal for Marriage Blessing -->
     <div id="marriageBlessingModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="modal-content bg-white rounded-lg p-6 w-11/12 max-w-md">
+        <div class="modal-content bg-white rounded-lg p-6 w-13/14 max-w-[40rem] max-h-[80vh] overflow-y-auto">
             <span class="close text-gray-600 cursor-pointer float-right" id="closeMarriageBlessingModal">&times;</span>
             <h3 class="text-xl font-semibold mb-4">Marriage Blessing Form Requirements</h3>
             <p>Isi ketentuan untuk Marriage Blessing di sini.</p>
             <form action="#" method="POST" class="mt-4">
-                <input type="text" name="couple_name" placeholder="Couple Name" required class="border rounded p-2 w-full mb-2">
-                <input type="date" name="blessing_date" required class="border rounded p-2 w-full mb-2">
+                <p>I. Permohonan Pemberkatan / Doa Pernikahan</p>
+                <input type="text" name="hari_pemberkatan" placeholder="Hari" required class="border rounded p-2 w-full mb-2"><input type="date" name="tanggal-pemberkatan" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="pukul_pemberkatan" placeholder="Pukul" required class="border rounded p-2 w-full mb-2">
+                <input type="checkbox" id="permohonan_pemberkatan1" name="permohonan_pemberkatan1" class="mr-2">
+                <label for="childDedication3" class="text-gray-700">Liturgi (Acara Kebaktian) </label>
+                <p></p>
+                <input type="checkbox" id="permohonan_pemberkatan2" name="permohonan_pemberkatan2" class="mr-2">
+                <label for="childDedication3" class="text-gray-700">Pemberkatan Saja</label>
+                <p></p>
+                <p>II. Data Calon Mempelai Pria</p>
+                <input type="date" name="dedication_date" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="nama_calon_mempelai_pria" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="nomor_telp_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="tempat_lahir_calon_mempelai_pria" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
+                Tanggal<input type="date" name="tanggal_lahir_calon_mempelai" required class="border rounded p-2 w-full mb-2">
+                
+
+
+                
+                
                 <button type="submit" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Submit</button>
             </form>
         </div>
@@ -78,14 +99,23 @@
 
     <!-- Modal for Baptism Request -->
     <div id="baptismRequestModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="modal-content bg-white rounded-lg p-6 w-11/12 max-w-md">
+        <div class="modal-content bg-white rounded-lg p-6 w-13/14 max-w-[40rem] max-h-[80vh] overflow-y-auto">
             <span class="close text-gray-600 cursor-pointer float-right" id="closeBaptismRequestModal">&times;</span>
             <h3 class="text-xl font-semibold mb-4">Baptism Request Form Requirements</h3>
             <p>Isi ketentuan untuk Baptism Request di sini.</p>
             <form action="#" method="POST" class="mt-4">
-                <input type="text" name="applicant_name" placeholder="Applicant Name" required class="border rounded p-2 w-full mb-2">
-                <input type="date" name="baptism_date" required class="border rounded p-2 w-full mb-2">
-                <button type="submit" class="mt-2 bg-yellow-500 text-white px-4 py-2 rounded">Submit</button>
+                <input type="text" name="nama_anak" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="nomor_telp" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
+                <input type="date" name="tanggal-lahir" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="alamat" placeholder="Alamat" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="kelurahan" placeholder="Kelurahan" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="beribadah_di" placeholder="Beribadah di " required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="nama_ayah" placeholder="Nama Ayah" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="nama_ibu" placeholder="Nama Ibu" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="tanggal_baptis" placeholder="Kapan ingin melakukan Pelaksanaan Baptisan?" required class="border rounded p-2 w-full mb-2">
+                <input type="text" name="pembaptis" placeholder="Baptisan ingin dilayani/dilakukan oleh siapa?" required class="border rounded p-2 w-full mb-2">
+                <p>Pas foto 4x6cm</p><input type="file" required class="border rounded p-2 w-full mb-2">
             </form>
         </div>
     </div>
