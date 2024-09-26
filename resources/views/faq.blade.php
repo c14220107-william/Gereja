@@ -55,7 +55,7 @@
                     <span id="faq5-toggle" class="text-blue-600">+</span>
                 </div>
                 <div id="faq5" class="hidden px-4 pb-4">
-                    <p>Gereja kami berlokasi di [Alamat Gereja]. Anda dapat menggunakan peta di situs web kami untuk petunjuk lebih lanjut.</p>
+                    <p>Gereja kami berlokasi di Jl. Raya Kutisari Indah No.60, Kutisari, Kec. Tenggilis Mejoyo, Surabaya, Jawa Timur . Anda dapat menggunakan peta di situs web kami untuk petunjuk lebih lanjut.</p>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
 <section id="contact-form" class="py-20 bg-gray-100">
     <div class="container mx-auto text-center">
         <h2 class="text-4xl font-bold mb-8">Kritik Dan Saran</h2>
-        <p class="mb-4">Silakan isi formulir di bawah ini untuk mengajukan pertanyaan kepada kami.</p>
+        <p class="mb-4">Silakan isi formulir di bawah ini untuk mengajukan kritik dan saran kepada kami.</p>
 
         <form action="/submit-question" method="POST" class="max-w-md mx-auto bg-white shadow-md rounded-lg p-8">
             @csrf
