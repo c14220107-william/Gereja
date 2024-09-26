@@ -14,43 +14,108 @@
     </section>
     {{-- About Section --}}
     <section id="tentang" class="py-10 bg-gray-100">
-        <div class="container mx-auto flex flex-col md:flex-row items-center">
-            <div class="w-full md:w-1/2">
-                <img src="{{ asset('img/tentang.JPG') }}" alt="Tentang Gereja Kami" class="rounded-lg shadow-lg">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-2">
+        <div class="w-full md:w-1/2 flex justify-center">
+            <img src="{{ asset('img/tentang.JPG') }}" alt="Tentang Gereja Kami" class="rounded-lg shadow-lg w-1/3 p-0">
+        </div>
+        <div class="w-full md:w-1/2 md:pl-10 -mt-4 md:mt-0 text-center md:text-left">
+            <h2 class="text-4xl font-bold mb-4">Tentang Gereja Kami</h2>
+            <p class="text-lg text-gray-700">Gereja kami adalah tempat untuk memperdalam iman, membangun hubungan dengan Tuhan, dan melayani masyarakat. Kami menyambut semua orang untuk bergabung dalam komunitas kami yang hangat dan penuh kasih.</p>
+        </div>
+    </div>
+</section>
+{{-- visi & misi Section --}}
+<section id="visi-misi" class="py-20 bg-gradient-to-r from-blue-300 to-blue-500">
+    <div class="container mx-auto text-center">
+        <h2 class="text-5xl font-extrabold text-white mb-8">Visi dan Misi Kami</h2>
+        <div class="flex flex-col md:flex-row justify-around">
+            <!-- Visi -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Visi</h3>
+                <p class="text-lg text-gray-700">Menjadi gereja yang menginspirasi, mendukung, dan membimbing setiap individu dalam pertumbuhan iman dan kasih.</p>
             </div>
-            <div class="w-full md:w-1/2 md:pl-10 mt-10 md:mt-0">
-                <h2 class="text-4xl font-bold mb-4">Tentang Gereja Kami</h2>
-                <p class="text-lg text-gray-700">Gereja kami adalah tempat untuk memperdalam iman, membangun hubungan dengan Tuhan, dan melayani masyarakat. Kami menyambut semua orang untuk bergabung dalam komunitas kami yang hangat dan penuh kasih.</p>
+
+            <!-- Misi -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Misi</h3>
+                <p class="text-lg text-gray-700">Menyebarkan kasih Kristus melalui pelayanan, komunitas, dan pengajaran yang mendorong pertumbuhan spiritual.</p>
             </div>
         </div>
-    </section>
-    <section id="sunday-services" class="py-20 bg-gradient-to-r from-blue-500 to-blue-300">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-8">Jadwal Ibadah Minggu</h2>
-            <div class="flex flex-col md:flex-row justify-around">
-                <!-- Umum -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3">
-                    <h3 class="text-3xl font-semibold text-blue-600 mb-4">Umum</h3>
-                    <p class="text-lg text-gray-600">Pukul 07:45 - 09:30</p>
-                    <p class="mt-4 text-gray-700">Bergabunglah dalam ibadah pagi yang penuh sukacita dengan pujian dan khotbah yang menginspirasi.</p>
-                </div>
-    
-                <!-- Youth -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3">
-                    <h3 class="text-3xl font-semibold text-blue-600 mb-4">Youth</h3>
-                    <p class="text-lg text-gray-600">Pukul 10:30 - 12:00</p>
-                    <p class="mt-4 text-gray-700">Ibadah siang yang lebih santai, cocok untuk keluarga dan teman-teman.</p>
-                </div>
-    
-                <!-- Sekolah Minggu -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3">
-                    <h3 class="text-3xl font-semibold text-blue-600 mb-4">Sekolah Minggu</h3>
-                    <p class="text-lg text-gray-600">Pukul 7.40 - 9.30</p>
-                    <p class="mt-4 text-gray-700">Akhiri hari Anda dengan ibadah malam yang damai dan reflektif.</p>
-                </div>
+    </div>
+</section>
+{{-- value Section --}}
+<section id="nilai" class="py-20 bg-white">
+    <div class="container mx-auto text-center">
+        <h2 class="text-5xl font-extrabold text-blue-600 mb-8">Nilai Kami</h2>
+        <div class="flex justify-center">
+            <img src="{{ asset('img/your-image.png') }}" alt="nanti kasik gambar biar menarik tp blm nyari wkwk" class="w-1/4 rounded-lg shadow-lg">
+        </div>
+        <p class="text-4xl font-semibold text-blue-800 mb-4">Care, Love, and Serve</p>
+        <p class="text-lg text-gray-700 mx-auto max-w-3xl mb-8">Kami berkomitmen untuk mengutamakan perhatian dan kepedulian dalam setiap interaksi. Menyebarkan kasih dalam setiap tindakan dan pelayanan. Melayani dengan sepenuh hati, mewujudkan iman dalam tindakan nyata.</p>
+    </div>
+</section>
+{{-- jadwal Section --}}
+<section id="sunday-services" class="py-20 bg-gradient-to-r from-blue-500 to-blue-300">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold text-white mb-8">Weekly Schedule</h2>
+
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-10 mx-auto max-w-2xl">
+            <h3 class="text-4xl font-semibold text-blue-600 mb-4">Ibadah Umum</h3>
+            <p class="text-lg text-gray-600">Bergabunglah bersama kami dalam ibadah utama yang dipimpin dengan pujian dan khotbah yang menginspirasi.</p>
+            <p class="mt-4 text-gray-700">Pukul 07:45 - 09:30</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-around">
+            <!-- Umum -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Umum</h3>
+                <p class="text-lg text-gray-600">Pukul 07:45 - 09:30</p>
+                <p class="mt-4 text-gray-700">Bergabunglah dalam ibadah pagi yang penuh sukacita dengan pujian dan khotbah yang menginspirasi.</p>
+            </div>
+
+            <!-- Youth -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Youth</h3>
+                <p class="text-lg text-gray-600">Pukul 10:30 - 12:00</p>
+                <p class="mt-4 text-gray-700">Ibadah siang yang lebih santai, cocok untuk keluarga dan teman-teman.</p>
+            </div>
+
+            <!-- Sekolah Minggu -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Sekolah Minggu</h3>
+                <p class="text-lg text-gray-600">Pukul 07:40 - 09:30</p>
+                <p class="mt-4 text-gray-700">Akhiri hari Anda dengan ibadah malam yang damai dan reflektif.</p>
             </div>
         </div>
-    </section>
+
+        <!-- Baris Kedua untuk Nilai Tambahan -->
+        <div class="flex flex-col md:flex-row justify-around mt-10">
+            <!-- Ibadah Malam -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Ibadah Malam</h3>
+                <p class="text-lg text-gray-600">Pukul 18:00 - 19:30</p>
+                <p class="mt-4 text-gray-700">Bergabunglah dalam ibadah malam yang penuh damai dan refleksi.</p>
+            </div>
+
+            <!-- Doa Bersama -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Doa Bersama</h3>
+                <p class="text-lg text-gray-600">Pukul 16:00 - 17:00</p>
+                <p class="mt-4 text-gray-700">Bersama-sama dalam doa, memperkuat iman kita.</p>
+            </div>
+
+            <!-- Pelayanan Komunitas -->
+            <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Pelayanan Komunitas</h3>
+                <p class="text-lg text-gray-600">Pukul 15:00 - 16:00</p>
+                <p class="mt-4 text-gray-700">Ikuti kegiatan pelayanan komunitas untuk saling mendukung.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
     <section id="more-info" class="py-20 bg-gray-100">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-8">Informasi Lebih Lanjut</h2>
@@ -75,6 +140,20 @@
             <p class="text-gray-600">Untuk informasi lebih lanjut, hubungi kami di: <a href="mailto:info@gereja.com" class="text-blue-600 underline">info@gereja.com</a></p>
         </div>
     </section>
+
+    {{-- maps Section --}}
+    <section id="maps" class="py-20">
+    <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold text-blue-600 mb-8">Lokasi Kami</h2>
+        <div class="flex justify-center">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.117285116905!2d112.74864667476119!3d-7.340723992667856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbb282c280c5%3A0x20733d589d61a51a!2sGPPS%20Bethlehem%20Kutisari%20Surabaya!5e0!3m2!1sen!2sid!4v1727332708845!5m2!1sen!2sid"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+
     
     
     
