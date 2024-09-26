@@ -58,6 +58,8 @@ Route::post('/admin/register', [ControllersAdminAuthController::class, 'register
 
 Route::middleware('admin')->group(function() {
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
     // Rute lain untuk manajemen jemaat, pelayanan, dll.
 });
 

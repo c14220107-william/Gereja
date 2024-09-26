@@ -8,3 +8,4 @@
         <button type="submit">Daftar</button>
     </form>
 @endsection
+    
