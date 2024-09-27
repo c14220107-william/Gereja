@@ -27,7 +27,7 @@
 {{-- visi & misi Section --}}
 <section id="visi-misi" class="py-20 bg-gradient-to-r from-blue-300 to-blue-500">
     <div class="container mx-auto text-center">
-        <h2 class="text-5xl font-extrabold text-white mb-8">Visi dan Misi Kami</h2>
+        <h2 class="text-5xl font-extrabold text-white mb-8">Visi dan Misi</h2>
         <div class="flex flex-col md:flex-row justify-around">
             <!-- Visi -->
             <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
@@ -57,7 +57,7 @@
 {{-- jadwal Section --}}
 <section id="sunday-services" class="py-20 bg-gradient-to-r from-blue-500 to-blue-300">
     <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold text-white mb-8">Weekly Schedule</h2>
+        <h2 class="text-4xl font-bold text-white mb-8">Ibadah Sepekan</h2>
 
         <div class="bg-white rounded-lg shadow-lg p-8 mb-10 mx-auto max-w-2xl">
             <h3 class="text-4xl font-semibold text-blue-600 mb-4">Ibadah Umum</h3>
