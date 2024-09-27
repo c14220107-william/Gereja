@@ -61,29 +61,30 @@
 
         <div class="bg-white rounded-lg shadow-lg p-8 mb-10 mx-auto max-w-2xl">
             <h3 class="text-4xl font-semibold text-blue-600 mb-4">Ibadah Umum</h3>
-            <p class="text-lg text-gray-600">Bergabunglah bersama kami dalam ibadah utama yang dipimpin dengan pujian dan khotbah yang menginspirasi.</p>
-            <p class="mt-4 text-gray-700">Pukul 07:45 - 09:30</p>
+            <p class="mt-4 text-gray-700">Minggu</p>
+            <p class="mt-2 text-gray-700">Pukul 07:45 - 09:30</p>
+            <p class="mt-4 text-lg text-gray-600">Bergabunglah bersama kami dalam ibadah utama yang dipimpin dengan pujian dan khotbah yang menginspirasi.</p>
         </div>
 
         <div class="flex flex-col md:flex-row justify-around">
             <!-- Umum -->
             <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
-                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Umum</h3>
-                <p class="text-lg text-gray-600">Pukul 07:45 - 09:30</p>
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Ibadah Kaum Wanita</h3>
+                <p class="text-lg text-gray-600">Pukul 16:30 - 18:00</p>
                 <p class="mt-4 text-gray-700">Bergabunglah dalam ibadah pagi yang penuh sukacita dengan pujian dan khotbah yang menginspirasi.</p>
             </div>
 
             <!-- Youth -->
             <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
-                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Youth</h3>
-                <p class="text-lg text-gray-600">Pukul 10:30 - 12:00</p>
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Youth Commcell</h3>
+                <p class="text-lg text-gray-600">Pukul 19:00 - 21:00</p>
                 <p class="mt-4 text-gray-700">Ibadah siang yang lebih santai, cocok untuk keluarga dan teman-teman.</p>
             </div>
 
             <!-- Sekolah Minggu -->
             <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
-                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Sekolah Minggu</h3>
-                <p class="text-lg text-gray-600">Pukul 07:40 - 09:30</p>
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Doa Malam</h3>
+                <p class="text-lg text-gray-600">Pukul 18:30 - 20:00</p>
                 <p class="mt-4 text-gray-700">Akhiri hari Anda dengan ibadah malam yang damai dan reflektif.</p>
             </div>
         </div>
@@ -92,8 +93,8 @@
         <div class="flex flex-col md:flex-row justify-around mt-10">
             <!-- Ibadah Malam -->
             <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 mx-2">
-                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Ibadah Malam</h3>
-                <p class="text-lg text-gray-600">Pukul 18:00 - 19:30</p>
+                <h3 class="text-3xl font-semibold text-blue-600 mb-4">Doa Fajar</h3>
+                <p class="text-lg text-gray-600">Pukul :00 - 19:30</p>
                 <p class="mt-4 text-gray-700">Bergabunglah dalam ibadah malam yang penuh damai dan refleksi.</p>
             </div>
 
