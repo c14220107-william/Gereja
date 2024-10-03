@@ -32,13 +32,15 @@
                 <!-- Visi -->
                 <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
                     <h3 class="text-3xl font-semibold text-blue-600 mb-4">Visi</h3>
-                    <p class="text-lg text-gray-700">Menjadi gereja yang menginspirasi, mendukung, dan membimbing setiap individu dalam pertumbuhan iman dan kasih.</p>
+                    <p class="text-lg text-gray-700">
+                        Menjadi jemaat yang <span class="font-bold italic text-red-500">kuat</span> dan
+                        <span class="underline text-purple-600">tidak tergoncangkan</span>.
+                    </p>
                 </div>
-
                 <!-- Misi -->
                 <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
                     <h3 class="text-3xl font-semibold text-blue-600 mb-4">Misi</h3>
-                    <p class="text-lg text-gray-700">Menyebarkan kasih Kristus melalui pelayanan, komunitas, dan pengajaran yang mendorong pertumbuhan spiritual.</p>
+                    <p class="text-lg text-gray-700">Jemaat yang kuat dan saling menguatkan dalam aspek spritual, psiko sosial, dalam kehidupan pribadi maupun komunal (keluarga dan gereja).</p>
                 </div>
             </div>
         </div>
@@ -66,7 +68,7 @@
                 <p class="mt-0 text-gray-800 text-xl font-medium">Pukul 07:45 - 09:30</p>
                 <p class="mt-4 text-lg text-gray-700 leading-relaxed">Bergabunglah bersama kami dalam ibadah utama yang dipimpin dengan pujian dan khotbah yang menginspirasi.</p>
             </div>
-            
+
             <div class="flex flex-col md:flex-row justify-around">
                 <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
                     <h3 class="text-2xl font-semibold text-blue-700 mb-2 border-b-2 border-blue-300 inline-block pb-1">Ibadah Kaum Wanita</h3>
