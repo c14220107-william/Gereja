@@ -45,7 +45,7 @@ class CongregationController extends Controller
      */
     public function show(Congregation $congregation)
     {
-        return view('congregations.show', compact('congregation'));
+        // return view('congregations.show', compact('congregation'));
     }
 
     /**

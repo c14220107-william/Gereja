@@ -32,32 +32,33 @@
             <span class="close text-gray-600 cursor-pointer float-right" id="closeChildDedicationModal">&times;</span>
             <h3 class="text-xl font-semibold mb-4">Penyerahan Anak Form Requirements</h3>
             <p>Isi ketentuan untuk Penyerahan Anak di sini.</p>
-            <form action="#" method="POST" class="mt-4">
+            <form action ="{{ route('form_penyerahan_anak.store') }}" method="POST" enctype="multipart/form-data" class="mt-4">
+                @csrf
                 Nama Anak<input type="text" name="nama_anak" id="nama_anak" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
                 Nomor Telepon<input type="text" name="nomor_telp_penanggungjawab_anak" id="nomor_telp_penanggungjawab" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
                 Tempat Lahir<input type="text" name="tempat_lahir_anak" id="tempat_lahir_anak" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
-                Tanggal Lahir<input type="date" name="tanggal_lahir" id="tanggal_lahir_anak" required class="border rounded p-2 w-full mb-2">
-                Nama Ayah<input type="text" name="nama_ayah" id= "nama_ayah_anak" placeholder="Nama Ayah" required class="border rounded p-2 w-full mb-2">
-                Nama Ibu<input type="text" name="nama_ibu" id="nama_ibu_anak" placeholder="Nama Ibu" required class="border rounded p-2 w-full mb-2">
-                Alamat<input type="text" name="alamat" id="alamat_anak" placeholder="Alamat" required class="border rounded p-2 w-full mb-2">
-                Kelurahan<input type="text" name="kelurahan" id="kelurahan_anak" placeholder="Kelurahan" required class="border rounded p-2 w-full mb-2">
-                Kecamatan<input type="text" name="kecamatan" id="kecamatan_anak" placeholder="Kecamatan" required class="border rounded p-2 w-full mb-2">        
+                Tanggal Lahir<input type="date" name="tanggal_lahir_anak" id="tanggal_lahir_anak" required class="border rounded p-2 w-full mb-2">
+                Nama Ayah<input type="text" name="nama_ayah_anak" id= "nama_ayah_anak" placeholder="Nama Ayah" required class="border rounded p-2 w-full mb-2">
+                Nama Ibu<input type="text" name="nama_ibu_anak" id="nama_ibu_anak" placeholder="Nama Ibu" required class="border rounded p-2 w-full mb-2">
+                Alamat<input type="text" name="alamat_anak" id="alamat_anak" placeholder="Alamat" required class="border rounded p-2 w-full mb-2">
+                Kelurahan<input type="text" name="kelurahan_anak" id="kelurahan_anak" placeholder="Kelurahan" required class="border rounded p-2 w-full mb-2">
+                Kecamatan<input type="text" name="kecamatan_anak" id="kecamatan_anak" placeholder="Kecamatan" required class="border rounded p-2 w-full mb-2">        
                 Asal Gereja<input type="text" name="asal_gereja_anak" id="asal_gereja_anak" placeholder="Gereja Asal" required class="border rounded p-2 w-full mb-2">
                 Berapa Lama<input type="text" name="lama_ibadah_anak" id="lama_ibadah_anak" placeholder="Sudah Berapa Lama Beribadah (..thn)" required class="border rounded p-2 w-full mb-2">
                 <input type="checkbox" id="childDedication" name="services1" value="childDedication" class="mr-2" onclick="toggleInput('tempat_asal_dibaptis','tanggal_dibaptis_gereja_lama')">
                 <label for="childDedication" class="text-gray-700">Apakah Suami&Istri sudah dibaptis?</label>
                 <p></p>
-                <input type="text" id="tempat_asal_dibaptis" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Dimana?"> <input type="date" id="tanggal_dibaptis_gereja_lama" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
+                <input type="text" name="tempat_asal_dibaptis" id="tempat_asal_dibaptis" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Dimana?"> <input type="date" name="tanggal_dibaptis_gereja_lama" id="tanggal_dibaptis_gereja_lama" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
                 <p></p>
-                <input type="checkbox" id="childDedication2" name="services2" value="childDedication2" class="mr-2" onclick="toggleInput('nomor_piagam_pernikahan_parent','tanggal_piagam_pernikahan')">
-                <label for="childDedication3" class="text-gray-700">Apakah Suami&Istri sudah diberkati dalam nikah gereja?</label>
-                <input type="text" id="nomor_piagam_pernikahan_parent" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Nomor Piagam Pernikahan Gereja"> <input type="date" id="tanggal_pernikahan" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
+                <input type="checkbox" id="childDedication2" name="services2" value="childDedication2" class="mr-2" onclick="toggleInput('nomor_piagam_pernikahan_parent','tanggal_pernikahan')">
+                <label for="childDedication3" class="text-gray-700">Apakah Suami&Istri sudah diberkati dalam nikah gereja?</label>  
+                <input type="text" name="nomor_piagam_pernikahan_parent" id="nomor_piagam_pernikahan_parent" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Nomor Piagam Pernikahan Gereja"> <input type="date"  name="tanggal_pernikahan" id="tanggal_pernikahan" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
                 <p></p>
                 <input type="checkbox" id="childDedication3" name="services2" value="childDedication3" class="mr-2" onclick="toggleInput('nomor_akte_pernikahan_parent','tanggal_akte_pernikahan')">
                 <label for="childDedication3" class="text-gray-700">Apakah Suami&Istri sudah mengurus akte pernikahan di catatan sipil?</label>
-                <input type="text" id="nomor_akte_pernikahan_parent" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Nomor Akte Pernikahan Gereja"> <input type="date" id="tanggal_akte_pernikahan" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
+                <input type="text" name="nomor_akte_pernikahan_parent" id="nomor_akte_pernikahan_parent" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Nomor Akte Pernikahan Gereja"> <input type="date" name="tanggal_akte_pernikahan" id="tanggal_akte_pernikahan" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
                 <p></p>
-                Pas Foto Terbaru 4x6cm <input type="file" id="pas_foto_anak" required class="border rounded p-2 w-full mb-2">
+                Pas Foto Terbaru 4x6cm <input type="file" name="pas_foto_anak" id="pas_foto_anak" required class="border rounded p-2 w-full mb-2">
 
                 
 
@@ -79,60 +80,60 @@
                 <p>I. Permohonan Pemberkatan / Doa Pernikahan</p>
                 Hari Pemberkatan yang direncanakan<input type="text" name="hari_pemberkatan" id="hari_pemberkatan" placeholder="Hari" required class="border rounded p-2 w-full mb-2"><input type="date" name="tanggal-pemberkatan" required class="border rounded p-2 w-full mb-2">
                 Pukul Pemberkatan<input type="text" name="pukul_pemberkatan" id="pukul_pemberkatan" placeholder="Pukul" required class="border rounded p-2 w-full mb-2">
-                <input type="checkbox" id="permohonan_pemberkatan1" id="permohonan_pemberkatan1" class="mr-2">
+                <input type="checkbox" name="permohonan_pemberkatan1" id="permohonan_pemberkatan_acara" class="mr-2">
                 <label for="permohonan_pemberkatan1" class="text-gray-700">Liturgi (Acara Kebaktian) </label>
                 <p></p>
-                <input type="checkbox" id="permohonan_pemberkatan2" name="permohonan_pemberkatan2" class="mr-2">
+                <input type="checkbox" id="permohonan_pemberkatan2" name="permohonan_pemberkatan_pemberkatan" class="mr-2">
                 <label for="permohonan_pemberkatan2" class="text-gray-700">Pemberkatan Saja</label>
                 <p></p>
                 <p>II. Data Calon Mempelai Pria</p>
-                Nama<input type="text" name="nama_calon_mempelai_pria" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
-                Nomor Telepon<input type="text" name="nomor_telp_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Alamat<input type="text" name="nomor_telp_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Tempat Lahir<input type="text" name="tempat_lahir_calon_mempelai_pria" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
-                Tanggal Lahir<input type="date" name="tanggal_lahir_calon_mempelai" required class="border rounded p-2 w-full mb-2">
-                Nomor KTP<input type="text" name="nomor_ktp_calon_mempelai_pria" placeholder="No ktp" required class="border rounded p-2 w-full mb-2">
-                Nomor Surat Baptis <input type="text" name="nomor_surat_baptis_calon_mempelai_pria" placeholder="No surat baptis" required class="border rounded p-2 w-full mb-2"> 
-                Gereja Calon mempelai dibaptis<input type="text" name="asal_gereja_baptis_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Berbakti di gereja<input type="text" name="gereja_sekarang_calon_mempelai_pria" placeholder="berbakti di gereja" required class="border rounded p-2 w-full mb-2">
-                Pekerjaan <input type="text" name="pekerjaan_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Alamat Pekerjaan<input type="text" name="alamat_pekerjaan_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Nomor Telepon Pekerjaan<input type="text" name="telp_pekerjaan_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Nama Ayah<input type="text" name="nama_ayah_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Nama Ibu<input type="text" name="nama_ibu_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Alamat Orang Tua<input type="text" name="alamat_orangtua_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Nomor Telepon Orang Tua<input type="text" name="nomor_telp_orangtua_calon_mempelai_pria" placeholder="Nomor Telp" required class="border rounded p-2 w-full mb-2">
-                Apakah Sudah Mendapat Persetujuan dari orang tua?<input type="text" name="persetujuan_orangtua_calon_mempelai_pria" placeholder="Ya/Tidak" required class="border rounded p-2 w-full mb-2"> 
-                Apakah Calon Mempelai Pria sudah pernah menikah?<input type="text" name="riwayat_calon_mempelai_pria" placeholder="Sudah/Belum/pernah Menikah" required class="border rounded p-2 w-full mb-2"> 
-                Apakah sudah berkumpul bersama seperti suami istri?<input type="text" name="riwayat_calon_mempelai_pria" placeholder="Sudah/Belum" required class="border rounded p-2 w-full mb-2">
+                Nama<input type="text" name="nama_calon_mempelai_pria" id="nama_calon_mempelai_pria" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
+                Nomor Telepon<input type="text" name="nomor_telp_calon_mempelai_pria" id="nomor_telp_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Alamat<input type="text" name="alamat_calon_mempelai_pria" id="alamat_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Tempat Lahir<input type="text" name="tempat_lahir_calon_mempelai_pria" id="tempat_lahir_calon_mempelai_pria" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
+                Tanggal Lahir<input type="date" name="tanggal_lahir_calon_mempelai" id="tanggal_lahir_calon_mempelai" required class="border rounded p-2 w-full mb-2">
+                Nomor KTP<input type="text" name="nomor_ktp_calon_mempelai_pria" id="nomor_ktp_calon_mempelai_pria" placeholder="No ktp" required class="border rounded p-2 w-full mb-2">
+                Nomor Surat Baptis <input type="text" name="nomor_surat_baptis_calon_mempelai_pria" id="nomor_surat_baptis_calon_mempelai_pria" placeholder="No surat baptis" required class="border rounded p-2 w-full mb-2"> 
+                Gereja Calon mempelai dibaptis<input type="text" name="asal_gereja_baptis_calon_mempelai_pria" id="asal_gereja_baptis_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Berbakti di gereja<input type="text" name="gereja_sekarang_calon_mempelai_pria" id="gereja_sekarang_calon_mempelai_pria" placeholder="berbakti di gereja" required class="border rounded p-2 w-full mb-2">
+                Pekerjaan <input type="text" name="pekerjaan_calon_mempelai_pria" id="pekerjaan_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Alamat Pekerjaan<input type="text" name="alamat_pekerjaan_calon_mempelai_pria" id="alamat_pekerjaan_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Nomor Telepon Pekerjaan<input type="text" name="telp_pekerjaan_calon_mempelai_pria"  id= "telp_pekerjaan_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Nama Ayah<input type="text" name="nama_ayah_calon_mempelai_pria" id="nama_ayah_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Nama Ibu<input type="text" name="nama_ibu_calon_mempelai_pria" id="nama_ibu_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Alamat Orang Tua<input type="text" name="alamat_orangtua_calon_mempelai_pria" id="alamat_orangtua_calon_mempelai_pria" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Nomor Telepon Orang Tua<input type="text" name="nomor_telp_orangtua_calon_mempelai_pria" id="nomor_telp_orangtua_calon_mempelai_pria" placeholder="Nomor Telp" required class="border rounded p-2 w-full mb-2">
+                Apakah Sudah Mendapat Persetujuan dari orang tua?<input type="text" name="persetujuan_orangtua_calon_mempelai_pria" id="persetujuan_orangtua_calon_mempelai_pria" placeholder="Ya/Tidak" required class="border rounded p-2 w-full mb-2"> 
+                Apakah Calon Mempelai Pria sudah pernah menikah?<input type="text" name="riwayat_calon_mempelai_pria" id="riwayat_calon_mempelai_pria" placeholder="Sudah/Belum/pernah Menikah" required class="border rounded p-2 w-full mb-2"> 
+                Apakah sudah berkumpul bersama seperti suami istri?<input type="text" name="status_calon_mempelai_pria" id="status_calon_mempelai_pria" placeholder="Sudah/Belum" required class="border rounded p-2 w-full mb-2">
                 <p></p>
                 <p>III. Data Calon Mempelai Wanita</p>
-                Nama<input type="text" name="nama_calon_mempelai_wanita" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
-                Nomor Telepon<input type="text" name="nomor_telp_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Alamat<input type="text" name="nomor_telp_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Tempat Lahir<input type="text" name="tempat_lahir_calon_mempelai_wanita" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
-                Tanggal Lahir<input type="date" name="tanggal_lahir_calon_mempelai_wanita" required class="border rounded p-2 w-full mb-2">
-                Nomor KTP<input type="text" name="nomor_ktp_calon_mempelai_wanita" placeholder="No ktp" required class="border rounded p-2 w-full mb-2">
-                Nomor Surat Baptis <input type="text" name="nomor_surat_baptis_calon_mempelai_wanita" placeholder="No surat baptis" required class="border rounded p-2 w-full mb-2"> 
-                Gereja Calon mempelai dibaptis<input type="text" name="asal_gereja_baptis_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Berbakti di gereja<input type="text" name="gereja_sekarang_calon_mempelai_wanita" placeholder="berbakti di gereja" required class="border rounded p-2 w-full mb-2">
-                Pekerjaan <input type="text" name="pekerjaan_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Alamat Pekerjaan<input type="text" name="alamat_pekerjaan_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Nomor Telepon Pekerjaan<input type="text" name="telp_pekerjaan_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Nama Ayah<input type="text" name="nama_ayah_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Nama Ibu<input type="text" name="nama_ibu_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Alamat Orang Tua<input type="text" name="alamat_orangtua_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
-                Nomor Telepon Orang Tua<input type="text" name="nomor_telp_orangtua_calon_mempelai_wanita" placeholder="Nomor Telp" required class="border rounded p-2 w-full mb-2">
-                Apakah Sudah Mendapat Persetujuan dari orang tua?<input type="text" name="persetujuan_orangtua_calon_mempelai_wanita" placeholder="Ya/Tidak" required class="border rounded p-2 w-full mb-2"> 
-                Apakah Calon Mempelai Pria sudah pernah menikah?<input type="text" name="riwayat_calon_mempelai_wanita" placeholder="Sudah/Belum/pernah Menikah" required class="border rounded p-2 w-full mb-2"> 
-                Apakah sudah berkumpul bersama seperti suami istri?<input type="text" name="riwayat_calon_mempelai_wanita" placeholder="Sudah/Belum" required class="border rounded p-2 w-full mb-2">
+                Nama<input type="text" name="nama_calon_mempelai_wanita" id="nama_calon_mempelai_wanita" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
+                Nomor Telepon<input type="text" name="nomor_telp_calon_mempelai_wanita" id="nomor_telp_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Alamat<input type="text" name="alamat_calon_mempelai_wanita" id="alamat_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Tempat Lahir<input type="text" name="tempat_lahir_calon_mempelai_wanita" id="tempat_lahir_calon_mempelai_wanita" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
+                Tanggal Lahir<input type="date" name="tanggal_lahir_calon_mempelai_wanita" id="tanggal_lahir_calon_mempelai_wanita" required class="border rounded p-2 w-full mb-2">
+                Nomor KTP<input type="text" name="nomor_ktp_calon_mempelai_wanita" id="nomor_ktp_calon_mempelai_wanita" placeholder="No ktp" required class="border rounded p-2 w-full mb-2">
+                Nomor Surat Baptis <input type="text" name="nomor_surat_baptis_calon_mempelai_wanita" id="nomor_surat_baptis_calon_mempelai_wanita" placeholder="No surat baptis" required class="border rounded p-2 w-full mb-2"> 
+                Gereja Calon mempelai dibaptis<input type="text" name="asal_gereja_baptis_calon_mempelai_wanita" id="asal_gereja_baptis_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Berbakti di gereja<input type="text" name="gereja_sekarang_calon_mempelai_wanita" id="gereja_sekarang_calon_mempelai_wanita" placeholder="berbakti di gereja" required class="border rounded p-2 w-full mb-2">
+                Pekerjaan <input type="text" name="pekerjaan_calon_mempelai_wanita" id="pekerjaan_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Alamat Pekerjaan<input type="text" name="alamat_pekerjaan_calon_mempelai_wanita" id="alamat_pekerjaan_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Nomor Telepon Pekerjaan<input type="text" name="telp_pekerjaan_calon_mempelai_wanita"  id= "telp_pekerjaan_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Nama Ayah<input type="text" name="nama_ayah_calon_mempelai_wanita" id="nama_ayah_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Nama Ibu<input type="text" name="nama_ibu_calon_mempelai_wanita" id="nama_ibu_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Alamat Orang Tua<input type="text" name="alamat_orangtua_calon_mempelai_wanita" id="alamat_orangtua_calon_mempelai_wanita" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
+                Nomor Telepon Orang Tua<input type="text" name="nomor_telp_orangtua_calon_mempelai_wanita" id="nomor_telp_orangtua_calon_mempelai_wanita" placeholder="Nomor Telp" required class="border rounded p-2 w-full mb-2">
+                Apakah Sudah Mendapat Persetujuan dari orang tua?<input type="text" name="persetujuan_orangtua_calon_mempelai_wanita" id="persetujuan_orangtua_calon_mempelai_wanita" placeholder="Ya/Tidak" required class="border rounded p-2 w-full mb-2"> 
+                Apakah Calon Mempelai Pria sudah pernah menikah?<input type="text" name="riwayat_calon_mempelai_wanita" id="riwayat_calon_mempelai_wanita" placeholder="Sudah/Belum/pernah Menikah" required class="border rounded p-2 w-full mb-2"> 
+                Apakah sudah berkumpul bersama seperti suami istri?<input type="text" name="status_calon_mempelai_wanita" id="status_calon_mempelai_wanita" placeholder="Sudah/Belum" required class="border rounded p-2 w-full mb-2">
                 <p>IV. Surat Catatan Sipil</p>
                 Apakah sudah mengurus surat nikah di catatan sipil?<input type="text" name="surat_catatan_sipil" placeholder="Sudah/Belum" required class="border rounded p-2 w-full mb-2">
                 <input type="checkbox" id="cek_surat_sipil" name="cek_surat_sipil" value="cek_surat_sipil" class="mr-2" onclick="toggleInputSingle('file_surat_catatan_sipil')">
                 <label for="cek_surat_sipil" class="text-gray-700">Apabila sudah, harap dilampirkan fotocopynya</label>
                 <input type="file" id="file_surat_catatan_sipil" class="mt-2 hidden border border-gray-300 rounded px-2 py-1">
                 <p></p>
-                <button type="submit" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Submit</button>
+                <button type="submit"   class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Submit</button>
             </form>
         </div>
     </div>

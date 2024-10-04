@@ -1,0 +1,19 @@
+A. Portal Jemaat
+- Navbar
+- Home Page
+- About Us
+- Service Registration (Pendaftaran Layanan)
+- Ibadah Online
+- FAQ (Frequently Asked Questions)
+
+B. Sistem Manajemen Gereja (Admin)
+- Dashbord
+- Manajemen Kalender
+- Manajemen Jemaat
+- Manajemen Pelayanan Gereja
+- Manajemen Admin (nunjukno yang jadi admin siapa ae, email dll, pembagian tugas admin)
+- Manajement Event (berhubungan sama manajemen kalender)
+- Manajemen Permintaan Layanan
+- Arsip Layanan
+- Pesan Masuk
+- Pesan Telah Dibaca
