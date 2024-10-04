@@ -5,11 +5,13 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\CongregationController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\form_penyerahan_anak_Controller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceAdminController;
 use App\Http\Controllers\ServiceController;
+use App\Models\form_penyerahan_anak;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,6 +61,8 @@ Route::post('/admin/register', [ControllersAdminAuthController::class, 'register
 Route::middleware('admin')->group(function() {
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin/manajemenJemaat', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');
+
 
     // Rute lain untuk manajemen jemaat, pelayanan, dll.
 });
@@ -67,6 +71,15 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::resource('admin/congregation', CongregationController::class)->middleware('admin');
 Route::resource('admin/services', ServiceAdminController::class)->middleware('admin');
 Route::resource('admin/event', EventController::class)->middleware('admin');
+Route::resource('admin/manajemenJemaat', form_penyerahan_anak_Controller::class)->middleware('admin');
+
+
+
+Route::post('/service-registration', [form_penyerahan_anak_Controller::class, 'store'])->name('form_penyerahan_anak.store');
+
+
+Route::get('/admin/manajemenJemaat', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');
+
 
 
 

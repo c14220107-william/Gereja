@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+{{-- @extends('admin.layouts.app')
 
 @section('content')
     <h1>Edit Event</h1>
@@ -21,4 +21,4 @@
 
         <button type="submit">Perbarui</button>
     </form>
-@endsection
+@endsection --}}

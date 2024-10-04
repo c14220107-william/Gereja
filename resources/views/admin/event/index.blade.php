@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+{{-- @extends('admin.layouts.app')
 
 @section('content')
     <h1>Manajemen Kalender</h1>
@@ -54,4 +54,4 @@
     
     <div id="calendar"></div>
     
-@endsection
+@endsection --}}
