@@ -3,49 +3,88 @@
 @section('content')
 
 <body class="bg-gray-100">
+
     <!-- Hero Section -->
-    <section class="relative bg-cover bg-center text-white py-80" style="background-image: url('{{ asset('img/heroimg.JPG') }}');">
+    <section class="relative bg-cover bg-center text-white py-80" style="background-image: url('{{ asset('img/fotodalam.JPG') }}');">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Overlay -->
         <div class="relative z-10 text-center">
             <h1 class="text-6xl font-bold">Selamat Datang di Gereja Kami</h1>
-            <p class="mt-4 text-2xl">Tempat untuk bertumbuh dalam iman dan kasih.</p>
+            <p class="mt-4 text-2xl">Mari saling memperhatikan, mengasihi, dan melayani satu dengan yang lain.</p>
             <a href="#tentang" class="mt-8 inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100">Tentang Kami</a>
         </div>
     </section>
-    {{-- About Section --}}
-    <section id="tentang" class="py-10 bg-gray-100">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-2">
-            <div class="w-full md:w-1/2 flex justify-center">
-                <img src="{{ asset('img/tentang.JPG') }}" alt="Tentang Gereja Kami" class="rounded-lg shadow-lg w-1/3 p-0">
+
+<!-- Custom Section -->
+<section id="custom-section" class="relative py-20">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="your-image-url.jpg" alt="Background" class="w-full h-full object-cover">
+        <div class="bg-black opacity-30 absolute inset-0"></div> <!-- Optional overlay for better text visibility -->
+    </div>
+
+    <div class="container mx-auto relative z-10">
+        <!-- Top White Background -->
+        <div class="bg-white p-8 mb-0 rounded-b-lg shadow-lg text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Judul Bagian Atas</h2>
+            <p class="text-lg text-gray-600">Ini adalah teks di bagian atas dengan latar belakang putih.</p>
+        </div>
+
+        <!-- Middle Section -->
+        <div class="text-center my-10">
+            <h2 class="text-4xl font-bold text-white">Judul Bagian Tengah</h2>
+            <p class="text-lg text-white">Ini adalah teks di bagian tengah tanpa latar belakang.</p>
+        </div>
+
+        <!-- Bottom White Background -->
+        <div class="bg-white p-8 rounded-t-lg shadow-lg text-center">
+            <h2 class="text-3xl font-bold text-gray-800">Judul Bagian Bawah</h2>
+            <p class="text-lg text-gray-600">Ini adalah teks di bagian bawah dengan latar belakang putih.</p>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- About Section -->
+<section id="tentang" class="py-10 bg-gray-100">
+    <div class="container mx-auto flex flex-col items-center justify-center gap-2">
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <h2 class="text-4xl font-bold mb-4">Tentang Gereja Kami</h2>
+            <p class="text-lg text-gray-700">Gereja kami adalah tempat untuk memperdalam iman, membangun hubungan dengan Tuhan, dan melayani masyarakat. Kami menyambut semua orang untuk bergabung dalam komunitas kami yang hangat dan penuh kasih.</p>
+        </div>
+        <div class="w-full md:w-1/2 flex justify-center mt-4 md:mt-0">
+            <img src="{{ asset('img/tentang.JPG') }}" alt="Tentang Gereja Kami" class="rounded-lg shadow-lg w-2/3 p-0">
+        </div>
+    </div>
+</section>
+
+
+    <!-- Visi & Misi Section -->
+<section id="visi-misi" class="py-20 bg-gradient-to-r from-gray-800 to-gray-900">
+    <div class="container mx-auto text-center">
+        <h2 class="text-5xl font-extrabold text-white mb-8">Visi dan Misi</h2>
+        <div class="flex flex-col md:flex-row justify-around">
+            <!-- Visi -->
+            <div class="bg-gray-700 rounded-lg shadow-xl p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <h3 class="text-3xl font-semibold text-yellow-400 mb-4">Visi</h3>
+                <p class="text-lg text-gray-300">
+                    Menjadi jemaat yang <span class="font-bold italic text-red-500">kuat</span> dan
+                    <span class="underline text-purple-400">tidak tergoncangkan</span>.
+                </p>
             </div>
-            <div class="w-full md:w-1/2 md:pl-10 -mt-4 md:mt-0 text-center md:text-left">
-                <h2 class="text-4xl font-bold mb-4">Tentang Gereja Kami</h2>
-                <p class="text-lg text-gray-700">Gereja kami adalah tempat untuk memperdalam iman, membangun hubungan dengan Tuhan, dan melayani masyarakat. Kami menyambut semua orang untuk bergabung dalam komunitas kami yang hangat dan penuh kasih.</p>
+            <!-- Misi -->
+            <div class="bg-gray-700 rounded-lg shadow-xl p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+                <h3 class="text-3xl font-semibold text-yellow-400 mb-4">Misi</h3>
+                <p class="text-lg text-gray-300">Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial, dalam kehidupan pribadi maupun komunal (keluarga dan gereja).</p>
             </div>
         </div>
-    </section>
-    {{-- visi & misi Section --}}
-    <section id="visi-misi" class="py-20 bg-gradient-to-r from-blue-300 to-blue-500">
-        <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-extrabold text-white mb-8">Visi dan Misi</h2>
-            <div class="flex flex-col md:flex-row justify-around">
-                <!-- Visi -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
-                    <h3 class="text-3xl font-semibold text-blue-600 mb-4">Visi</h3>
-                    <p class="text-lg text-gray-700">
-                        Menjadi jemaat yang <span class="font-bold italic text-red-500">kuat</span> dan
-                        <span class="underline text-purple-600">tidak tergoncangkan</span>.
-                    </p>
-                </div>
-                <!-- Misi -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
-                    <h3 class="text-3xl font-semibold text-blue-600 mb-4">Misi</h3>
-                    <p class="text-lg text-gray-700">Jemaat yang kuat dan saling menguatkan dalam aspek spritual, psiko sosial, dalam kehidupan pribadi maupun komunal (keluarga dan gereja).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    {{-- value Section --}}
+    </div>
+</section>
+
+
+
+
+    <!-- Value Section -->
     <section id="nilai" class="py-20 bg-white">
         <div class="container mx-auto text-center">
             <h2 class="text-5xl font-extrabold text-blue-600 mb-8">Nilai Kami</h2>
@@ -57,7 +96,7 @@
         </div>
     </section>
 
-    {{-- jadwal Section --}}
+    <!-- Jadwal Section -->
     <section id="sunday-services" class="py-20 bg-gradient-to-r from-blue-500 to-blue-300">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold text-white mb-8">Ibadah Sepekan</h2>
@@ -113,7 +152,7 @@
     </section>
 
 
-
+    <!-- Informasi Section -->
     <section id="more-info" class="py-20 bg-gray-100">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-8">Informasi Lebih Lanjut</h2>
@@ -155,7 +194,7 @@
         </div>
     </section>
 
-    {{-- maps Section --}}
+    <!-- Maps Section -->
     <section id="maps" class="py-20">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold text-blue-600 mb-8">Lokasi Kami</h2>
