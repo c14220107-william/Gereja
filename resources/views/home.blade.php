@@ -3,118 +3,138 @@
 @section('content')
 
 <body class="bg-gray-100">
+
     <!-- Hero Section -->
-    <section class="relative bg-cover bg-center text-white py-80" style="background-image: url('{{ asset('img/heroimg.JPG') }}');">
+    <section class="relative bg-cover bg-center text-white py-80" style="background-image: url('{{ asset('img/fotodalam.JPG') }}');">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Overlay -->
         <div class="relative z-10 text-center">
             <h1 class="text-6xl font-bold">Selamat Datang di Gereja Kami</h1>
-            <p class="mt-4 text-2xl">Tempat untuk bertumbuh dalam iman dan kasih.</p>
-            <a href="#tentang" class="mt-8 inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100">Tentang Kami</a>
+            <p class="mt-4 text-2xl">Mari saling memperhatikan, mengasihi, dan melayani satu dengan yang lain.</p>
+            <a href="#tentang" class="mt-8 inline-block bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100">Tentang Kami</a>
         </div>
     </section>
-    {{-- About Section --}}
-    <section id="tentang" class="py-10 bg-gray-100">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-center gap-2">
-            <div class="w-full md:w-1/2 flex justify-center">
-                <img src="{{ asset('img/tentang.JPG') }}" alt="Tentang Gereja Kami" class="rounded-lg shadow-lg w-1/3 p-0">
+
+    <!-- About Section -->
+    <section id="tentang" class="py-16 bg-black">
+        <div class="container mx-auto flex flex-col items-center justify-center gap-8">
+            <div class="flex justify-center mb-1">
+                <img src="{{ asset('img/logopusat.png') }}" alt="Church Icon">
             </div>
-            <div class="w-full md:w-1/2 md:pl-10 -mt-4 md:mt-0 text-center md:text-left">
-                <h2 class="text-4xl font-bold mb-4">Tentang Gereja Kami</h2>
-                <p class="text-lg text-gray-700">Gereja kami adalah tempat untuk memperdalam iman, membangun hubungan dengan Tuhan, dan melayani masyarakat. Kami menyambut semua orang untuk bergabung dalam komunitas kami yang hangat dan penuh kasih.</p>
+            <div class="w-full md:w-2/3 text-center">
+                <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500">
+                    Tentang Gereja Kami
+                </h2>
+                <p class="text-lg text-gray-300 hover:text-gray-100 transition-all shadow-lg shadow-yellow-400/50">
+                    ini nanti harus coba tnya yang agak panjang penjelasane, mungkin isa juga ditambah sejarah" tipis" gitu. tapi ya itu harus tanya dlu. ini sementara coba kalo panjang bagus atau ga. apakah ini sudah cukup panjang. jadi ini nanti bagian untuk menjelaskan dari gereja ini bagaiamana dan lain-lain. asdfasdkfjaskdlfjnejngfaisdhgknsdktbiprefkdnbnaoirhtkamkdnvsaklnvlnakdlg alkdjfakheingklsadnklvnansdg.
+                </p>
             </div>
         </div>
     </section>
-    {{-- visi & misi Section --}}
-    <section id="visi-misi" class="py-20 bg-gradient-to-r from-blue-300 to-blue-500">
-        <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-extrabold text-white mb-8">Visi dan Misi</h2>
-            <div class="flex flex-col md:flex-row justify-around">
-                <!-- Visi -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
-                    <h3 class="text-3xl font-semibold text-blue-600 mb-4">Visi</h3>
-                    <p class="text-lg text-gray-700">
-                        Menjadi jemaat yang <span class="font-bold italic text-red-500">kuat</span> dan
-                        <span class="underline text-purple-600">tidak tergoncangkan</span>.
-                    </p>
+
+    <!-- Visi & Misi Section -->
+    <section class="relative bg-cover bg-center text-white py-96" style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
+        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+        <div class="relative z-10 text-center flex items-center justify-center h-full">
+            <div class="container mx-auto text-center px-8">
+                <h2 class="text-7xl font-serif font-extrabold text-white mb-12">
+                    Visi dan Misi
+                </h2>
+                <div class="flex flex-col md:flex-row justify-around gap-10">
+                    <!-- Visi -->
+                    <div class="bg-gray-800 bg-opacity-70 backdrop-blur-lg rounded-xl shadow-2xl p-12 md:w-1/3 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90">
+                        <div class="text-center">
+                            <h3 class="text-5xl font-bold text-yellow-400 mb-6">Visi</h3>
+                            <p class="text-2xl text-gray-200">
+                                Menjadi jemaat yang kuat dan tidak tergoncangkan.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Misi -->
+                    <div class="bg-gray-800 bg-opacity-70 backdrop-blur-lg rounded-xl shadow-2xl p-12 md:w-1/3 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90">
+                        <div class="text-center">
+                            <h3 class="text-5xl font-bold text-yellow-400 mb-6">Misi</h3>
+                            <p class="text-2xl text-gray-200">
+                                Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial, dalam kehidupan pribadi maupun komunal (keluarga dan gereja).
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Misi -->
-                <div class="bg-white rounded-lg shadow-lg p-8 mb-6 md:mb-0 md:w-1/3 transform transition duration-500 hover:scale-105">
-                    <h3 class="text-3xl font-semibold text-blue-600 mb-4">Misi</h3>
-                    <p class="text-lg text-gray-700">Jemaat yang kuat dan saling menguatkan dalam aspek spritual, psiko sosial, dalam kehidupan pribadi maupun komunal (keluarga dan gereja).</p>
-                </div>
             </div>
         </div>
     </section>
-    {{-- value Section --}}
-    <section id="nilai" class="py-20 bg-white">
+
+    <!-- Motto Section -->
+    <section id="nilai" class="py-20 bg-black">
         <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-extrabold text-blue-600 mb-8">Nilai Kami</h2>
+        <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500">
+                    Motto kami
+                </h2>
             <div class="flex justify-center">
-                <img src="{{ asset('img/your-image.png') }}" alt="nanti kasik gambar biar menarik tp blm nyari wkwk" class="w-1/4 rounded-lg shadow-lg">
+                <img src="{{ asset('img/logokutisari.png') }}" alt="nanti kasik gambar biar menarik tp blm nyari wkwk" class="w-1/6 rounded-lg shadow-lg">
             </div>
-            <p class="text-4xl font-semibold text-blue-800 mb-4">Care, Love, and Serve</p>
-            <p class="text-lg text-gray-700 mx-auto max-w-3xl mb-8">Kami berkomitmen untuk mengutamakan perhatian dan kepedulian dalam setiap interaksi. Menyebarkan kasih dalam setiap tindakan dan pelayanan. Melayani dengan sepenuh hati, mewujudkan iman dalam tindakan nyata.</p>
+            <p class="text-4xl font-semibold text-yellow-600 mb-4">Care, Love, and Serve</p>
+            <p class="text-lg text-white mx-auto max-w-3xl mb-8">ini nanti kasik penjelasan juga tentang care, love, and serve ini, tapi masik gatau, nnti tnya lagi. yang ini gausa terlalu panjang tapi jangan terlalu pendek juga.</p>
         </div>
     </section>
 
-    {{-- jadwal Section --}}
-    <section id="sunday-services" class="py-20 bg-gradient-to-r from-blue-500 to-blue-300">
+    <!-- Jadwal Section -->
+    <section id="sunday-services" class="py-20 bg-white">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-8">Ibadah Sepekan</h2>
+            <h2 class="text-5xl font-bold text-black mb-8">Ibadah Sepekan</h2>
 
-            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-8 mb-10 mx-auto max-w-2xl transform hover:scale-105 transition-transform duration-300">
-                <h3 class="text-4xl font-semibold text-blue-700 mb-4 border-b-4 border-blue-300 inline-block pb-2">Ibadah Umum</h3>
-                <p class="mt-4 text-black font-bold text-2xl">Minggu</p>
-                <p class="mt-0 text-gray-800 text-xl font-medium">Pukul 07:45 - 09:30</p>
-                <p class="mt-4 text-lg text-gray-700 leading-relaxed">Bergabunglah bersama kami dalam ibadah utama yang dipimpin dengan pujian dan khotbah yang menginspirasi.</p>
+            <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-8 mb-10 mx-auto max-w-2xl transform hover:scale-105 transition-transform duration-300">
+                <h3 class="text-4xl font-semibold text-white mb-4 border-b-4 border-yellow-300 inline-block pb-2">Ibadah Umum</h3>
+                <p class="mt-4 text-yellow-300 font-bold text-2xl">Minggu</p>
+                <p class="mt-0 text-yellow-300 text-xl font-medium">Pukul 07:45 - 09:30</p>
+                <p class="mt-4 text-lg text-white leading-relaxed">Bergabunglah bersama kami dalam ibadah utama yang dipimpin dengan pujian dan khotbah yang menginspirasi.</p>
             </div>
 
             <div class="flex flex-col md:flex-row justify-around">
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-2 border-b-2 border-blue-300 inline-block pb-1">Ibadah Kaum Wanita</h3>
-                    <p class="mt-3 text-black font-bold text-xl">Selasa</p>
-                    <p class="text-lg text-black">Pukul 16:30 - 18:00</p>
-                    <p class="mt-3 text-gray-700 leading-relaxed">Bergabunglah dalam ibadah pagi yang penuh sukacita dengan pujian dan khotbah yang menginspirasi.</p>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Ibadah Kaum Wanita</h3>
+                    <p class="mt-3 text-yellow-300 font-bold text-xl">Selasa</p>
+                    <p class="text-lg text-yellow-300">Pukul 16:30 - 18:00</p>
+                    <p class="mt-3 text-white leading-relaxed">Bergabunglah dalam ibadah pagi yang penuh sukacita dengan pujian dan khotbah yang menginspirasi.</p>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-2 border-b-2 border-blue-300 inline-block pb-1">Youth Commcell</h3>
-                    <p class="mt-3 text-black font-bold text-xl">Rabu</p>
-                    <p class="text-lg text-black">Pukul 19:00 - 21:00</p>
-                    <p class="mt-3 text-gray-700 leading-relaxed">Ibadah siang yang lebih santai, cocok untuk keluarga dan teman-teman.</p>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Youth Commcell</h3>
+                    <p class="mt-3 text-yellow-300 font-bold text-xl">Rabu</p>
+                    <p class="text-lg text-yellow-300">Pukul 19:00 - 21:00</p>
+                    <p class="mt-3 text-white leading-relaxed">Ibadah siang yang lebih santai, cocok untuk keluarga dan teman-teman.</p>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-2 border-b-2 border-blue-300 inline-block pb-1">Doa Malam</h3>
-                    <p class="mt-3 text-black font-bold text-xl">Kamis</p>
-                    <p class="text-lg text-black">Pukul 18:30 - 20:00</p>
-                    <p class="mt-3 text-gray-700 leading-relaxed">Akhiri hari Anda dengan ibadah malam yang damai dan reflektif.</p>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Doa Malam</h3>
+                    <p class="mt-3 text-yellow-300 font-bold text-xl">Kamis</p>
+                    <p class="text-lg text-yellow-300">Pukul 18:30 - 20:00</p>
+                    <p class="mt-3 text-white leading-relaxed">Akhiri hari Anda dengan ibadah malam yang damai dan reflektif.</p>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-around mt-10">
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-2 border-b-2 border-blue-300 inline-block pb-1">Doa Fajar</h3>
-                    <p class="mt-3 text-black font-bold text-xl">Sabtu</p>
-                    <p class="text-lg text-black">Pukul 05:30 - 06:30</p>
-                    <p class="mt-3 text-gray-700 leading-relaxed">Bergabunglah dalam ibadah malam yang penuh damai dan refleksi.</p>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Doa Fajar</h3>
+                    <p class="mt-3 text-yellow-300 font-bold text-xl">Sabtu</p>
+                    <p class="text-lg text-yellow-300">Pukul 05:30 - 06:30</p>
+                    <p class="mt-3 text-white leading-relaxed">Bergabunglah dalam ibadah malam yang penuh damai dan refleksi.</p>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-2 border-b-2 border-blue-300 inline-block pb-1">Sekolah Minggu</h3>
-                    <p class="mt-3 text-black font-bold text-xl">Minggu</p>
-                    <p class="text-lg text-black">Pukul 08:00 - 09:30</p>
-                    <p class="mt-3 text-gray-700 leading-relaxed">Bersama-sama dalam doa, memperkuat iman kita.</p>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Sekolah Minggu</h3>
+                    <p class="mt-3 text-yellow-300 font-bold text-xl">Minggu</p>
+                    <p class="text-lg text-yellow-300">Pukul 08:00 - 09:30</p>
+                    <p class="mt-3 text-white leading-relaxed">Bersama-sama dalam doa, memperkuat iman kita.</p>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-700 mb-2 border-b-2 border-blue-300 inline-block pb-1">Ibadah Youth</h3>
-                    <p class="mt-3 text-black font-bold text-xl">Minggu</p>
-                    <p class="text-lg text-black">Pukul 10:30 - 12:00</p>
-                    <p class="mt-3 text-gray-700 leading-relaxed">Ikuti kegiatan pelayanan komunitas untuk saling mendukung.</p>
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Ibadah Youth</h3>
+                    <p class="mt-3 text-yellow-300 font-bold text-xl">Minggu</p>
+                    <p class="text-lg text-yellow-300">Pukul 10:30 - 12:00</p>
+                    <p class="mt-3 text-white leading-relaxed">Ikuti kegiatan pelayanan komunitas untuk saling mendukung.</p>
                 </div>
             </div>
         </div>
     </section>
 
 
-
-    <section id="more-info" class="py-20 bg-gray-100">
+    <!-- Informasi Section -->
+    <section id="more-info" class="py-20 bg-gray-300">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-8">Informasi Lebih Lanjut</h2>
             <p class="text-lg text-gray-600 mb-4">Ikuti kami di media sosial untuk mendapatkan berita terbaru dan informasi acara.</p>
@@ -155,7 +175,7 @@
         </div>
     </section>
 
-    {{-- maps Section --}}
+    <!-- Maps Section -->
     <section id="maps" class="py-20">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold text-blue-600 mb-8">Lokasi Kami</h2>
