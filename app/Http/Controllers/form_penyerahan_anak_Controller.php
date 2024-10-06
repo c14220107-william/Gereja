@@ -109,8 +109,9 @@ class form_penyerahan_anak_Controller extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(form_penyerahan_anak $form_penyerahan_anak)
     {
-        //
+        $form_penyerahan_anak->delete();
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Jemaat berhasil dihapus.');
     }
 }

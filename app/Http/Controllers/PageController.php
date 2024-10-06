@@ -15,6 +15,8 @@ class PageController extends Controller
     public function onlineworship(){
         return view('onlineworship');
     }
-    
+    public function tes(){
+        return view('admin/tes');
+    }
     
 }

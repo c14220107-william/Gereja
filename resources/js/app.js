@@ -10,3 +10,4 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 window.Alpine = Alpine;
 
 Alpine.start();
+

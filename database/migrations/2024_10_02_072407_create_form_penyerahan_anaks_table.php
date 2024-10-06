@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('nomor_akte_pernikahan_parent')->nullable(); // Nomor Akte Pernikahan (optional)
             $table->date('tanggal_akte_pernikahan')->nullable(); // Tanggal Akte Pernikahan (optional)
             $table->string('pas_foto_anak');
+            
             $table->timestamps();
         });
     }
