@@ -2,15 +2,92 @@
 
 @section('content')
 
+<!-- Keyframes and Custom Animations (Tailwind Config) -->
+<style>
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounce-on-hover {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-5px);
+        }
+    }
+
+    /* Utility for animation timing delay */
+    .animate-fade-in-delay {
+        animation: fade-in 1.5s ease-out forwards;
+        animation-delay: 0.5s;
+    }
+
+    /* Bounce effect on hover */
+    .animate-bounce-on-hover:hover {
+        animation: bounce-on-hover 1s infinite;
+    }
+
+    .animate-fade-in-up {
+        animation: fade-in-up 1s ease-out forwards;
+    }
+
+    .fade-in-up-on-scroll {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
+    }
+
+    .fade-in-up-on-scroll.scroll-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<!-- JavaScript untuk animasi saat scroll -->
+<script>
+    document.addEventListener('scroll', function() {
+        let elements = document.querySelectorAll('.fade-in-up-on-scroll');
+        elements.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                element.classList.add('scroll-active');
+            }
+        });
+    });
+</script>
+
 <body class="bg-gray-100">
 
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center text-white py-80" style="background-image: url('{{ asset('img/fotodalam.JPG') }}');">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative z-10 text-center">
-            <h1 class="text-6xl font-bold">Selamat Datang di Gereja Kami</h1>
-            <p class="mt-4 text-2xl">Mari saling memperhatikan, mengasihi, dan melayani satu dengan yang lain.</p>
-            <a href="#tentang" class="mt-8 inline-block bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-100">Tentang Kami</a>
+            <h1 class="text-6xl font-bold opacity-0 animate-fade-in-delay">Selamat Datang di Gereja Kami</h1>
+            <p class="mt-4 text-2xl opacity-0 animate-fade-in-delay">Mari saling memperhatikan, mengasihi, dan melayani satu dengan yang lain.</p>
+            <a href="#tentang" class="mt-8 inline-block bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-300 animate-bounce-on-hover">Tentang Kami</a>
         </div>
     </section>
 
@@ -36,12 +113,12 @@
         <div class="absolute inset-0 bg-black bg-opacity-70"></div>
         <div class="relative z-10 text-center flex items-center justify-center h-full">
             <div class="container mx-auto text-center px-8">
-                <h2 class="text-7xl font-serif font-extrabold text-white mb-12">
+                <h2 class="text-7xl font-serif font-extrabold text-white mb-12 fade-in-up-on-scroll">
                     Visi dan Misi
                 </h2>
                 <div class="flex flex-col md:flex-row justify-around gap-10">
                     <!-- Visi -->
-                    <div class="bg-gray-800 bg-opacity-70 backdrop-blur-lg rounded-xl shadow-2xl p-12 md:w-1/3 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90">
+                    <div class="bg-gray-800 bg-opacity-70 backdrop-blur-lg rounded-xl shadow-2xl p-12 md:w-1/3 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90 fade-in-up-on-scroll">
                         <div class="text-center">
                             <h3 class="text-5xl font-bold text-yellow-400 mb-6">Visi</h3>
                             <p class="text-2xl text-gray-200">
@@ -50,7 +127,7 @@
                         </div>
                     </div>
                     <!-- Misi -->
-                    <div class="bg-gray-800 bg-opacity-70 backdrop-blur-lg rounded-xl shadow-2xl p-12 md:w-1/3 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90">
+                    <div class="bg-gray-800 bg-opacity-70 backdrop-blur-lg rounded-xl shadow-2xl p-12 md:w-1/3 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90 fade-in-up-on-scroll">
                         <div class="text-center">
                             <h3 class="text-5xl font-bold text-yellow-400 mb-6">Misi</h3>
                             <p class="text-2xl text-gray-200">
@@ -66,9 +143,9 @@
     <!-- Motto Section -->
     <section id="nilai" class="py-20 bg-black">
         <div class="container mx-auto text-center">
-        <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500">
-                    Motto kami
-                </h2>
+            <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500">
+                Motto kami
+            </h2>
             <div class="flex justify-center">
                 <img src="{{ asset('img/logokutisari.png') }}" alt="nanti kasik gambar biar menarik tp blm nyari wkwk" class="w-1/6 rounded-lg shadow-lg">
             </div>
@@ -80,9 +157,9 @@
     <!-- Jadwal Section -->
     <section id="sunday-services" class="py-20 bg-white">
         <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-bold text-black mb-8">Ibadah Sepekan</h2>
+            <h2 class="text-5xl font-bold text-black mb-8 fade-in-up-on-scroll">Ibadah Sepekan</h2>
 
-            <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-8 mb-10 mx-auto max-w-2xl transform hover:scale-105 transition-transform duration-300">
+            <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-8 mb-10 mx-auto max-w-2xl transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
                 <h3 class="text-4xl font-semibold text-white mb-4 border-b-4 border-yellow-300 inline-block pb-2">Ibadah Umum</h3>
                 <p class="mt-4 text-yellow-300 font-bold text-2xl">Minggu</p>
                 <p class="mt-0 text-yellow-300 text-xl font-medium">Pukul 07:45 - 09:30</p>
@@ -90,19 +167,19 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-around">
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Ibadah Kaum Wanita</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Selasa</p>
                     <p class="text-lg text-yellow-300">Pukul 16:30 - 18:00</p>
                     <p class="mt-3 text-white leading-relaxed">Bergabunglah dalam ibadah pagi yang penuh sukacita dengan pujian dan khotbah yang menginspirasi.</p>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Youth Commcell</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Rabu</p>
                     <p class="text-lg text-yellow-300">Pukul 19:00 - 21:00</p>
                     <p class="mt-3 text-white leading-relaxed">Ibadah siang yang lebih santai, cocok untuk keluarga dan teman-teman.</p>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Doa Malam</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Kamis</p>
                     <p class="text-lg text-yellow-300">Pukul 18:30 - 20:00</p>
@@ -110,19 +187,19 @@
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-around mt-10">
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Doa Fajar</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Sabtu</p>
                     <p class="text-lg text-yellow-300">Pukul 05:30 - 06:30</p>
                     <p class="mt-3 text-white leading-relaxed">Bergabunglah dalam ibadah malam yang penuh damai dan refleksi.</p>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Sekolah Minggu</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Minggu</p>
                     <p class="text-lg text-yellow-300">Pukul 08:00 - 09:30</p>
                     <p class="mt-3 text-white leading-relaxed">Bersama-sama dalam doa, memperkuat iman kita.</p>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Ibadah Youth</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Minggu</p>
                     <p class="text-lg text-yellow-300">Pukul 10:30 - 12:00</p>
@@ -171,11 +248,10 @@
                 </a>
 
                 <!-- Link Whatsapp -->
-                <a href="https://www.youtube.com/@bethlehemkutisari4941" class="text-blue-600 hover:text-blue-800">
+                <a href="https://wa.me/nomor_whatsapp" class="text-green-600 hover:text-green-800">
                     <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
-                        <svg class="rounded-md transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
-                            <path d="M61.1026 23.7185C60.5048 21.471 58.7363 19.6981 56.4863 19.0904C52.4181 18 36.0951 18 36.0951 18C36.0951 18 19.7805 18 15.7039 19.0904C13.4622 19.6897 11.6937 21.4627 11.0876 23.7185C10 27.7971 10 36.3124 10 36.3124C10 36.3124 10 44.8276 11.0876 48.9063C11.6854 51.1537 13.4539 52.9267 15.7039 53.5343C19.7805 54.6247 36.0951 54.6247 36.0951 54.6247C36.0951 54.6247 52.4181 54.6247 56.4863 53.5343C58.728 52.935 60.4965 51.162 61.1026 48.9063C62.1902 44.8276 62.1902 36.3124 62.1902 36.3124C62.1902 36.3124 62.1902 27.7971 61.1026 23.7185Z" fill="#FF3000" />
-                            <path d="M30.8811 44.1617L44.4392 36.3124L30.8811 28.463V44.1617Z" fill="white" />
+                        <svg class="rounded-md transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
+                            <path fill="#25D366" d="M16 0C7.164 0 0 7.163 0 16c0 2.826.737 5.495 2.023 7.825L.014 32l8.348-2.018A15.936 15.936 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.736 23.457c-.337.948-1.7 1.676-2.396 1.798-.646.104-1.477.15-2.382-.153-.554-.175-1.26-.41-2.176-.801-3.835-1.58-6.335-5.482-6.529-5.74-.193-.257-1.563-2.072-1.563-3.956s.988-2.803 1.339-3.188c.35-.385.767-.482 1.017-.482s.508.002.732.012c.238.01.557-.09.872.665.337.783 1.09 2.666 1.188 2.857.096.192.159.417.032.674-.127.257-.191.416-.382.64-.192.223-.406.497-.582.669-.192.192-.392.402-.168.787.224.385.995 1.648 2.136 2.669 1.47 1.313 2.705 1.716 3.094 1.909.386.192.615.16.842-.095.23-.256.964-1.121 1.222-1.503.256-.385.512-.32.867-.192.353.127 2.231 1.053 2.615 1.244.385.192.641.288.737.448.096.16.096.954-.24 1.902z" />
                         </svg>
                     </button>
                 </a>
