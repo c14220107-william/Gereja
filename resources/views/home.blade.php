@@ -169,6 +169,17 @@
                         </svg>
                     </button>
                 </a>
+
+                <!-- Link Whatsapp -->
+                <a href="https://www.youtube.com/@bethlehemkutisari4941" class="text-blue-600 hover:text-blue-800">
+                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
+                        <svg class="rounded-md transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
+                            <path d="M61.1026 23.7185C60.5048 21.471 58.7363 19.6981 56.4863 19.0904C52.4181 18 36.0951 18 36.0951 18C36.0951 18 19.7805 18 15.7039 19.0904C13.4622 19.6897 11.6937 21.4627 11.0876 23.7185C10 27.7971 10 36.3124 10 36.3124C10 36.3124 10 44.8276 11.0876 48.9063C11.6854 51.1537 13.4539 52.9267 15.7039 53.5343C19.7805 54.6247 36.0951 54.6247 36.0951 54.6247C36.0951 54.6247 52.4181 54.6247 56.4863 53.5343C58.728 52.935 60.4965 51.162 61.1026 48.9063C62.1902 44.8276 62.1902 36.3124 62.1902 36.3124C62.1902 36.3124 62.1902 27.7971 61.1026 23.7185Z" fill="#FF3000" />
+                            <path d="M30.8811 44.1617L44.4392 36.3124L30.8811 28.463V44.1617Z" fill="white" />
+                        </svg>
+                    </button>
+                </a>
+
             </div>
 
             <p class="text-gray-600">Untuk informasi lebih lanjut, hubungi kami di: <a href="mailto:info@gereja.com" class="text-blue-600 underline">info@gereja.com</a></p>
@@ -178,7 +189,7 @@
     <!-- Maps Section -->
     <section id="maps" class="py-20">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-blue-600 mb-8">Lokasi Kami</h2>
+            <h2 class="text-4xl font-bold text-black mb-8">Lokasi Kami</h2>
             <div class="flex justify-center">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.117285116905!2d112.74864667476119!3d-7.340723992667856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbb282c280c5%3A0x20733d589d61a51a!2sGPPS%20Bethlehem%20Kutisari%20Surabaya!5e0!3m2!1sen!2sid!4v1727332708845!5m2!1sen!2sid"
