@@ -246,13 +246,13 @@
  </div>
  <!-- NEW CONTAINER SECTION -->
  <div class="cs">
-  <h1>
+  <h1 style="color: black">
    God wants to use you.
   </h1>
-  <p>
+  <p style="color: black">
    We're here to support you regardless of where you are on your faith journey. Let us guide you towards your next step and discover what God has in store for your life.
   </p>
-  <a class="btn-learn" href="#">
+  <a class="btn-learn" href="#" style="color: black;">
    Learn More
   </a>
  </div>
