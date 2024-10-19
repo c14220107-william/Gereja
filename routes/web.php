@@ -17,6 +17,7 @@ use App\Models\form_baptisan;
 use App\Models\form_penyerahan_anak;
 use App\Models\form_pernikahan;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KritikSaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +37,7 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/service-registration', [ServiceController::class, 'form'])->name('service-registration');
 Route::post('/service-registration', [ServiceController::class, 'register']);
 Route::get('/onlineworship', [PageController::class, 'onlineworship'])->name('onlineworship');
-Route::get('/faq', [PageController::class, 'faq'])->name('faq');
+
 Route::get('/admin/tes', [PageController::class, 'tes'])->name('tes');
 
 
@@ -88,8 +89,8 @@ Route::get('/admin/manajemenJemaat/edit', [Form_Controller::class, 'edit1'])->na
 
 Route::resource('admin/manajemenJemaat', Form_Controller::class)->middleware('admin');
 
-
-
+Route::get('/faq', [KritikSaranController::class, 'faq'])->name('faq');
+Route::post('/faq', [KritikSaranController::class, 'store'])->name('kritikSaran.store');
 
 // Route::post('/service-registration', [form_penyerahan_anak_Controller::class, 'store'])->name('form_penyerahan_anak.store');
 // Route::get('/admin/manajemenJemaat', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');

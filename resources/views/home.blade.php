@@ -16,6 +16,9 @@
         }
     }
 
+    
+
+
     @keyframes fade-in {
         0% {
             opacity: 0;
@@ -82,7 +85,7 @@
 <body class="bg-gray-100">
 
     <!-- Hero Section -->
-    <section class="relative bg-cover bg-center text-white py-80" style="background-image: url('{{ asset('img/fotodalam.JPG') }}');">
+    <section class="relative bg-cover bg-center text-white py-80" style="background-image: url({{ asset('img/fotodalam.JPG') }});">
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         <div class="relative z-10 text-center">
             <h1 class="text-6xl font-bold opacity-0 animate-fade-in-delay">Selamat Datang di Gereja Kami</h1>
@@ -90,6 +93,8 @@
             <a href="#tentang" class="mt-8 inline-block bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-300 animate-bounce-on-hover">Tentang Kami</a>
         </div>
     </section>
+
+    @include('components.marquee')
 
     <!-- About Section -->
     <section id="tentang" class="py-16 bg-black">
@@ -108,8 +113,9 @@
         </div>
     </section>
 
+    
     <!-- Visi & Misi Section -->
-    <section class="relative bg-cover bg-center text-white py-96" style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
+    <section class="relative bg-cover bg-center text-white py-96" style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}'); background-attachment: fixed">
         <div class="absolute inset-0 bg-black bg-opacity-70"></div>
         <div class="relative z-10 text-center flex items-center justify-center h-full">
             <div class="container mx-auto text-center px-8">
@@ -155,9 +161,10 @@
     </section>
 
     <!-- Jadwal Section -->
-    <section id="sunday-services" class="py-20 bg-white">
+    <section id="sunday-services" class="relative py-20 bg-white" style="background-image: url('{{ asset('img/untuk_jadwal_ibadah.JPG') }}'); background-attachment: fixed">
+        <div class="absolute inset-0 bg-white bg-opacity-35"></div>
         <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-bold text-black mb-8 fade-in-up-on-scroll">Ibadah Sepekan</h2>
+            <h2 class="text-5xl font-bold text-slate-900 mb-8 fade-in-up-on-scroll">Ibadah Sepekan</h2>
 
             <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-8 mb-10 mx-auto max-w-2xl transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
                 <h3 class="text-4xl font-semibold text-white mb-4 border-b-4 border-yellow-300 inline-block pb-2">Ibadah Umum</h3>
@@ -231,7 +238,7 @@
                                 <radialGradient id="paint1_radial_7092_54471" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(41.1086 63.257) scale(51.4733 51.4424)">
                                     <stop offset="0.64" stop-color="#8C3AAA" stop-opacity="0" />
                                     <stop offset="1" stop-color="#8C3AAA" />
-                                </radialGradient>
+                                </radialGradient>	
                             </defs>
                         </svg>
                     </button>
@@ -263,9 +270,13 @@
     </section>
 
     <!-- Maps Section -->
-    <section id="maps" class="py-20">
+<<<<<<< Updated upstream
+    <section id="maps" class="py-20 bg-gradient-to-b from-black to-slate-900">
+=======
+    <section id="maps" class="py-20 bg-black">
+>>>>>>> Stashed changes
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-black mb-8">Lokasi Kami</h2>
+            <h2 class="text-4xl font-bold text-white mb-8">Lokasi Kami</h2>
             <div class="flex justify-center">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.117285116905!2d112.74864667476119!3d-7.340723992667856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbb282c280c5%3A0x20733d589d61a51a!2sGPPS%20Bethlehem%20Kutisari%20Surabaya!5e0!3m2!1sen!2sid!4v1727332708845!5m2!1sen!2sid"

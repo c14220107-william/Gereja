@@ -1,7 +1,7 @@
 @extends('admin.layouts.header')
 
 @section('content')
-<div class="min-h-screen flex items-start justify-center bg-gray-100 py-6 px-4 sm:px-6 lg:px-8">
+<div class="min-h-screen flex w-full items-start justify-center bg-gray-900 bg-blend-exclusion" style="background-image: url({{ asset('img/fotodalam.JPG') }}); background-size: cover; background-position: center;">
     <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-md mt-8">
         <h1 class="text-2xl font-semibold text-center text-black">Login Admin</h1>
         
