@@ -42,6 +42,19 @@ class Form_Controller extends Controller
     {
        return view('admin.manajemenJemaat.create1'); 
     }
+    public function create2()
+    {
+       return view('admin.manajemenJemaat.create2'); 
+    }
+    public function create3()
+    {
+       return view('admin.manajemenJemaat.create3'); 
+    }
+
+    public function edit1()
+    {
+        return view('admin.manajemenJemaat.edit1');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -88,7 +101,23 @@ class Form_Controller extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // Validasi data
+        $validatedData = $request->validate([
+            'form_type' => 'required|string',
+            // Tambahkan validasi lain sesuai kebutuhan
+        ]);
+
+        // Proses penyimpanan berdasarkan jenis form
+        switch ($validatedData['form_type']) {
+            case 'penyerahan_anak':
+                return $this->form_penyerahan_anak_Controller->update($request,$id);
+            // case 'pernikahan':
+            //     return $this->form_penikahan_Controller->update($request,$id);
+            // case 'baptisan':
+            //     return $this->FormBaptisanController->update($request,$id);
+        }
+
+        return redirect()->route('admin.manajemenJemaat.index')->with('success', 'Data berhasil disimpan.');
     }
 
     /**

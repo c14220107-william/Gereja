@@ -59,7 +59,7 @@
                     <input type="text" name="tempat_asal_dibaptis" id="tempat_asal_dibaptis" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Dimana?"> <input type="date" name="tanggal_dibaptis_gereja_lama" id="tanggal_dibaptis_gereja_lama" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
                     <p></p>
                     <input type="checkbox" id="childDedication2" name="services2" value="childDedication2" class="mr-2" onclick="toggleInput('nomor_piagam_pernikahan_parent','tanggal_pernikahan')">
-                    <label for="childDedication3" class="text-gray-700">Apakah Suami&Istri sudah diberkati dalam nikah gereja?</label>  
+                    <label for="childDedication2" class="text-gray-700">Apakah Suami&Istri sudah diberkati dalam nikah gereja?</label>  
                     <input type="text" name="nomor_piagam_pernikahan_parent" id="nomor_piagam_pernikahan_parent" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Nomor Piagam Pernikahan Gereja"> <input type="date"  name="tanggal_pernikahan" id="tanggal_pernikahan" class="mt-2 hidden border border-gray-300 rounded px-2 py-1" placeholder="Masukkan detail tambahan">
                     <p></p>
                     <input type="checkbox" id="childDedication3" name="services2" value="childDedication3" class="mr-2" onclick="toggleInput('nomor_akte_pernikahan_parent','tanggal_akte_pernikahan')">

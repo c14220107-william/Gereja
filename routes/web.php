@@ -82,8 +82,9 @@ Route::resource('admin/event', EventController::class)->middleware('admin');
 // Route::resource('admin/manajemenJemaat', form_penyerahan_anak_Controller::class)->middleware('admin');
 // Route::resource('admin/manajemenJemaat', form_pernikahan_Controller::class)->middleware('admin');
 Route::get('/admin/manajemenJemaat/create1', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create1');
-Route::get('/admin/manajemenJemaat/create2', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create2');
-// Route::get('/admin/manajemenJemaat/create3', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create3');
+Route::get('/admin/manajemenJemaat/create2', [Form_Controller::class, 'create2'])->name('manajemenJemaat.create2');
+// Route::get('/admin/manajemenJemaat/create3', [Form_Controller::class, 'create3'])->name('manajemenJemaat.create3');
+Route::get('/admin/manajemenJemaat/edit', [Form_Controller::class, 'edit1'])->name('manajemenJemaat.edit1');
 
 Route::resource('admin/manajemenJemaat', Form_Controller::class)->middleware('admin');
 

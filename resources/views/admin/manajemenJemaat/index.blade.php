@@ -14,6 +14,8 @@
         <p class="text-center text-gray-500">Belum ada data yang tersedia.</p>
     @else
          <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Penyerahan Anak</h2>
+         <a href="{{ route('manajemenJemaat.create1') }}" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a>
+
         <table class="min-w-full bg-white border rounded-lg shadow-md">
             <thead>
                 <tr>
@@ -71,7 +73,7 @@
                         <td class="py-2 px-4 border-b">{{ $item1->tanggal_akte_pernikahan }}</td>
                         <td class="py-2 px-4 border-b">{{ $item1->created_at }}</td>
                         <td class="py-2 px-4 border-b">
-                            <a href="{{ route('manajemenJemaat.edit', $item1->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
+                            <a href="{{ route('manajemenJemaat.edit1', $item1->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
                             <form action="{{ route('manajemenJemaat.destroy', $item1->id) }}" method="POST" class="inline-block">
                                 @csrf
                                 @method('DELETE')
@@ -95,6 +97,8 @@
         </table>
         
         <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Pernikahan</h2>
+        <a href="{{ route('manajemenJemaat.create2') }}" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a>
+
         <table class="min-w-full bg-white border rounded-lg shadow-md">
             <thead>
                 <tr>
