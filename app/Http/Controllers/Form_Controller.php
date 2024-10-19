@@ -38,9 +38,9 @@ class Form_Controller extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create1()
     {
-        //
+       return view('admin.manajemenJemaat.create1'); 
     }
 
     /**
@@ -64,7 +64,7 @@ class Form_Controller extends Controller
                 return $this->FormBaptisanController->store($request);
         }
 
-        return redirect()->back()->with('success', 'Data berhasil disimpan.');
+        return redirect()->route('admin.manajemenJemaat.index')->with('success', 'Data berhasil disimpan.');
     }
 
     /**

@@ -13,6 +13,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceAdminController;
 use App\Http\Controllers\ServiceController;
+use App\Models\form_baptisan;
 use App\Models\form_penyerahan_anak;
 use App\Models\form_pernikahan;
 use Illuminate\Support\Facades\Route;
@@ -80,6 +81,10 @@ Route::resource('admin/services', ServiceAdminController::class)->middleware('ad
 Route::resource('admin/event', EventController::class)->middleware('admin');
 // Route::resource('admin/manajemenJemaat', form_penyerahan_anak_Controller::class)->middleware('admin');
 // Route::resource('admin/manajemenJemaat', form_pernikahan_Controller::class)->middleware('admin');
+Route::get('/admin/manajemenJemaat/create1', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create1');
+Route::get('/admin/manajemenJemaat/create2', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create2');
+// Route::get('/admin/manajemenJemaat/create3', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create3');
+
 Route::resource('admin/manajemenJemaat', Form_Controller::class)->middleware('admin');
 
 
@@ -92,7 +97,8 @@ Route::resource('admin/manajemenJemaat', Form_Controller::class)->middleware('ad
 
 
 Route::post('/service-registration', [Form_Controller::class, 'store'])->name('Form.store');
-Route::get('/admin/manajemenJemaat', [Form_Controller::class, 'index'])->name('manajemenJemaat.index');
+// Route::get('/admin/manajemenJemaat', [Form_Controller::class, 'index'])->name('manajemenJemaat.index');
+
 
 
 

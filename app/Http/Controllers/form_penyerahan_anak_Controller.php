@@ -19,10 +19,10 @@ class form_penyerahan_anak_Controller extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        return view("form_penyerahan_anak.create");
-    }
+    // public function create()
+    // {
+    //     return view("form_penyerahan_anak.create");
+    // }
 
     /**
      * Store a newly created resource in storage.

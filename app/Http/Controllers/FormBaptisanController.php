@@ -21,9 +21,9 @@ class FormBaptisanController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create_Form()
     {
-        return view ("form_baptisan.create");
+        // return view ("admin.manajemenJemaat.createForm");
     }
 
     /**

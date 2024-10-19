@@ -274,6 +274,9 @@
         </table>
         <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Baptisan Air</h2>
 
+        <a href="{{ route('manajemenJemaat.create1') }}" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a>
+        {{-- <a href="#" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a> --}}
+
         <table class="min-w-full bg-white border rounded-lg shadow-md">
             <thead>
                 <tr>
