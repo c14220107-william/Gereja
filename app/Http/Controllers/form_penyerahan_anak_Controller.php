@@ -74,6 +74,9 @@ class form_penyerahan_anak_Controller extends Controller
             'pas_foto_anak' => $path,
         ]);
 
+
+        return redirect()->back()->with('success', 'Data berhasil disimpan!');
+
         // form_penyerahan_anak::create($validatedData);
         // return redirect()->route('manajemen_jemaat.index')->with('success','Jemaat berhasil ditambahkan.');
 

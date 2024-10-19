@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    @if($form_penyerahan_anaks->isEmpty() && $form_pernikahans->isEmpty())
+    @if($form_penyerahan_anaks->isEmpty() && $form_pernikahans->isEmpty() && $form_baptisans->isEmpty())
         <p class="text-center text-gray-500">Belum ada data yang tersedia.</p>
     @else
          <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Penyerahan Anak</h2>
@@ -95,7 +95,6 @@
         </table>
         
         <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Pernikahan</h2>
-        <h3 class="text-2xl font-semibold mb-6">I. Permohonan Pemberkatan / Doa Pernikahan</h3>
         <table class="min-w-full bg-white border rounded-lg shadow-md">
             <thead>
                 <tr>
@@ -103,56 +102,6 @@
                     <th class="py-2 px-4 border-b">Tanggal Pemberkatan</th>
                     <th class="py-2 px-4 border-b">Pukul Pemberkatan</th>
                     <th class="py-2 px-4 border-b">Tipe Acara</th>
-                    
-
-                
-                    
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($form_pernikahans as $item2)
-                <tr class="text-center">
-                    <td class="py-2 px-4 border-b">{{ $item2->hari_pemberkatan }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item2->tanggal_pemberkatan }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item2->pukul_pemberkatan }}</td>
-                    <td class="py-2 px-4 border-b">
-                        @if($item2->permohonan_pemberkatan1 == true)
-                            <p>Liturgi (Acara Kebaktian)</p>
-                        @if ($item2->permohonan_pemberkatan2 == true)
-                            <p>Pemberkatan Saja</p>
-                        @endif
-                            <p>Belum Respon</p>
-                        @endif
-                        <td class="py-2 px-4 border-b">
-                            <a href="{{ route('manajemenJemaat.edit', $item2->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
-                            <form action="{{ route('manajemenJemaat.destroy', $item2->id) }}" method="POST" class="inline-block">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">Hapus</button>
-                            </form>
-
-
-                        </td>
-   
-
-                    </td>
-                    {{-- <td class="py-2 px-4 border-b">
-                        <!-- Aksi Edit atau Hapus -->
-                        <a href="{{ route('admin.child-registrations.edit', $item2->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded">Edit</a>
-                        <form action="{{ route('admin.child-registrations.destroy', $item2->id) }}" method="POST" class="inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Hapus</button>
-                        </form>
-                    </td> --}}
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <h3 class="text-2xl font-semibold mb-6">II. Data Calon Mempelai Pria</h3>
-        <table class="min-w-full bg-white border rounded-lg shadow-md">
-            <thead>
-                <tr>
                     <th class="py-2 px-4 border-b">Nama Calon Mempelai Pria</th>
                     <th class="py-2 px-4 border-b">Nomor Telepon Calon Mempelai Pria</th>
                     <th class="py-2 px-4 border-b">Alamat Calon Mempelai Pria</th>
@@ -172,7 +121,29 @@
                     <th class="py-2 px-4 border-b">Persetujuan Orang Tua</th>
                     <th class="py-2 px-4 border-b">Riwayat Calon Mempelai Pria</th>
                     <th class="py-2 px-4 border-b">Status Calon Mempelai Pria</th>
+                    <th class="py-2 px-4 border-b">Nama Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Nomor Telepon Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Alamat Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Tempat Lahir Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Tanggal Lahir Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Nomor KTP Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Nomor Surat Baptis Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Asal Gereja Baptis Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Gereja domisili Calon Mempelai Wanita</th>                    
+                    <th class="py-2 px-4 border-b">Pekerjaan Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Alamat Pekerjaan Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Nomor Telepon Pekerjaan Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Nama Ayah Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Nama Ibu Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Alamat Orang Tua Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Nomor Telepon Orang Tua Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Persetujuan Orang Tua</th>
+                    <th class="py-2 px-4 border-b">Riwayat Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Status Calon Mempelai Wanita</th>
+                    <th class="py-2 px-4 border-b">Status Surat Nikah</th>
+                    <th class="py-2 px-4 border-b">File Surat Nikah</th>
                     <th class="py-2 px-4 border-b">Aksi</th>
+                    
 
                 
                     
@@ -181,7 +152,19 @@
             <tbody>
                 @foreach($form_pernikahans as $item2)
                 <tr class="text-center">
-                    <td class="py-2 px-4 border-b">{{ $item2->nama_calon_mempelai_pria }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item2->hari_pemberkatan }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item2->tanggal_pemberkatan }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item2->pukul_pemberkatan }}</td>
+                    <td class="py-2 px-4 border-b">
+                        @if ($item2->permohonan_pemberkatan1 == true)
+                            <p>Liturgi Acara Kebaktian</p>
+                        @elseif($item2->permohonan_pemberkatan2 == true)
+                            <p>Pemberkatan Saja</p>
+                        @else
+                            <p>Belum Mengkonfirmasi</p>
+                            
+                        @endif
+                        <td class="py-2 px-4 border-b">{{ $item2->nama_calon_mempelai_pria }}</td>
                     <td class="py-2 px-4 border-b">{{ $item2->nomor_telp_calon_mempelai_pria }}</td>
                     <td class="py-2 px-4 border-b">{{ $item2->alamat_calon_mempelai_pria }}</td>
                     <td class="py-2 px-4 border-b">{{ $item2->tempat_lahir_calon_mempelai_pria }}</td>
@@ -221,64 +204,6 @@
                             
                         @endif 
                     </td>
-                    <td class="py-2 px-4 border-b">
-                        <a href="{{ route('manajemenJemaat.edit', $item2->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
-                        <form action="{{ route('manajemenJemaat.destroy', $item2->id) }}" method="POST" class="inline-block">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">Hapus</button>
-                        </form>
-
-
-                    </td>
-   
-
-                    
-                    {{-- <td class="py-2 px-4 border-b">
-                        <!-- Aksi Edit atau Hapus -->
-                        <a href="{{ route('admin.child-registrations.edit', $item2->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded">Edit</a>
-                        <form action="{{ route('admin.child-registrations.destroy', $item2->id) }}" method="POST" class="inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Hapus</button>
-                        </form>
-                    </td> --}}
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <h3 class="text-2xl font-semibold mb-6">III. Data Calon Mempelai Wanita</h3>
-        <table class="min-w-full bg-white border rounded-lg shadow-md">
-            <thead>
-                <tr>
-                    <th class="py-2 px-4 border-b">Nama Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Nomor Telepon Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Alamat Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Tempat Lahir Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Tanggal Lahir Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Nomor KTP Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Nomor Surat Baptis Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Asal Gereja Baptis Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Gereja domisili Calon Mempelai Wanita</th>                    
-                    <th class="py-2 px-4 border-b">Pekerjaan Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Alamat Pekerjaan Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Nomor Telepon Pekerjaan Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Nama Ayah Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Nama Ibu Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Alamat Orang Tua Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Nomor Telepon Orang Tua Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Persetujuan Orang Tua</th>
-                    <th class="py-2 px-4 border-b">Riwayat Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Status Calon Mempelai Wanita</th>
-                    <th class="py-2 px-4 border-b">Aksi</th>
-
-                
-                    
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($form_pernikahans as $item2)
-                <tr class="text-center">
                     <td class="py-2 px-4 border-b">{{ $item2->nama_calon_mempelai_wanita }}</td>
                     <td class="py-2 px-4 border-b">{{ $item2->nomor_telp_calon_mempelai_wanita }}</td>
                     <td class="py-2 px-4 border-b">{{ $item2->alamat_calon_mempelai_wanita }}</td>
@@ -320,78 +245,89 @@
                         @endif 
                     </td>
                     <td class="py-2 px-4 border-b">
-                        <a href="{{ route('manajemenJemaat.edit', $item2->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
-                        <form action="{{ route('manajemenJemaat.destroy', $item2->id) }}" method="POST" class="inline-block">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">Hapus</button>
-                        </form>
-
-
-                    </td>
-   
-
-                    
-                    {{-- <td class="py-2 px-4 border-b">
-                        <!-- Aksi Edit atau Hapus -->
-                        <a href="{{ route('admin.child-registrations.edit', $item2->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded">Edit</a>
-                        <form action="{{ route('admin.child-registrations.destroy', $item2->id) }}" method="POST" class="inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Hapus</button>
-                        </form>
-                    </td> --}}
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <h3 class="text-2xl font-semibold mb-6">IV. Surat Catatan Sipil</h3>
-        <table class="min-w-full bg-white border rounded-lg shadow-md">
-            <thead>
-                <tr>
-                    <th class="py-2 px-4 border-b">Status Surat Nikah</th>
-                    <th class="py-2 px-4 border-b">File Surat Nikah</th>
-                    <th class="py-2 px-4 border-b">Aksi</th>
-                    
-
-                
-                    
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($form_pernikahans as $item2)
-                <tr class="text-center">
-                    <td class="py-2 px-4 border-b">
                         @if($item2->cek_surat_sipil == true)
                             <p>Sudah Mengurus</p>
                             
                         @else
                             <p>Belum Mengurus</p>
                         @endif
-                            
                     </td>
                     <td class="py-2 px-4 border-b">
                         @if($item2->file_surat_catatan_sipil)
                         <a href="{{ asset('storage/' . $item2->file_surat_catatan_sipil) }}" target="_blank">Lihat PDF</a>
-                            
                         @else
                             <p>Belum Ada</p>
+                        @endif   
+                    </td>
+                        <td class="py-2 px-4 border-b">
+                            <a href="{{ route('manajemenJemaat.edit', $item2->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
+                            <form action="{{ route('manajemenJemaat.destroy', $item2->id) }}" method="POST" class="inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">Hapus</button>
+                            </form>
+                        </td>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Baptisan Air</h2>
+
+        <table class="min-w-full bg-white border rounded-lg shadow-md">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 border-b">Nama </th>
+                    <th class="py-2 px-4 border-b">Nomor Telepon</th>
+                    <th class="py-2 px-4 border-b">Tempat Lahir</th>
+                    <th class="py-2 px-4 border-b">Tanggal Lahir</th>
+                    <th class="py-2 px-4 border-b">Alamat</th>
+                    <th class="py-2 px-4 border-b">Kelurahan</th>
+                    <th class="py-2 px-4 border-b">Beribadah Di</th>
+                    <th class="py-2 px-4 border-b">Nama Ayah</th>
+                    <th class="py-2 px-4 border-b">Nama Ibu</th>
+                    <th class="py-2 px-4 border-b">Tanggal Baptis</th>
+                    <th class="py-2 px-4 border-b">Gembala Yang Membaptis</th>
+                    <th class="py-2 px-4 border-b">Foto</th>
+                    <th class="py-2 px-4 border-b">Aksi</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach($form_baptisans as $item3)
+                <tr class="text-center">
+                    <td class="py-2 px-4 border-b">{{ $item3->nama_anak }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->nomor_telp }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->tempat_lahir }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->tanggal_lahir }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->alamat}}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->kelurahan }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->beribadah_di }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->nama_ayah }}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->nama_ibu}}</td>   
+                    <td class="py-2 px-4 border-b">{{ $item3->tanggal_baptis}}</td>
+                    <td class="py-2 px-4 border-b">{{ $item3->pembaptis}}</td>
+
+                    <td class="py-2 px-4 border-b">
+                        @if($item3->file_foto_pemohon_baptis)
+                            <img src="{{ asset('storage/' . $item3->file_foto_pemohon_baptis) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover">
+                        @else
+                            <p>Belum ada foto</p>
                         @endif
-                            
                     </td>
                     <td class="py-2 px-4 border-b">
-                        <a href="{{ route('manajemenJemaat.edit', $item2->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
-                        <form action="{{ route('manajemenJemaat.destroy', $item2->id) }}" method="POST" class="inline-block">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">Hapus</button>
+                         <a href="{{ route('manajemenJemaat.edit', $item3->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
+                        <form action="{{ route('manajemenJemaat.destroy', $item3->id) }}" method="POST" class="inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">Hapus</button>
                         </form>
 
 
-                    </td>
+                        </td>
                     {{-- <td class="py-2 px-4 border-b">
                         <!-- Aksi Edit atau Hapus -->
-                        <a href="{{ route('admin.child-registrations.edit', $item2->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded">Edit</a>
+                        <a href="{{ route('admin.child-registrations.edit', $item1->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded">Edit</a>
                         <form action="{{ route('admin.child-registrations.destroy', $item1->id) }}" method="POST" class="inline">
                             @csrf
                             @method('DELETE')
@@ -399,9 +335,12 @@
                         </form>
                     </td> --}}
                 </tr>
-                @endforeach
+
+            @endforeach
             </tbody>
+
         </table>
+        
         
 
 

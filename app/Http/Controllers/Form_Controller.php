@@ -2,20 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\form_baptisan;
 use App\Models\form_penyerahan_anak;
 use App\Models\form_pernikahan;
 use Illuminate\Http\Request;
+
+use function Laravel\Prompts\form;
 
 class Form_Controller extends Controller
 {
 
     protected $form_penyerahan_anak_Controller;
     protected $form_penikahan_Controller;
+    protected $FormBaptisanController;
 
     public function __construct()
     {
         $this->form_penyerahan_anak_Controller = new form_penyerahan_anak_Controller();
         $this->form_penikahan_Controller = new form_pernikahan_Controller();
+        $this->FormBaptisanController = new FormBaptisanController();
        
     }
     /**
@@ -25,7 +30,8 @@ class Form_Controller extends Controller
     {
         $form_penyerahan_anaks = form_penyerahan_anak::all();
         $form_pernikahans = form_pernikahan::all();
-        return view('admin.manajemenJemaat.index',compact('form_penyerahan_anaks', 'form_pernikahans'));
+        $form_baptisans = form_baptisan::all();
+        return view('admin.manajemenJemaat.index',compact('form_penyerahan_anaks', 'form_pernikahans','form_baptisans'));
         
     }
 
@@ -54,8 +60,8 @@ class Form_Controller extends Controller
                 return $this->form_penyerahan_anak_Controller->store($request);
             case 'pernikahan':
                 return $this->form_penikahan_Controller->store($request);
-            // case 'baptis':
-            //     return $this->baptisController->store($request);
+            case 'baptisan':
+                return $this->FormBaptisanController->store($request);
         }
 
         return redirect()->back()->with('success', 'Data berhasil disimpan.');
@@ -101,6 +107,13 @@ class Form_Controller extends Controller
             $formPernikahan->delete();
             return redirect()->route('manajemenJemaat.index')->with('success', 'Data berhasil dihapus');
         }
+
+        $form_baptisan = form_baptisan::find($id);
+        if ($form_baptisan) {
+            $form_baptisan->delete();
+            return redirect()->route('manajemenJemaat.index')->with('success', 'Data berhasil dihapus');
+        } 
+        
         return redirect()->route('manajemenJemaat.index')->with('error', 'Data tidak ditemukan');
         }
 }

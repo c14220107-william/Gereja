@@ -54,7 +54,6 @@ class form_pernikahan extends Model
         'persetujuan_orangtua_calon_mempelai_wanita',
         'riwayat_calon_mempelai_wanita',
         'status_calon_mempelai_wanita',
-
         'cek_surat_sipil',
         'file_surat_catatan_sipil'
 

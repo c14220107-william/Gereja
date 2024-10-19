@@ -131,6 +131,7 @@ class form_pernikahan_Controller extends Controller
             'telp_pekerjaan_calon_mempelai_wanita' => $request->telp_pekerjaan_calon_mempelai_wanita,
             'nama_ayah_calon_mempelai_wanita' => $request->nama_ayah_calon_mempelai_wanita,
             'nama_ibu_calon_mempelai_wanita' => $request->nama_ibu_calon_mempelai_wanita,
+            'nomor_telp_orangtua_calon_mempelai_wanita' => $request->nomor_telp_orangtua_calon_mempelai_wanita,
             'alamat_orangtua_calon_mempelai_wanita' => $request->alamat_orangtua_calon_mempelai_wanita,
             'persetujuan_orangtua_calon_mempelai_wanita' => $persetujuan_orangtua_calon_mempelai_wanita,
             'riwayat_calon_mempelai_wanita' => $riwayat_calon_mempelai_wanita,

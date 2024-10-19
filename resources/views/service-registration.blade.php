@@ -84,7 +84,7 @@
                 <span class="close text-gray-600 cursor-pointer float-right" id="closeMarriageBlessingModal">&times;</span>
                 <h3 class="text-xl font-semibold mb-4">Marriage Blessing Form Requirements</h3>
                 <p>Isi ketentuan untuk Marriage Blessing di sini.</p>
-                <form action="{{ route('Form.store') }}" method="POST" class="mt-4">
+                <form action="{{ route('Form.store') }}" method="POST" enctype="multipart/form-data" class="mt-4">
                     @csrf
                     <input type="hidden" name="form_type" value="pernikahan">
                     <p>I. Permohonan Pemberkatan / Doa Pernikahan</p>
@@ -93,7 +93,7 @@
                     <input type="checkbox" name="permohonan_pemberkatan1" id="permohonan_pemberkatan_acara" class="mr-2">
                     <label for="permohonan_pemberkatan1" class="text-gray-700">Liturgi (Acara Kebaktian) </label>
                     <p></p>
-                    <input type="checkbox" id="permohonan_pemberkatan2" name="permohonan_pemberkatan_pemberkatan" class="mr-2">
+                    <input type="checkbox" id="permohonan_pemberkatan2" name="permohonan_pemberkatan2" class="mr-2">
                     <label for="permohonan_pemberkatan2" class="text-gray-700">Pemberkatan Saja</label>
                     <p></p>
                     <p>II. Data Calon Mempelai Pria</p>
@@ -145,7 +145,7 @@
                     <p>IV. Surat Catatan Sipil</p>
                     Apakah sudah mengurus surat nikah di catatan sipil?<input type="checkbox" name="cek_surat_sipil" class="mr-2" onclick="toggleInputSingle('file_surat_catatan_sipil')">
                     <label for="cek_surat_sipil" class="text-gray-700">Apabila sudah, harap dilampirkan fotocopynya (wajib dalam bentuk PDF)</label>
-                    <input type="file" id="file_surat_catatan_sipil" class="mt-2 hidden border border-gray-300 rounded px-2 py-1">
+                    <input type="file" name="file_surat_catatan_sipil" id="file_surat_catatan_sipil" class="mt-2 hidden border border-gray-300 rounded px-2 py-1">
                     <p></p>
                     <button type="submit"   class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Submit</button>
                 </form>
@@ -158,19 +158,24 @@
                 <span class="close text-gray-600 cursor-pointer float-right" id="closeBaptismRequestModal">&times;</span>
                 <h3 class="text-xl font-semibold mb-4">Baptism Request Form Requirements</h3>
                 <p>Isi ketentuan untuk Baptism Request di sini.</p>
-                <form action="#" method="POST" class="mt-4">
+                <form action="{{ route('Form.store') }}" method="POST" enctype="multipart/form-data" class="mt-4">
+                    <input type="hidden" name="form_type" value="baptisan">
+
+                    @csrf
                     Nama Pemohon<input type="text" name="nama_anak" id="nama_pemohon_baptis" placeholder="Nama" required class="border rounded p-2 w-full mb-2">
                     Nomor Telepon<input type="text" name="nomor_telp" id="nomor_telp_pemohon_baptis" placeholder="No Telp" required class="border rounded p-2 w-full mb-2">
                     Tempat Lahir<input type="text" name="tempat_lahir" id="tempat_lahir_pemohon_baptis" placeholder="Tempat Lahir" required class="border rounded p-2 w-full mb-2">
-                    Tanggal Lahir<input type="date" name="tanggal-lahir" id="tanggal_lahir_pemohon_baptis" required class="border rounded p-2 w-full mb-2">
+                    Tanggal Lahir<input type="date" name="tanggal_lahir" id="tanggal_lahir_pemohon_baptis" required class="border rounded p-2 w-full mb-2">
                     Alamat<input type="text" name="alamat" id="alamat_pemohon_baptis" placeholder="Alamat" required class="border rounded p-2 w-full mb-2">
                     Kelurahan<input type="text" name="kelurahan" id="kelurahan_pemohon_baptis" placeholder="Kelurahan" required class="border rounded p-2 w-full mb-2">
                     Asal Gereja<input type="text" name="beribadah_di" id="gereja_asal" placeholder="Beribadah di " required class="border rounded p-2 w-full mb-2">
                     Nama Ayah<input type="text" name="nama_ayah" id="nama_ayah_pemohon_baptis" placeholder="Nama Ayah" required class="border rounded p-2 w-full mb-2">
                     Nama Ibu<input type="text" name="nama_ibu" id="nama_ibu_pemohon_baptis" placeholder="Nama Ibu" required class="border rounded p-2 w-full mb-2">
-                    Tanggal Baptis yang diinginkan<input type="text" name="tanggal_baptis" id="tanggal_baptis" placeholder="Kapan ingin melakukan Pelaksanaan Baptisan?" required class="border rounded p-2 w-full mb-2">
+                    Tanggal Baptis yang diinginkan<input type="date" name="tanggal_baptis" id="tanggal_baptis" placeholder="Kapan ingin melakukan Pelaksanaan Baptisan?" required class="border rounded p-2 w-full mb-2">
                     Pendeta/Gembala yang akan Membaptis<input type="text" name="pembaptis" id="pembaptis" placeholder="Baptisan ingin dilayani/dilakukan oleh siapa?" required class="border rounded p-2 w-full mb-2">
-                    <p>Pas foto 4x6cm</p><input type="file" id="file_foto_pemohon_baptis" required class="border rounded p-2 w-full mb-2">
+                    <p>Pas foto 4x6cm</p><input type="file" name="file_foto_pemohon_baptis" id="file_foto_pemohon_baptis" required class="border rounded p-2 w-full mb-2">
+                    <p></p>
+                    <button type="submit"   class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Submit</button>
                 </form>
             </div>
         </div>

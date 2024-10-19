@@ -55,6 +55,7 @@ return new class extends Migration
             $table->string('nama_ayah_calon_mempelai_wanita');
             $table->string('nama_ibu_calon_mempelai_wanita');
             $table->string('alamat_orangtua_calon_mempelai_wanita');
+            $table->string('nomor_telp_orangtua_calon_mempelai_wanita');
             $table->boolean('persetujuan_orangtua_calon_mempelai_wanita')->default(false);
             $table->boolean('riwayat_calon_mempelai_wanita')->default(false);
             $table->boolean('status_calon_mempelai_wanita')->default(false);
