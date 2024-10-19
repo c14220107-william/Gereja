@@ -110,6 +110,7 @@ Route::post('/faq', [KritikSaranController::class, 'store'])->name('kritikSaran.
 Route::post('/service-registration', [Form_Controller::class, 'store'])->name('Form.store');
 // Route::get('/admin/manajemenJemaat', [Form_Controller::class, 'index'])->name('manajemenJemaat.index');
 
+Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 
 
