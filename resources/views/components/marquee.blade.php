@@ -22,12 +22,12 @@
 <div class="relative bg-gradient-to-b from-neutral-700 to-black h-20 text-white py-4">
     <div class="marquee-container">
         <div id="marquee" class="marquee">
-            <span class="mx-8 text-3xl font-bold">Selamat datang di GPPS Betlehem website!</span>
-            <span class="mx-8 text-3xl font-bold">Tuhan memberkati kita semua!</span>
-            <span class="mx-8 text-3xl font-bold">gatau mau tulis apa lagi</span>
-            <span class="mx-8 text-3xl font-bold">Selamat datang di GPPS Betlehem website!</span> 
-            <span class="mx-8 text-3xl font-bold">Tuhan memberkati kita semua!</span>
-            <span class="mx-8 text-3xl font-bold">gatau mau tulis apa lagi</span>
+            <span class="mx-8 text-3xl font-bold">Selamat datang di GPPS Bethlehem Kutisari!</span>
+            <span class="mx-8 text-3xl font-bold">Tuhan Yesus memberkati kita semua!</span>
+            <span class="mx-8 text-3xl font-bold">CARE, LOVE, AND SERVE!</span>
+            <span class="mx-8 text-3xl font-bold">Selamat datang di GPPS Bethlehem Kutisari!</span>
+            <span class="mx-8 text-3xl font-bold">Tuhan Yesus memberkati kita semua!</span>
+            <span class="mx-8 text-3xl font-bold">CARE, LOVE, AND SERVE!</span>
         </div>
     </div>
 </div>

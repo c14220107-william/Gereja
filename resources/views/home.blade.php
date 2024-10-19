@@ -16,15 +16,32 @@
         }
     }
 
-    
-
-
     @keyframes fade-in {
         0% {
             opacity: 0;
         }
 
         100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInDelay {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInDelay {
+        from {
+            opacity: 0;
+        }
+
+        to {
             opacity: 1;
         }
     }
@@ -53,7 +70,7 @@
     }
 
     .animate-fade-in-up {
-        animation: fade-in-up 1s ease-out forwards;
+        animation: fade-in-up 2s ease-out forwards;
     }
 
     .fade-in-up-on-scroll {
@@ -66,6 +83,14 @@
     .fade-in-up-on-scroll.scroll-active {
         opacity: 1;
         transform: translateY(0);
+    }
+
+    .animate-slideUp {
+        animation: slideUp 1s ease-out;
+    }
+
+    .animate-fadeInDelay {
+        animation: fadeInDelay 1.5s ease-in-out;
     }
 </style>
 
@@ -90,7 +115,7 @@
         <div class="relative z-10 text-center">
             <h1 class="text-6xl font-bold opacity-0 animate-fade-in-delay">Selamat Datang di Gereja Kami</h1>
             <p class="mt-4 text-2xl opacity-0 animate-fade-in-delay">Mari saling memperhatikan, mengasihi, dan melayani satu dengan yang lain.</p>
-            <a href="#tentang" class="mt-8 inline-block bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-300 animate-bounce-on-hover">Tentang Kami</a>
+            <a href="#tentang" class="mt-8 inline-block bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-300 animate-bounce-on-hover animate-fade-in-up">Tentang Kami</a>
         </div>
     </section>
 
@@ -98,22 +123,22 @@
 
     <!-- About Section -->
     <section id="tentang" class="py-16 bg-black">
-        <div class="container mx-auto flex flex-col items-center justify-center gap-8">
+        <div class="container mx-auto flex flex-col items-center justify-center gap-8 fade-in-up-on-scroll">
             <div class="flex justify-center mb-1">
                 <img src="{{ asset('img/logopusat.png') }}" alt="Church Icon">
             </div>
             <div class="w-full md:w-2/3 text-center">
-                <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500">
+                <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500 fade-in-up-on-scroll">
                     Tentang Gereja Kami
                 </h2>
                 <p class="text-lg text-gray-300 hover:text-gray-100 transition-all shadow-lg shadow-yellow-400/50">
-                    ini nanti harus coba tnya yang agak panjang penjelasane, mungkin isa juga ditambah sejarah" tipis" gitu. tapi ya itu harus tanya dlu. ini sementara coba kalo panjang bagus atau ga. apakah ini sudah cukup panjang. jadi ini nanti bagian untuk menjelaskan dari gereja ini bagaiamana dan lain-lain. asdfasdkfjaskdlfjnejngfaisdhgknsdktbiprefkdnbnaoirhtkamkdnvsaklnvlnakdlg alkdjfakheingklsadnklvnansdg.
+                    Shallom! GPPS Bethlehem Kutisari hadir untuk bisa bersaksi akan kebaikan Tuhan kita Yesus Kristus. Kesempatan dan momentum yang Tuhan yang berikan dalam kehidupan kita untuk bersaksi bagi-Nya, hendaknya kita manfaatkan sebaik mungkin dengan penuh kerendahan hati, sukacita, dan pengabdian diri. Semoga dengan hadirnya GPPS Bethlehem Kutisari, kami dapat menjadi terang dan garam buat para saudara-saudari terkasih. Menjadi inspirasi orang percaya untuk terus bertumbuh dalam Tuhan! Salam dalam kasih-Nya, Care-Love-and Serve!
                 </p>
             </div>
         </div>
     </section>
 
-    
+
     <!-- Visi & Misi Section -->
     <section class="relative bg-cover bg-center text-white py-96" style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}'); background-attachment: fixed">
         <div class="absolute inset-0 bg-black bg-opacity-70"></div>
@@ -148,15 +173,15 @@
 
     <!-- Motto Section -->
     <section id="nilai" class="py-20 bg-black">
-        <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500">
+        <div class="container mx-auto text-center fade-in-up-on-scroll">
+            <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500 fade-in-up-on-scroll">
                 Motto kami
             </h2>
             <div class="flex justify-center">
                 <img src="{{ asset('img/logokutisari.png') }}" alt="nanti kasik gambar biar menarik tp blm nyari wkwk" class="w-1/6 rounded-lg shadow-lg">
             </div>
-            <p class="text-4xl font-semibold text-yellow-600 mb-4">Care, Love, and Serve</p>
-            <p class="text-lg text-white mx-auto max-w-3xl mb-8">ini nanti kasik penjelasan juga tentang care, love, and serve ini, tapi masik gatau, nnti tnya lagi. yang ini gausa terlalu panjang tapi jangan terlalu pendek juga.</p>
+            <p class="text-4xl font-semibold text-yellow-600 mb-4 fade-in-up-on-scroll">Care, Love, and Serve</p>
+            <p class="text-lg text-white mx-auto max-w-3xl mb-8 fade-in-up-on-scroll">GPPS Bethlehem Kutisari memiliki jemaat yang saling memperhatikan, mengasihi, dan melayani dalam rangka menjadi kesatuan jemaat yang kuat dan tidak tergoncongkan. Motto ini diharap menjadi dasar bagi para jemaat dalam menjalankan kehidupan kekristenannya hari lepas hari.</p>
         </div>
     </section>
 
@@ -164,9 +189,11 @@
     <section id="sunday-services" class="relative py-20 bg-white" style="background-image: url('{{ asset('img/untuk_jadwal_ibadah.JPG') }}'); background-attachment: fixed">
         <div class="absolute inset-0 bg-white bg-opacity-35"></div>
         <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-bold text-slate-900 mb-8 fade-in-up-on-scroll">Ibadah Sepekan</h2>
+            <h2 class="text-7xl font-serif font-extrabold text-white mb-12 fade-in-up-on-scroll">
+                    Ibadah Sepekan
+            </h2>
 
-            <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-8 mb-10 mx-auto max-w-2xl transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
+            <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-8 mb-10 mx-auto max-w-2xl transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
                 <h3 class="text-4xl font-semibold text-white mb-4 border-b-4 border-yellow-300 inline-block pb-2">Ibadah Umum</h3>
                 <p class="mt-4 text-yellow-300 font-bold text-2xl">Minggu</p>
                 <p class="mt-0 text-yellow-300 text-xl font-medium">Pukul 07:45 - 09:30</p>
@@ -174,19 +201,19 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-around">
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Ibadah Kaum Wanita</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Selasa</p>
                     <p class="text-lg text-yellow-300">Pukul 16:30 - 18:00</p>
                     <p class="mt-3 text-white leading-relaxed">Bergabunglah dalam ibadah pagi yang penuh sukacita dengan pujian dan khotbah yang menginspirasi.</p>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Youth Commcell</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Rabu</p>
                     <p class="text-lg text-yellow-300">Pukul 19:00 - 21:00</p>
                     <p class="mt-3 text-white leading-relaxed">Ibadah siang yang lebih santai, cocok untuk keluarga dan teman-teman.</p>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Doa Malam</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Kamis</p>
                     <p class="text-lg text-yellow-300">Pukul 18:30 - 20:00</p>
@@ -194,19 +221,19 @@
                 </div>
             </div>
             <div class="flex flex-col md:flex-row justify-around mt-10">
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Doa Fajar</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Sabtu</p>
                     <p class="text-lg text-yellow-300">Pukul 05:30 - 06:30</p>
                     <p class="mt-3 text-white leading-relaxed">Bergabunglah dalam ibadah malam yang penuh damai dan refleksi.</p>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Sekolah Minggu</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Minggu</p>
                     <p class="text-lg text-yellow-300">Pukul 08:00 - 09:30</p>
                     <p class="mt-3 text-white leading-relaxed">Bersama-sama dalam doa, memperkuat iman kita.</p>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-105 transition-transform duration-300 fade-in-up-on-scroll">
+                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
                     <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Ibadah Youth</h3>
                     <p class="mt-3 text-yellow-300 font-bold text-xl">Minggu</p>
                     <p class="text-lg text-yellow-300">Pukul 10:30 - 12:00</p>
@@ -219,7 +246,7 @@
 
     <!-- Informasi Section -->
     <section id="more-info" class="py-20 bg-gray-300">
-        <div class="container mx-auto text-center">
+        <div class="container mx-auto text-center fade-in-up-on-scroll">
             <h2 class="text-4xl font-bold mb-8">Informasi Lebih Lanjut</h2>
             <p class="text-lg text-gray-600 mb-4">Ikuti kami di media sosial untuk mendapatkan berita terbaru dan informasi acara.</p>
 
@@ -238,7 +265,7 @@
                                 <radialGradient id="paint1_radial_7092_54471" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(41.1086 63.257) scale(51.4733 51.4424)">
                                     <stop offset="0.64" stop-color="#8C3AAA" stop-opacity="0" />
                                     <stop offset="1" stop-color="#8C3AAA" />
-                                </radialGradient>	
+                                </radialGradient>
                             </defs>
                         </svg>
                     </button>
@@ -255,7 +282,7 @@
                 </a>
 
                 <!-- Link Whatsapp -->
-                <a href="https://wa.me/nomor_whatsapp" class="text-green-600 hover:text-green-800">
+                <a href="https://wa.me/+6287703370660" class="text-green-600 hover:text-green-800">
                     <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
                         <svg class="rounded-md transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
                             <path fill="#25D366" d="M16 0C7.164 0 0 7.163 0 16c0 2.826.737 5.495 2.023 7.825L.014 32l8.348-2.018A15.936 15.936 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.736 23.457c-.337.948-1.7 1.676-2.396 1.798-.646.104-1.477.15-2.382-.153-.554-.175-1.26-.41-2.176-.801-3.835-1.58-6.335-5.482-6.529-5.74-.193-.257-1.563-2.072-1.563-3.956s.988-2.803 1.339-3.188c.35-.385.767-.482 1.017-.482s.508.002.732.012c.238.01.557-.09.872.665.337.783 1.09 2.666 1.188 2.857.096.192.159.417.032.674-.127.257-.191.416-.382.64-.192.223-.406.497-.582.669-.192.192-.392.402-.168.787.224.385.995 1.648 2.136 2.669 1.47 1.313 2.705 1.716 3.094 1.909.386.192.615.16.842-.095.23-.256.964-1.121 1.222-1.503.256-.385.512-.32.867-.192.353.127 2.231 1.053 2.615 1.244.385.192.641.288.737.448.096.16.096.954-.24 1.902z" />
@@ -265,18 +292,14 @@
 
             </div>
 
-            <p class="text-gray-600">Untuk informasi lebih lanjut, hubungi kami di: <a href="mailto:info@gereja.com" class="text-blue-600 underline">info@gereja.com</a></p>
+            <p class="text-gray-600">Untuk informasi lebih lanjut, hubungi kami di: <a href="mailto:samuel.gppskutisari@gmail.com" class="text-blue-600 underline">samuel.gppskutisari@gmail.com</a></p>
         </div>
     </section>
 
     <!-- Maps Section -->
-<<<<<<< Updated upstream
-    <section id="maps" class="py-20 bg-gradient-to-b from-black to-slate-900">
-=======
-    <section id="maps" class="py-20 bg-black">
->>>>>>> Stashed changes
+    <section id="maps" class="py-20">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-8">Lokasi Kami</h2>
+            <h2 class="text-4xl font-bold text-black mb-8 fade-in-up-on-scroll">Lokasi Kami</h2>
             <div class="flex justify-center">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.117285116905!2d112.74864667476119!3d-7.340723992667856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbb282c280c5%3A0x20733d589d61a51a!2sGPPS%20Bethlehem%20Kutisari%20Surabaya!5e0!3m2!1sen!2sid!4v1727332708845!5m2!1sen!2sid"
@@ -284,6 +307,4 @@
             </div>
         </div>
     </section>
-
-
     @endsection
