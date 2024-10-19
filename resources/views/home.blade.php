@@ -270,7 +270,11 @@
     </section>
 
     <!-- Maps Section -->
+<<<<<<< Updated upstream
     <section id="maps" class="py-20 bg-gradient-to-b from-black to-slate-900">
+=======
+    <section id="maps" class="py-20 bg-black">
+>>>>>>> Stashed changes
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold text-white mb-8">Lokasi Kami</h2>
             <div class="flex justify-center">
