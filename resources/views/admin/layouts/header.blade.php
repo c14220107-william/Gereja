@@ -16,7 +16,7 @@
 </nav>
 </head>
 <body>
-    <div class="flex-grow container mx-auto py-6 px-4">
+    <div class="flex-grow container">
         @yield('content')
     </div>
 </body>
