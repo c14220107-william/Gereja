@@ -73,7 +73,7 @@
                         <td class="py-2 px-4 border-b">{{ $item1->tanggal_akte_pernikahan }}</td>
                         <td class="py-2 px-4 border-b">{{ $item1->created_at }}</td>
                         <td class="py-2 px-4 border-b">
-                            <a href="{{ route('manajemenJemaat.edit1', $item1->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
+                            <a href="{{ route('form1.edit', ['id' => $item1->id]) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
                             <form action="{{ route('manajemenJemaat.destroy', $item1->id) }}" method="POST" class="inline-block">
                                 @csrf
                                 @method('DELETE')

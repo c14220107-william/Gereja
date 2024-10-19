@@ -51,9 +51,25 @@ class Form_Controller extends Controller
        return view('admin.manajemenJemaat.create3'); 
     }
 
-    public function edit1()
+    // public function edit(form_penyerahan_anak $form_penyerahan_anak)
+    // {
+    //     $this->form_penyerahan_anak_Controller->edit($form_penyerahan_anak);;
+    //     return view('admin.manajemenJemaat.edit1');
+    // }
+    public function edit1($id)
     {
-        return view('admin.manajemenJemaat.edit1');
+        $formPenyerahanAnak = form_penyerahan_anak::findOrFail($id);
+        return view('admin.manajemenJemaat.edit1', compact('formPenyerahanAnak'));
+    }
+    public function edit2($id){
+        $formPernikahan = form_pernikahan::findOrFail($id);
+        return view('admin.manajemenJemaat.edit2', compact('formPernikahan'));
+        
+    }
+    public function edit3($id){
+        $formBaptisan = form_baptisan::findOrFail($id);
+        return view('admin.manajemenJemaat.edit3', compact('formBaptisan'));
+        
     }
 
     /**
@@ -99,26 +115,54 @@ class Form_Controller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    // public function update(Request $request, string $id)
+    // {
+    //     // Validasi data
+    //     $validatedData = $request->validate([
+    //         'form_type' => 'required|string',
+    //         // Tambahkan validasi lain sesuai kebutuhan
+    //     ]);
+
+    //     $form_penyerahan_anak = form_penyerahan_anak::all()->id;
+
+    //     // Proses penyimpanan berdasarkan jenis form
+    //     switch ($validatedData['form_type']) {
+    //         case 'penyerahan_anak':
+    //             return $this->form_penyerahan_anak_Controller->update($request,$form_penyerahan_anak);
+    //         // case 'pernikahan':
+    //         //     return $this->form_penikahan_Controller->update($request,$id);
+    //         // case 'baptisan':
+    //         //     return $this->FormBaptisanController->update($request,$id);
+    //     }
+
+    //     return redirect()->route('admin.manajemenJemaat.index')->with('success', 'Data berhasil disimpan.');
+    // }
+
+    public function update1(Request $request, $id)
     {
-        // Validasi data
-        $validatedData = $request->validate([
-            'form_type' => 'required|string',
-            // Tambahkan validasi lain sesuai kebutuhan
-        ]);
-
-        // Proses penyimpanan berdasarkan jenis form
-        switch ($validatedData['form_type']) {
-            case 'penyerahan_anak':
-                return $this->form_penyerahan_anak_Controller->update($request,$id);
-            // case 'pernikahan':
-            //     return $this->form_penikahan_Controller->update($request,$id);
-            // case 'baptisan':
-            //     return $this->FormBaptisanController->update($request,$id);
-        }
-
-        return redirect()->route('admin.manajemenJemaat.index')->with('success', 'Data berhasil disimpan.');
+        $formPenyerahanAnak = form_penyerahan_anak::findOrFail($id);
+        // Validate and update the form data here
+        $formPenyerahanAnak->update($request->all());
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Data updated successfully');
     }
+
+    public function update2(Request $request, $id)
+    {
+        $formPernikahan = form_baptisan::findOrFail($id);
+        // Validate and update the form data here
+        $formPernikahan->update($request->all());
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Data updated successfully');
+    }
+
+    public function update3(Request $request, $id)
+    {
+        $formBaptisan = form_baptisan::findOrFail($id);
+        // Validate and update the form data here
+        $formBaptisan->update($request->all());
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Data updated successfully');
+    }
+
+
 
     /**
      * Remove the specified resource from storage.

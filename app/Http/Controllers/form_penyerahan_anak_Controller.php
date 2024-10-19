@@ -6,6 +6,8 @@ use App\Models\form_penyerahan_anak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+use function Laravel\Prompts\form;
+
 class form_penyerahan_anak_Controller extends Controller
 {
     /**
@@ -97,10 +99,13 @@ class form_penyerahan_anak_Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(form_penyerahan_anak $form_penyerahan_anak)
-    {
-        
-    }
+    // public function edit($id)
+    // {
+    //     $data = form_penyerahan_anak::findOrFail($id); // Ambil data berdasarkan ID
+
+    //     return view('admin.manajemenJemaat.edit1', compact('data')); // Kirim data ke view edit1.blade.php
+    // }
+    
 
     // public function edit(Congregation $congregation)
     // {
@@ -110,8 +115,9 @@ class form_penyerahan_anak_Controller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request , $id)
     {
+
         $request->validate([
             'nama_anak' => 'required|string|max:255',
             'nomor_telp_penanggungjawab_anak' => 'required|string|max:15',
@@ -127,7 +133,9 @@ class form_penyerahan_anak_Controller extends Controller
             'pas_foto_anak' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
     
-        $form = form_penyerahan_anak::findOrFail($id);
+        
+
+        $form = form_penyerahan_anak::findorFail($id);
     
         if ($request->hasFile('pas_foto_anak')) {
             // Hapus foto lama jika ada
