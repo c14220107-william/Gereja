@@ -3,76 +3,77 @@
 @section('content')
 
 <style>
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
 
-  .faq-answer.open {
-    max-height: 1000px; /* Disesuaikan agar sesuai dengan konten */
-  }
+    .faq-answer.open {
+        max-height: 1000px;
+        /* Disesuaikan agar sesuai dengan konten */
+    }
 
-  /* Fade-in Animations */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
+    /* Fade-in Animations */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
 
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-   /* Hover Effect */
-   button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
+    /* Hover Effect */
+    button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
 
-  /* Active state */
-  button:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
+    /* Active state */
+    button:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
 </style>
 
 <script>
-  function toggleAnswer(faqId) {
-      const answer = document.getElementById(faqId);
-      const toggle = document.getElementById(faqId + '-toggle');
-  
-      if (answer.classList.contains('open')) {
-          answer.classList.remove('open');
-          toggle.textContent = '+';
-      } else {
-          answer.classList.add('open');
-          toggle.textContent = '-';
-      }
-  }
+    function toggleAnswer(faqId) {
+        const answer = document.getElementById(faqId);
+        const toggle = document.getElementById(faqId + '-toggle');
 
-  // Fade-in animation on scroll
-  document.addEventListener('scroll', function() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(element => {
-      const position = element.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight;
+        if (answer.classList.contains('open')) {
+            answer.classList.remove('open');
+            toggle.textContent = '+';
+        } else {
+            answer.classList.add('open');
+            toggle.textContent = '-';
+        }
+    }
 
-      if (position < screenPosition) {
-        element.classList.add('visible');
-      }
+    // Fade-in animation on scroll
+    document.addEventListener('scroll', function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            const position = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight;
+
+            if (position < screenPosition) {
+                element.classList.add('visible');
+            }
+        });
     });
-  });
 
-   // Trigger fade-in when page is loaded
-   window.onload = function() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(element => {
-      element.classList.add('visible');
-    });
-  };
+    // Trigger fade-in when page is loaded
+    window.onload = function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            element.classList.add('visible');
+        });
+    };
 </script>
 
 
@@ -81,7 +82,7 @@
         <h2 class="text-4xl font-bold mb-8">Pertanyaan yang Sering Diajukan (FAQ)</h2>
 
         <div class="max-w-3xl mx-auto">
-        <div class="bg-white shadow-md rounded-lg mb-4">
+            <div class="bg-white shadow-md rounded-lg mb-4">
                 <div class="flex justify-between items-center p-4 cursor-pointer" onclick="toggleAnswer('faq1')">
                     <h3 class="text-xl font-semibold">1. Apa yang perlu saya lakukan untuk bergabung dengan gereja?</h3>
                     <span id="faq1-toggle" class="text-blue-600">+</span>
@@ -140,7 +141,7 @@
         <h2 class="text-4xl font-bold mb-2">Kritik Dan Saran</h2>
         <p class="mb-4">Silakan isi formulir di bawah ini untuk mengajukan kritik dan saran kepada kami.</p>
 
-        <form action="/submit-question" method="POST" class="max-w-md mx-auto bg-white shadow-md rounded-lg p-8">
+        <form action="{{ route('kritikSaran.store')}}" method="POST" class="max-w-md mx-auto bg-white shadow-md rounded-lg p-8">
             @csrf
 
             <!-- Input Nama -->
@@ -151,8 +152,8 @@
 
             <!-- Input Pertanyaan -->
             <div class="mb-4">
-                <label for="question" class="block text-left text-gray-700 font-semibold mb-2">Pertanyaan</label>
-                <textarea id="question" name="question" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis pertanyaan Anda di sini"></textarea>
+                <label for="kritikSaran" class="block text-left text-gray-700 font-semibold mb-2">Kritik / Saran</label>
+                <textarea id="kritikSaran" name="kritikSaran" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis Kritik / Saran Anda di sini"></textarea>
             </div>
 
             <!-- Checkbox untuk sembunyikan nama -->
@@ -178,13 +179,13 @@
         } else {
             answer.classList.add('hidden');
             toggle.textContent = '+';
+        }
     }
-}
     // Fungsi untuk menyembunyikan atau menampilkan input nama
     function toggleNameField() {
         const nameField = document.getElementById('nameField');
         const hideName = document.getElementById('hideName');
-        
+
         if (hideName.checked) {
             nameField.style.display = 'none'; // Sembunyikan input nama
         } else {
