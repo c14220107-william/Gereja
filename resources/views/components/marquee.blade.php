@@ -2,10 +2,10 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-    /* Container utama */
+    /* Container Utama */
     .marquee-container {
         overflow: hidden;
-        background: #000000; /* Background hitam sesuai referensi */
+        background: #1a1a1a; /* Background abu-abu gelap */
         height: 80px;
         display: flex;
         align-items: center;
@@ -13,14 +13,14 @@
         position: relative;
     }
 
-    /* Wrapper untuk konten marquee dan duplikat */
+    /* Wrapper untuk Konten */
     .marquee-wrapper {
         display: flex;
-        animation: marquee 12s linear infinite;
+        animation: marquee 15s linear infinite;
         white-space: nowrap;
     }
 
-    /* Animasi marquee */
+    /* Animasi Marquee */
     @keyframes marquee {
         from {
             transform: translateX(0);
@@ -30,29 +30,37 @@
         }
     }
 
-    /* Gaya teks dalam marquee */
+    /* Gaya Teks */
     .marquee-wrapper span {
-        font-family: 'Bebas Neue', sans-serif; /* Font modern mendekati contoh */
-        font-size: 60px;
+        font-family: 'Bebas Neue', sans-serif; /* Font modern */
+        font-size: 50px;
         font-weight: 400;
-        color: #ffffff; /* Warna teks putih */
+        color: #cccccc; /* Warna teks abu terang */
         line-height: 80px;
-        margin-right: 1rem; /* Spasi minimal antar teks */
+        margin-right: 2rem; /* Spasi antar teks */
+        display: flex;
+        align-items: center;
+    }
+
+    /* Gaya Pemisah Simbol */
+    .separator {
+        font-size: 40px;
+        color: #666666; /* Warna simbol abu-abu lebih gelap */
+        margin: 0 1rem;
     }
 </style>
 
-
+<!-- Marquee Section -->
 <div class="marquee-container">
     <div class="marquee-wrapper" id="marquee">
-        <span>Selamat datang di GPPS Bethlehem Kutisari!</span>
-        <span>Tuhan Yesus memberkati kita semua!</span>
-        <span>CARE, LOVE, AND SERVE!</span>
+        <span>SELAMAT DATANG DI GPPS BETHLEHEM KUTISARI!</span>
+        <span>TUHAN YESUS MEMBERKATI KITA SEMUA!</span>
+        <span>CARE • LOVE • SERVE</span>
     </div>
     <div class="marquee-wrapper">
-        <span>Selamat datang di GPPS Bethlehem Kutisari!</span>
-        <span>Tuhan Yesus memberkati kita semua!</span>
-        <span>CARE, LOVE, AND SERVE!</span>
+        <span>SELAMAT DATANG DI GPPS BETHLEHEM KUTISARI!</span>
+        <span>TUHAN YESUS MEMBERKATI KITA SEMUA!</span>
+        <span>CARE • LOVE • SERVE</span>
     </div>
 </div>
-
 

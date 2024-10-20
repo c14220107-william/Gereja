@@ -138,33 +138,34 @@
         </div>
     </section>
 
-
-    <!-- Visi & Misi Section -->
-    <section class="relative bg-cover bg-center text-white py-96" style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}'); background-attachment: fixed">
-        <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-        <div class="relative z-10 text-center flex items-center justify-center h-full">
-            <div class="container mx-auto text-center px-8">
-                <h2 class="text-7xl font-serif font-extrabold text-white mb-12 fade-in-up-on-scroll">
-                    Visi dan Misi
-                </h2>
-                <div class="flex flex-col md:flex-row justify-around gap-10">
-                    <!-- Visi -->
-                    <div class="bg-gray-800 bg-opacity-70 backdrop-blur-lg rounded-xl shadow-2xl p-12 md:w-1/3 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90 fade-in-up-on-scroll">
-                        <div class="text-center">
-                            <h3 class="text-5xl font-bold text-yellow-400 mb-6">Visi</h3>
-                            <p class="text-2xl text-gray-200">
-                                Menjadi jemaat yang kuat dan tidak tergoncangkan.
-                            </p>
-                        </div>
+    <!-- Visi dan Misi Section -->
+    <section class="relative bg-cover bg-center text-white py-32" 
+        style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}'); background-attachment: fixed;">
+        <div class="absolute inset-0 bg-black bg-opacity-80"></div>
+        <div class="relative z-10 container mx-auto text-center px-6 md:px-8">
+            <h2 class="text-5xl md:text-6xl font-serif font-extrabold text-white mb-10">
+                Visi Misi
+            </h2>
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <!-- Visi -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl shadow-lg p-8 md:w-1/3 w-full max-w-md transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-opacity-20">
+                    <div class="text-center">
+                        <div class="text-yellow-400 text-6xl mb-4">🌟</div> <!-- Icon untuk Visi -->
+                        <h3 class="text-3xl font-bold text-white mb-4">Visi</h3>
+                        <p class="text-lg text-gray-200">
+                            Menjadi jemaat yang kuat dan tidak tergoncangkan.
+                        </p>
                     </div>
-                    <!-- Misi -->
-                    <div class="bg-gray-800 bg-opacity-70 backdrop-blur-lg rounded-xl shadow-2xl p-12 md:w-1/3 flex items-center justify-center transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:bg-opacity-90 fade-in-up-on-scroll">
-                        <div class="text-center">
-                            <h3 class="text-5xl font-bold text-yellow-400 mb-6">Misi</h3>
-                            <p class="text-2xl text-gray-200">
-                                Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial, dalam kehidupan pribadi maupun komunal (keluarga dan gereja).
-                            </p>
-                        </div>
+                </div>
+
+                <!-- Misi -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl shadow-lg p-8 md:w-1/3 w-full max-w-md transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-opacity-20">
+                    <div class="text-center">
+                        <div class="text-yellow-400 text-6xl mb-4">🤝</div> <!-- Icon untuk Misi -->
+                        <h3 class="text-3xl font-bold text-white mb-4">Misi</h3>
+                        <p class="text-lg text-gray-200">
+                            Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial, dalam kehidupan pribadi maupun komunal (keluarga dan gereja).
+                        </p>
                     </div>
                 </div>
             </div>
