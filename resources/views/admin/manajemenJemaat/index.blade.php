@@ -264,7 +264,7 @@
                         @endif   
                     </td>
                         <td class="py-2 px-4 border-b">
-                            <a href="{{ route('manajemenJemaat.edit', $item2->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
+                            <a href="{{ route('form2.edit', $item2->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
                             <form action="{{ route('manajemenJemaat.destroy', $item2->id) }}" method="POST" class="inline-block">
                                 @csrf
                                 @method('DELETE')

@@ -89,7 +89,7 @@
                     <input type="hidden" name="form_type" value="pernikahan">
                     <p>I. Permohonan Pemberkatan / Doa Pernikahan</p>
                     Hari Pemberkatan yang direncanakan<input type="text" name="hari_pemberkatan" id="hari_pemberkatan" placeholder="Hari" required class="border rounded p-2 w-full mb-2"><input type="date" name="tanggal_pemberkatan" required class="border rounded p-2 w-full mb-2">
-                    Pukul Pemberkatan<input type="text" name="pukul_pemberkatan" id="pukul_pemberkatan" placeholder="Pukul" required class="border rounded p-2 w-full mb-2">
+                    Pukul Pemberkatan<input type="time" name="pukul_pemberkatan" id="pukul_pemberkatan" placeholder="Pukul" required class="border rounded p-2 w-full mb-2">
                     <input type="checkbox" name="permohonan_pemberkatan1" id="permohonan_pemberkatan_acara" class="mr-2">
                     <label for="permohonan_pemberkatan1" class="text-gray-700">Liturgi (Acara Kebaktian) </label>
                     <p></p>
