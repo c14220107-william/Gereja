@@ -45,13 +45,18 @@
   window.addEventListener("scroll", function() {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop > lastScrollTop) {
-          // Scroll ke bawah, sembunyikan navbar
-          navbar.style.transform = "translateY(-100%)";
+      if (scrollTop === 0) {
+          // Kalo navbarnya di posisi paling atas, navbarnya jadi hitam penuh
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 1)"; // Hitam penuh
       } else {
-          // Scroll ke atas, tampilkan navbar
-          navbar.style.transform = "translateY(0)";
+          // Jika scroll  ke bawah atau ke atas, navbar jadi hitam transparan
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Hitam dengan transparansi 50%
       }
+
       lastScrollTop = scrollTop;
   });
 </script>
+
+
+
+

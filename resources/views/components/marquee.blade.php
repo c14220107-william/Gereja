@@ -1,52 +1,58 @@
+
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+    /* Container utama */
     .marquee-container {
-        overflow: hidden; 
+        overflow: hidden;
+        background: #000000; /* Background hitam sesuai referensi */
+        height: 80px;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    /* Wrapper untuk konten marquee dan duplikat */
+    .marquee-wrapper {
+        display: flex;
+        animation: marquee 12s linear infinite;
         white-space: nowrap;
     }
 
-    .marquee {
-        display: inline-block;
-        animation: marquee 10s linear infinite; 
+    /* Animasi marquee */
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
     }
 
-    @keyframes marquee {
-        0% {
-            transform: translateX(0); 
-        }
-        100% {
-            transform: translateX(-50%); 
-        }
+    /* Gaya teks dalam marquee */
+    .marquee-wrapper span {
+        font-family: 'Bebas Neue', sans-serif; /* Font modern mendekati contoh */
+        font-size: 60px;
+        font-weight: 400;
+        color: #ffffff; /* Warna teks putih */
+        line-height: 80px;
+        margin-right: 1rem; /* Spasi minimal antar teks */
     }
 </style>
 
-<div class="relative bg-gradient-to-b from-neutral-700 to-black h-20 text-white py-4">
-    <div class="marquee-container">
-        <div id="marquee" class="marquee">
-            <span class="mx-8 text-3xl font-bold">Selamat datang di GPPS Bethlehem Kutisari!</span>
-            <span class="mx-8 text-3xl font-bold">Tuhan Yesus memberkati kita semua!</span>
-            <span class="mx-8 text-3xl font-bold">CARE, LOVE, AND SERVE!</span>
-            <span class="mx-8 text-3xl font-bold">Selamat datang di GPPS Bethlehem Kutisari!</span>
-            <span class="mx-8 text-3xl font-bold">Tuhan Yesus memberkati kita semua!</span>
-            <span class="mx-8 text-3xl font-bold">CARE, LOVE, AND SERVE!</span>
-        </div>
+
+<div class="marquee-container">
+    <div class="marquee-wrapper" id="marquee">
+        <span>Selamat datang di GPPS Bethlehem Kutisari!</span>
+        <span>Tuhan Yesus memberkati kita semua!</span>
+        <span>CARE, LOVE, AND SERVE!</span>
+    </div>
+    <div class="marquee-wrapper">
+        <span>Selamat datang di GPPS Bethlehem Kutisari!</span>
+        <span>Tuhan Yesus memberkati kita semua!</span>
+        <span>CARE, LOVE, AND SERVE!</span>
     </div>
 </div>
 
-<script>
-    const marquee = document.getElementById('marquee');
-    
-    // total panjang text
-    const marqueeWidth = marquee.scrollWidth;
-    const containerWidth = document.querySelector('.marquee-container').clientWidth;
 
-    // kecepatan running text
-    const duration = (marqueeWidth / 80) + 's'; 
-    marquee.style.animationDuration = duration;
-
-    // Reset animasi
-    marquee.addEventListener('animationiteration', () => {
-        marquee.style.animation = 'none'; 
-        void marquee.offsetWidth; 
-        marquee.style.animation = `marquee ${duration} linear infinite`; 
-    });
-</script>
