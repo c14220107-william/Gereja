@@ -93,7 +93,28 @@ class Form_Controller extends Controller
                 return $this->FormBaptisanController->store($request);
         }
 
-        return redirect()->route('admin.manajemenJemaat.index')->with('success', 'Data berhasil disimpan.');
+        return redirect()->back()->with('success', 'Data berhasil disimpan.');
+    }
+
+    public function storefromCreate(Request $request)
+    {
+        // Validasi data
+        $validatedData = $request->validate([
+            'form_type' => 'required|string',
+            // Tambahkan validasi lain sesuai kebutuhan
+        ]);
+
+        // Proses penyimpanan berdasarkan jenis form
+        switch ($validatedData['form_type']) {
+            case 'penyerahan_anak':
+                return $this->form_penyerahan_anak_Controller->storefromCreate($request);
+            case 'pernikahan':
+                return $this->form_penikahan_Controller->storefromCreate($request);
+            case 'baptisan':
+                return $this->FormBaptisanController->storefromCreate($request);
+        }
+
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Data created successfully');
     }
 
     /**

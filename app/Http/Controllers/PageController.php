@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\YouTubeLink;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -13,10 +14,15 @@ class PageController extends Controller
         return view('faq');
     }
     public function onlineworship(){
-        return view('onlineworship');
+        $youtubeLink = YouTubeLink::latest()->first();
+
+        // $youtubeLink->url = str_replace('watch?v=', 'embed/', $youtubeLink->url);
+
+        return view('onlineworship',compact('youtubeLink'));
     }
     public function tes(){
         return view('admin/tes');
     }
+    
     
 }

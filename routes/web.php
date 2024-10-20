@@ -18,6 +18,7 @@ use App\Models\form_penyerahan_anak;
 use App\Models\form_pernikahan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KritikSaranController;
+use App\Http\Controllers\linkYoutubeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,10 @@ Route::middleware('admin')->group(function() {
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/manajemenJemaat', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');
+Route::get('/admin/manajemen_faq', [KritikSaranController::class, 'index'])->name('manajemen_faq.index');
+Route::get('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'index'])->name('manajemen_liveStreaming.index');
+Route::post('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'store'])->name('admin.storeYoutubeLink');
+
 
 
     // Rute lain untuk manajemen jemaat, pelayanan, dll.
@@ -108,6 +113,11 @@ Route::post('/faq', [KritikSaranController::class, 'store'])->name('kritikSaran.
 
 
 Route::post('/service-registration', [Form_Controller::class, 'store'])->name('Form.store');
+Route::post('admin/manajemenJemaat/create1', [Form_Controller::class, 'storefromCreate'])->name('Form.store');
+Route::post('admin/manajemenJemaat/create2', [Form_Controller::class, 'storefromCreate'])->name('Form.store');
+Route::post('admin/manajemenJemaat/create3', [Form_Controller::class, 'storefromCreate'])->name('Form.store');
+
+
 // Route::get('/admin/manajemenJemaat', [Form_Controller::class, 'index'])->name('manajemenJemaat.index');
 
 Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');

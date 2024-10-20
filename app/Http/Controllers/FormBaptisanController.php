@@ -67,12 +67,49 @@ class FormBaptisanController extends Controller
             'file_foto_pemohon_baptis' => $path,
         ]);
 
+        return redirect()->back()->with('success', 'Data created successfully');
+    
+    }
+
+    public function storefromCreate(Request $request)
+    {
+        $request->validate([
+            'nama_anak' => 'required|string|max:255',
+            'nomor_telp' => 'required|string|max:15',
+            'tempat_lahir' => 'required|string|max:255',
+            'tanggal_lahir' => 'required|date',
+            'alamat' => 'required|string|max:255',
+            'kelurahan' => 'required|string|max:255',
+            'beribadah_di' => 'required|string|max:255',
+            'nama_ayah' => 'required|string|max:255',
+            'nama_ibu' => 'required|string|max:255',
+            'tanggal_baptis' => 'required|date',
+            'pembaptis' => 'required|string|max:255',
+            'file_foto_pemohon_baptis' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+        ]);
+
+        if ($request->hasFile('file_foto_pemohon_baptis')) {
+            $path = $request->file('file_foto_pemohon_baptis')->store('file_foto_pemohon_baptis', 'public');
+        } else {
+            $path = null;
+        }
+
+        form_baptisan::create([
+            'nama_anak' => $request->nama_anak,
+            'nomor_telp' => $request->nomor_telp,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'kelurahan' => $request->kelurahan,
+            'beribadah_di' => $request->beribadah_di,
+            'nama_ayah' => $request->nama_ayah,
+            'nama_ibu' => $request->nama_ibu,
+            'tanggal_baptis' => $request->tanggal_baptis,
+            'pembaptis' => $request->pembaptis,
+            'file_foto_pemohon_baptis' => $path,
+        ]);
+
         return redirect()->route('manajemenJemaat.index')->with('success', 'Data created successfully');
-
-
-
-        
-        
     
     }
 

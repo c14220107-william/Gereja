@@ -28,4 +28,9 @@ class KritikSaranController extends Controller
         // Redirect atau kembali dengan pesan sukses
         return redirect()->back()->with('success', 'Kritik dan saran Anda telah dikirim!');
     }
+
+    public function index(){
+        $kritik_sarans = kritikSaran::all();
+        return view('admin.manajemen_faq.index',compact('kritik_sarans'));
+    }
 }
