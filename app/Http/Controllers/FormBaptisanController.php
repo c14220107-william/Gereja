@@ -67,7 +67,7 @@ class FormBaptisanController extends Controller
             'file_foto_pemohon_baptis' => $path,
         ]);
 
-        return redirect()->back()->with('success', 'Data berhasil disimpan!');
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Data created successfully');
 
 
 

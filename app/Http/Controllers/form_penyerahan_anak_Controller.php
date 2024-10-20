@@ -78,7 +78,7 @@ class form_penyerahan_anak_Controller extends Controller
         ]);
 
 
-        return redirect()->back()->with('success', 'Data berhasil disimpan!');
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Data Created successfully');
 
         // form_penyerahan_anak::create($validatedData);
         // return redirect()->route('manajemen_jemaat.index')->with('success','Jemaat berhasil ditambahkan.');
