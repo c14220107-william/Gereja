@@ -278,7 +278,7 @@
         </table>
         <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Baptisan Air</h2>
 
-        <a href="{{ route('manajemenJemaat.create1') }}" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a>
+        <a href="{{ route('manajemenJemaat.create3') }}" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a>
         {{-- <a href="#" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a> --}}
 
         <table class="min-w-full bg-white border rounded-lg shadow-md">
@@ -323,7 +323,7 @@
                         @endif
                     </td>
                     <td class="py-2 px-4 border-b">
-                         <a href="{{ route('manajemenJemaat.edit', $item3->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
+                         <a href="{{ route('form3.edit', $item3->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
                         <form action="{{ route('manajemenJemaat.destroy', $item3->id) }}" method="POST" class="inline-block">
                                 @csrf
                                 @method('DELETE')
