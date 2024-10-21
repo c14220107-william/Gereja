@@ -92,6 +92,14 @@
     .animate-fadeInDelay {
         animation: fadeInDelay 1.5s ease-in-out;
     }
+    #maps {
+        background-color: #f4f4f4;
+    }
+
+    #maps .container {
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
 </style>
 
 <!-- JavaScript untuk animasi saat scroll -->
@@ -109,203 +117,284 @@
 
 <body class="bg-gray-100">
 
-    <!-- Hero Section -->
-    <section class="relative bg-cover bg-center text-white py-80" style="background-image: url({{ asset('img/fotodalam.JPG') }});">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative z-10 text-center">
-            <h1 class="text-6xl font-bold opacity-0 animate-fade-in-delay">Selamat Datang di Gereja Kami</h1>
-            <p class="mt-4 text-2xl opacity-0 animate-fade-in-delay">Mari saling memperhatikan, mengasihi, dan melayani satu dengan yang lain.</p>
-            <a href="#tentang" class="mt-8 inline-block bg-white text-yellow-600 font-semibold px-6 py-3 rounded-full shadow hover:bg-gray-300 animate-bounce-on-hover animate-fade-in-up">Tentang Kami</a>
+   <!-- Hero Section -->
+    <section class="relative bg-black text-white min-h-screen flex items-center justify-center">
+        <!-- Gambar Background dengan Overlay -->
+        <div class="absolute inset-0 bg-cover bg-center" 
+            style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
+            <div class="absolute inset-0 bg-black bg-opacity-70"></div> <!-- Overlay Lebih Gelap -->
+        </div>
+
+        <!-- Konten Hero -->
+        <div class="relative z-10 text-center max-w-2xl mx-auto">
+            <p class="text-lg mb-4 uppercase tracking-widest opacity-0 animate-fade-in">Made in Framer</p>
+            
+            <!-- Animasi Reveal untuk Teks -->
+            <h1 class="text-7xl font-extrabold leading-tight mb-6 animate-reveal-text">
+                Selamat Datang di GPPS Bethlehem Kutisari!
+            </h1>
+
+            <a href="#tentang" class="bg-yellow-500 text-white px-8 py-4 rounded-full shadow-md text-lg font-semibold 
+            transition-transform transform hover:scale-105 hover:bg-yellow-600">
+                Tentang Kami
+            </a>
         </div>
     </section>
 
+    <script>
+        document.querySelector('a[href="#tentang"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    </script>
+
     @include('components.marquee')
 
-    <!-- About Section -->
-    <section id="tentang" class="py-16 bg-black">
-        <div class="container mx-auto flex flex-col items-center justify-center gap-8 fade-in-up-on-scroll">
-            <div class="flex justify-center mb-1">
-                <img src="{{ asset('img/logopusat.png') }}" alt="Church Icon">
+    <!-- Tentang Gereja Section -->
+    <section id="tentang" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-8 md:px-16 lg:px-32 flex flex-col md:flex-row items-center gap-12">
+            <!-- Gambar -->
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="{{ asset('img/fotodalam.JPG') }}" alt="Church Logo" class="rounded-lg shadow-lg" />
             </div>
-            <div class="w-full md:w-2/3 text-center">
-                <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500 fade-in-up-on-scroll">
+
+            <!-- Konten Teks -->
+            <div class="w-full md:w-1/2 text-left">
+                <h2 class="text-4xl font-bold mb-6 text-gray-900">
                     Tentang Gereja Kami
                 </h2>
-                <p class="text-lg text-gray-300 hover:text-gray-100 transition-all shadow-lg shadow-yellow-400/50">
-                    Shallom! GPPS Bethlehem Kutisari hadir untuk bisa bersaksi akan kebaikan Tuhan kita Yesus Kristus. Kesempatan dan momentum yang Tuhan yang berikan dalam kehidupan kita untuk bersaksi bagi-Nya, hendaknya kita manfaatkan sebaik mungkin dengan penuh kerendahan hati, sukacita, dan pengabdian diri. Semoga dengan hadirnya GPPS Bethlehem Kutisari, kami dapat menjadi terang dan garam buat para saudara-saudari terkasih. Menjadi inspirasi orang percaya untuk terus bertumbuh dalam Tuhan! Salam dalam kasih-Nya, Care-Love-and Serve!
+                <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+                    Shallom! GPPS Bethlehem Kutisari hadir untuk bisa bersaksi akan kebaikan Tuhan kita Yesus Kristus. Kesempatan dan momentum yang Tuhan berikan dalam kehidupan kita untuk bersaksi bagi-Nya, hendaknya kita manfaatkan sebaik mungkin dengan penuh kerendahan hati, sukacita, dan pengabdian diri. Semoga dengan hadirnya GPPS Bethlehem Kutisari, kami dapat menjadi terang dan garam buat para saudara-saudari terkasih. Menjadi inspirasi orang percaya untuk terus bertumbuh dalam Tuhan! Salam dalam kasih-Nya, Care Love and Serve!
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Visi dan Misi Section -->
-    <section class="relative bg-cover bg-center text-white py-32" 
-        style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}'); background-attachment: fixed;">
-        <div class="absolute inset-0 bg-black bg-opacity-80"></div>
-        <div class="relative z-10 container mx-auto text-center px-6 md:px-8">
-            <h2 class="text-5xl md:text-6xl font-serif font-extrabold text-white mb-10">
-                Visi Misi
-            </h2>
-            <div class="flex flex-col md:flex-row justify-center gap-8">
-                <!-- Visi -->
-                <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl shadow-lg p-8 md:w-1/3 w-full max-w-md transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-opacity-20">
-                    <div class="text-center">
-                        <div class="text-yellow-400 text-6xl mb-4">🌟</div> <!-- Icon untuk Visi -->
-                        <h3 class="text-3xl font-bold text-white mb-4">Visi</h3>
-                        <p class="text-lg text-gray-200">
-                            Menjadi jemaat yang kuat dan tidak tergoncangkan.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Misi -->
-                <div class="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl shadow-lg p-8 md:w-1/3 w-full max-w-md transition-transform transform hover:scale-105 hover:shadow-2xl hover:bg-opacity-20">
-                    <div class="text-center">
-                        <div class="text-yellow-400 text-6xl mb-4">🤝</div> <!-- Icon untuk Misi -->
-                        <h3 class="text-3xl font-bold text-white mb-4">Misi</h3>
-                        <p class="text-lg text-gray-200">
-                            Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial, dalam kehidupan pribadi maupun komunal (keluarga dan gereja).
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Motto Section -->
-    <section id="nilai" class="py-20 bg-black">
-        <div class="container mx-auto text-center fade-in-up-on-scroll">
-            <h2 class="text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-500 to-blue-500 fade-in-up-on-scroll">
-                Motto kami
-            </h2>
-            <div class="flex justify-center">
-                <img src="{{ asset('img/logokutisari.png') }}" alt="nanti kasik gambar biar menarik tp blm nyari wkwk" class="w-1/6 rounded-lg shadow-lg">
+    <section class="py-10" style="background-color: #F4F4F4;">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-center">
+            <div class="flex flex-col text-center">
+                <h2 class="text-5xl font-bold mb-4" style="color: #1C2B2D;">
+                    Motto Kami
+                </h2>
+                <div class="flex justify-center mb-4">
+                    <img src="{{ asset('img/logokutisari.png') }}" alt="Logo Motto" 
+                        class="w-1/2 md:w-1/3 rounded-full">
+                </div>
+                <p class="text-4xl font-semibold mb-2" style="color: #4A5657;">
+                    <span id="motto-text"></span>
+                </p>
+                <p class="text-lg text-justify" 
+                style="">
+                    GPPS Bethlehem Kutisari memiliki jemaat yang saling memperhatikan, mengasihi, dan melayani 
+                    dalam rangka menjadi kesatuan jemaat yang kuat dan tidak tergoncangkan. Motto ini diharap 
+                    menjadi dasar bagi para jemaat dalam menjalankan kehidupan kekristenannya hari lepas hari.
+                </p>
             </div>
-            <p class="text-4xl font-semibold text-yellow-600 mb-4 fade-in-up-on-scroll">Care, Love, and Serve</p>
-            <p class="text-lg text-white mx-auto max-w-3xl mb-8 fade-in-up-on-scroll">GPPS Bethlehem Kutisari memiliki jemaat yang saling memperhatikan, mengasihi, dan melayani dalam rangka menjadi kesatuan jemaat yang kuat dan tidak tergoncongkan. Motto ini diharap menjadi dasar bagi para jemaat dalam menjalankan kehidupan kekristenannya hari lepas hari.</p>
         </div>
     </section>
 
-    <!-- Jadwal Section -->
-    <section id="sunday-services" class="relative py-20 bg-white" style="background-image: url('{{ asset('img/untuk_jadwal_ibadah.JPG') }}'); background-attachment: fixed">
-        <div class="absolute inset-0 bg-white bg-opacity-35"></div>
+
+    <!-- Visi & Misi Section -->
+    <section class="py-10" style="background-color: #F4F4F4;">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-center">
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-5xl font-bold mb-4 text-center" style="color: #1C2B2D;">
+                    Visi & Misi
+                </h2>
+                <div class="flex flex-col md:flex-row justify-center gap-8">
+                    <!-- Visi -->
+                    <div class="p-4 shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+                        style="background-color: #FFFFFF; border-radius: 20px; width: 100%; max-width: 300px;">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-2" style="color: #1C2B2D;">Visi</h3>
+                            <p class="text-lg text-justify" style="color: #4A5657;">
+                                Menjadi jemaat yang kuat dan tidak tergoncangkan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Misi -->
+                    <div class="p-4 shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
+                        style="background-color: #FFFFFF; border-radius: 20px; width: 100%; max-width: 300px;">
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-2" style="color: #1C2B2D;">Misi</h3>
+                            <p class="text-lg text-justify" style="color: #4A5657;">
+                                Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial, 
+                                dalam kehidupan pribadi maupun komunal (keluarga dan gereja).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JavaScript untuk Looping Typing Effect -->
+    <script>
+        const text = "Care Love Serve";
+        let index = 0;
+        let isDeleting = false;
+        const speed = 200; // Kecepatan mengetik (ms)
+        const eraseSpeed = 150; // Kecepatan menghapus (ms)
+        const delayBetweenLoops = 2000; // Jeda sebelum mengetik ulang (ms)
+        const pauseAtEnd = 3000; // Jeda setelah teks selesai (ms)
+
+        function typeWriter() {
+            const mottoText = document.getElementById("motto-text");
+
+            if (!isDeleting && index <= text.length) {
+                mottoText.innerHTML = text.substring(0, index++);
+                setTimeout(typeWriter, speed);
+            } else if (isDeleting && index >= 0) {
+                mottoText.innerHTML = text.substring(0, index--);
+                setTimeout(typeWriter, eraseSpeed);
+            }
+
+            if (index === text.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                    typeWriter();
+                }, pauseAtEnd);
+            } else if (index < 0) {
+                isDeleting = false;
+                setTimeout(typeWriter, delayBetweenLoops);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+    
+    <!-- Seksi Ibadah Sepekan -->
+    <section id="sunday-services" class="py-20" style="background-color: #F4F4F4;">
         <div class="container mx-auto text-center">
-            <h2 class="text-7xl font-serif font-extrabold text-white mb-12 fade-in-up-on-scroll">
-                    Ibadah Sepekan
-            </h2>
+            <h2 class="text-3xl font-bold mb-8" style="color: #1C2B2D;">Ibadah Sepekan</h2>
 
-            <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-8 mb-10 mx-auto max-w-2xl transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
-                <h3 class="text-4xl font-semibold text-white mb-4 border-b-4 border-yellow-300 inline-block pb-2">Ibadah Umum</h3>
-                <p class="mt-4 text-yellow-300 font-bold text-2xl">Minggu</p>
-                <p class="mt-0 text-yellow-300 text-xl font-medium">Pukul 07:45 - 09:30</p>
-                <p class="mt-4 text-lg text-white leading-relaxed">Bergabunglah bersama kami dalam ibadah utama yang dipimpin dengan pujian dan khotbah yang menginspirasi.</p>
-            </div>
+            <div class="relative">
+                <!-- Tombol Kiri -->
+                <button id="prev-btn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full shadow-md">
+                    &larr;
+                </button>
 
-            <div class="flex flex-col md:flex-row justify-around">
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
-                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Ibadah Kaum Wanita</h3>
-                    <p class="mt-3 text-yellow-300 font-bold text-xl">Selasa</p>
-                    <p class="text-lg text-yellow-300">Pukul 16:30 - 18:00</p>
-                    <p class="mt-3 text-white leading-relaxed">Bergabunglah dalam ibadah pagi yang penuh sukacita dengan pujian dan khotbah yang menginspirasi.</p>
+                <!-- Carousel Container -->
+                <div id="carousel" class="flex overflow-hidden gap-6">
+                    <!-- Kartu 1 -->
+                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Ibadah Umum</h3>
+                        <p class="text-gray-700">Minggu | Pukul 07:45 - 09:30</p>
+                        <p class="text-sm text-gray-500">Bergabunglah dalam ibadah utama dengan pujian dan khotbah yang menginspirasi.</p>
+                    </div>
+
+                    <!-- Kartu 2 -->
+                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Ibadah Kaum Wanita</h3>
+                        <p class="text-gray-700">Selasa | Pukul 16:30 - 18:00</p>
+                        <p class="text-sm text-gray-500">Ibadah khusus wanita dengan suasana sukacita dan pujian menyentuh hati.</p>
+                    </div>
+
+                    <!-- Kartu 3 -->
+                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Youth Commcell</h3>
+                        <p class="text-gray-700">Rabu | Pukul 19:00 - 21:00</p>
+                        <p class="text-sm text-gray-500">Komunitas muda dalam ibadah malam yang menyenangkan dan penuh semangat.</p>
+                    </div>
+
+                    <!-- Kartu 4 -->
+                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Doa Malam</h3>
+                        <p class="text-gray-700">Kamis | Pukul 18:30 - 20:00</p>
+                        <p class="text-sm text-gray-500">Akhiri hari dengan doa malam yang penuh damai dan refleksi rohani.</p>
+                    </div>
+
+                    <!-- Kartu 5 -->
+                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Doa Fajar</h3>
+                        <p class="text-gray-700">Sabtu | Pukul 05:30 - 06:30</p>
+                        <p class="text-sm text-gray-500">Mulailah pagi Anda dengan doa bersama untuk mendapatkan kekuatan dan berkat.</p>
+                    </div>
+
+                    <!-- Kartu 6 -->
+                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Sekolah Minggu</h3>
+                        <p class="text-gray-700">Minggu | Pukul 08:00 - 09:30</p>
+                        <p class="text-sm text-gray-500">Ibadah anak-anak yang menyenangkan untuk menumbuhkan iman sejak dini.</p>
+                    </div>
+
+                    <!-- Kartu 7 -->
+                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold mb-2">Ibadah Youth</h3>
+                        <p class="text-gray-700">Minggu | Pukul 10:30 - 12:00</p>
+                        <p class="text-sm text-gray-500">Bergabunglah dalam ibadah youth untuk bertumbuh dalam iman dan komunitas.</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
-                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Youth Commcell</h3>
-                    <p class="mt-3 text-yellow-300 font-bold text-xl">Rabu</p>
-                    <p class="text-lg text-yellow-300">Pukul 19:00 - 21:00</p>
-                    <p class="mt-3 text-white leading-relaxed">Ibadah siang yang lebih santai, cocok untuk keluarga dan teman-teman.</p>
-                </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
-                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Doa Malam</h3>
-                    <p class="mt-3 text-yellow-300 font-bold text-xl">Kamis</p>
-                    <p class="text-lg text-yellow-300">Pukul 18:30 - 20:00</p>
-                    <p class="mt-3 text-white leading-relaxed">Akhiri hari Anda dengan ibadah malam yang damai dan reflektif.</p>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row justify-around mt-10">
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
-                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Doa Fajar</h3>
-                    <p class="mt-3 text-yellow-300 font-bold text-xl">Sabtu</p>
-                    <p class="text-lg text-yellow-300">Pukul 05:30 - 06:30</p>
-                    <p class="mt-3 text-white leading-relaxed">Bergabunglah dalam ibadah malam yang penuh damai dan refleksi.</p>
-                </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
-                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Sekolah Minggu</h3>
-                    <p class="mt-3 text-yellow-300 font-bold text-xl">Minggu</p>
-                    <p class="text-lg text-yellow-300">Pukul 08:00 - 09:30</p>
-                    <p class="mt-3 text-white leading-relaxed">Bersama-sama dalam doa, memperkuat iman kita.</p>
-                </div>
-                <div class="bg-gradient-to-r from-gray-600 to-gray-900 rounded-xl shadow-lg p-6 mb-6 md:mb-0 md:w-1/3 mx-7 transform hover:scale-305 hover:shadow-2xl hover:bg-opacity-90 transition-transform duration-300 fade-in-up-on-scroll">
-                    <h3 class="text-2xl font-semibold text-white mb-2 border-b-2 border-yellow-300 inline-block pb-1">Ibadah Youth</h3>
-                    <p class="mt-3 text-yellow-300 font-bold text-xl">Minggu</p>
-                    <p class="text-lg text-yellow-300">Pukul 10:30 - 12:00</p>
-                    <p class="mt-3 text-white leading-relaxed">Ikuti kegiatan pelayanan komunitas untuk saling mendukung.</p>
-                </div>
+
+                <!-- Tombol Kanan -->
+                <button id="next-btn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full shadow-md">
+                    &rarr;
+                </button>
             </div>
         </div>
     </section>
 
+    
+    <!-- JavaScript Carousel -->
+    <script>
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
 
-    <!-- Informasi Section -->
-    <section id="more-info" class="py-20 bg-gray-300">
-        <div class="container mx-auto text-center fade-in-up-on-scroll">
-            <h2 class="text-4xl font-bold mb-8">Informasi Lebih Lanjut</h2>
-            <p class="text-lg text-gray-600 mb-4">Ikuti kami di media sosial untuk mendapatkan berita terbaru dan informasi acara.</p>
+        const cardWidth = 300; // Width of each card
+        const totalCards = carousel.children.length; // Total number of cards
+        const visibleCards = 3; // Number of cards visible at a time
+        let scrollAmount = 0; // Current scroll amount
 
-            <div class="flex justify-center space-x-6 mb-8">
-                <!-- Link Instagram -->
-                <a href="https://www.instagram.com/gppsbethlehemkutisari?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-blue-600 hover:text-blue-800">
-                    <button class="w-10 h-10 flex items-center justify-center group rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
-                        <svg class="transition-all duration-300 group-hover:scale-110" width="28" height="28" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M27.4456 35.7808C27.4456 31.1786 31.1776 27.4468 35.7826 27.4468C40.3875 27.4468 44.1216 31.1786 44.1216 35.7808C44.1216 40.383 40.3875 44.1148 35.7826 44.1148C31.1776 44.1148 27.4456 40.383 27.4456 35.7808ZM22.9377 35.7808C22.9377 42.8708 28.6883 48.618 35.7826 48.618C42.8768 48.618 48.6275 42.8708 48.6275 35.7808C48.6275 28.6908 42.8768 22.9436 35.7826 22.9436C28.6883 22.9436 22.9377 28.6908 22.9377 35.7808ZM46.1342 22.4346C46.1339 23.0279 46.3098 23.608 46.6394 24.1015C46.9691 24.595 47.4377 24.9797 47.9861 25.2069C48.5346 25.4342 49.1381 25.4939 49.7204 25.3784C50.3028 25.2628 50.8378 24.9773 51.2577 24.5579C51.6777 24.1385 51.9638 23.6041 52.0799 23.0222C52.1959 22.4403 52.1367 21.8371 51.9097 21.2888C51.6828 20.7406 51.2982 20.2719 50.8047 19.942C50.3112 19.6122 49.7309 19.436 49.1372 19.4358H49.136C48.3402 19.4361 47.5771 19.7522 47.0142 20.3144C46.4514 20.8767 46.1349 21.6392 46.1342 22.4346ZM25.6765 56.1302C23.2377 56.0192 21.9121 55.6132 21.0311 55.2702C19.8632 54.8158 19.0299 54.2746 18.1538 53.4002C17.2777 52.5258 16.7354 51.6938 16.2827 50.5266C15.9393 49.6466 15.533 48.3214 15.4222 45.884C15.3009 43.2488 15.2767 42.4572 15.2767 35.781C15.2767 29.1048 15.3029 28.3154 15.4222 25.678C15.5332 23.2406 15.9425 21.918 16.2827 21.0354C16.7374 19.8682 17.2789 19.0354 18.1538 18.1598C19.0287 17.2842 19.8612 16.7422 21.0311 16.2898C21.9117 15.9466 23.2377 15.5406 25.6765 15.4298C28.3133 15.3086 29.1054 15.2844 35.7826 15.2844C42.4598 15.2844 43.2527 15.3106 45.8916 15.4298C48.3305 15.5408 49.6539 15.9498 50.537 16.2898C51.7049 16.7422 52.5382 17.2854 53.4144 18.1598C54.2905 19.0342 54.8308 19.8682 55.2855 21.0354C55.6289 21.9154 56.0351 23.2406 56.146 25.678C56.2673 28.3154 56.2915 29.1048 56.2915 35.781C56.2915 42.4572 56.2673 43.2466 56.146 45.884C56.0349 48.3214 55.6267 49.6462 55.2855 50.5266C54.8308 51.6938 54.2893 52.5266 53.4144 53.4002C52.5394 54.2738 51.7049 54.8158 50.537 55.2702C49.6565 55.6134 48.3305 56.0194 45.8916 56.1302C43.2549 56.2514 42.4628 56.2756 35.7826 56.2756C29.1024 56.2756 28.3125 56.2514 25.6765 56.1302ZM25.4694 10.9322C22.8064 11.0534 20.9867 11.4754 19.3976 12.0934C17.7518 12.7316 16.3585 13.5878 14.9663 14.977C13.5741 16.3662 12.7195 17.7608 12.081 19.4056C11.4626 20.9948 11.0403 22.8124 10.9191 25.4738C10.7958 28.1394 10.7676 28.9916 10.7676 35.7808C10.7676 42.57 10.7958 43.4222 10.9191 46.0878C11.0403 48.7494 11.4626 50.5668 12.081 52.156C12.7195 53.7998 13.5743 55.196 14.9663 56.5846C16.3583 57.9732 17.7518 58.8282 19.3976 59.4682C20.9897 60.0862 22.8064 60.5082 25.4694 60.6294C28.138 60.7506 28.9893 60.7808 35.7826 60.7808C42.5759 60.7808 43.4286 60.7526 46.0958 60.6294C48.759 60.5082 50.5774 60.0862 52.1676 59.4682C53.8124 58.8282 55.2066 57.9738 56.5989 56.5846C57.9911 55.1954 58.8438 53.7998 59.4842 52.156C60.1026 50.5668 60.5268 48.7492 60.6461 46.0878C60.7674 43.4202 60.7956 42.57 60.7956 35.7808C60.7956 28.9916 60.7674 28.1394 60.6461 25.4738C60.5248 22.8122 60.1026 20.9938 59.4842 19.4056C58.8438 17.7618 57.9889 16.3684 56.5989 14.977C55.2088 13.5856 53.8124 12.7316 52.1696 12.0934C50.5775 11.4754 48.7588 11.0514 46.0978 10.9322C43.4306 10.811 42.5779 10.7808 35.7846 10.7808C28.9913 10.7808 28.138 10.809 25.4694 10.9322Z" fill="url(#paint0_radial_7092_54471)" />
-                            <path d="M27.4456 35.7808C27.4456 31.1786 31.1776 27.4468 35.7826 27.4468C40.3875 27.4468 44.1216 31.1786 44.1216 35.7808C44.1216 40.383 40.3875 44.1148 35.7826 44.1148C31.1776 44.1148 27.4456 40.383 27.4456 35.7808ZM22.9377 35.7808C22.9377 42.8708 28.6883 48.618 35.7826 48.618C42.8768 48.618 48.6275 42.8708 48.6275 35.7808C48.6275 28.6908 42.8768 22.9436 35.7826 22.9436C28.6883 22.9436 22.9377 28.6908 22.9377 35.7808ZM46.1342 22.4346C46.1339 23.0279 46.3098 23.608 46.6394 24.1015C46.9691 24.595 47.4377 24.9797 47.9861 25.2069C48.5346 25.4342 49.1381 25.4939 49.7204 25.3784C50.3028 25.2628 50.8378 24.9773 51.2577 24.5579C51.6777 24.1385 51.9638 23.6041 52.0799 23.0222C52.1959 22.4403 52.1367 21.8371 51.9097 21.2888C51.6828 20.7406 51.2982 20.2719 50.8047 19.942C50.3112 19.6122 49.7309 19.436 49.1372 19.4358H49.136C48.3402 19.4361 47.5771 19.7522 47.0142 20.3144C46.4514 20.8767 46.1349 21.6392 46.1342 22.4346ZM25.6765 56.1302C23.2377 56.0192 21.9121 55.6132 21.0311 55.2702C19.8632 54.8158 19.0299 54.2746 18.1538 53.4002C17.2777 52.5258 16.7354 51.6938 16.2827 50.5266C15.9393 49.6466 15.533 48.3214 15.4222 45.884C15.3009 43.2488 15.2767 42.4572 15.2767 35.781C15.2767 29.1048 15.3029 28.3154 15.4222 25.678C15.5332 23.2406 15.9425 21.918 16.2827 21.0354C16.7374 19.8682 17.2789 19.0354 18.1538 18.1598C19.0287 17.2842 19.8612 16.7422 21.0311 16.2898C21.9117 15.9466 23.2377 15.5406 25.6765 15.4298C28.3133 15.3086 29.1054 15.2844 35.7826 15.2844C42.4598 15.2844 43.2527 15.3106 45.8916 15.4298C48.3305 15.5408 49.6539 15.9498 50.537 16.2898C51.7049 16.7422 52.5382 17.2854 53.4144 18.1598C54.2905 19.0342 54.8308 19.8682 55.2855 21.0354C55.6289 21.9154 56.0351 23.2406 56.146 25.678C56.2673 28.3154 56.2915 29.1048 56.2915 35.781C56.2915 42.4572 56.2673 43.2466 56.146 45.884C56.0349 48.3214 55.6267 49.6462 55.2855 50.5266C54.8308 51.6938 54.2893 52.5266 53.4144 53.4002C52.5394 54.2738 51.7049 54.8158 50.537 55.2702C49.6565 55.6134 48.3305 56.0194 45.8916 56.1302C43.2549 56.2514 42.4628 56.2756 35.7826 56.2756C29.1024 56.2756 28.3125 56.2514 25.6765 56.1302ZM25.4694 10.9322C22.8064 11.0534 20.9867 11.4754 19.3976 12.0934C17.7518 12.7316 16.3585 13.5878 14.9663 14.977C13.5741 16.3662 12.7195 17.7608 12.081 19.4056C11.4626 20.9948 11.0403 22.8124 10.9191 25.4738C10.7958 28.1394 10.7676 28.9916 10.7676 35.7808C10.7676 42.57 10.7958 43.4222 10.9191 46.0878C11.0403 48.7494 11.4626 50.5668 12.081 52.156C12.7195 53.7998 13.5743 55.196 14.9663 56.5846C16.3583 57.9732 17.7518 58.8282 19.3976 59.4682C20.9897 60.0862 22.8064 60.5082 25.4694 60.6294C28.138 60.7506 28.9893 60.7808 35.7826 60.7808C42.5759 60.7808 43.4286 60.7526 46.0958 60.6294C48.759 60.5082 50.5774 60.0862 52.1676 59.4682C53.8124 58.8282 55.2066 57.9738 56.5989 56.5846C57.9911 55.1954 58.8438 53.7998 59.4842 52.156C60.1026 50.5668 60.5268 48.7492 60.6461 46.0878C60.7674 43.4202 60.7956 42.57 60.7956 35.7808C60.7956 28.9916 60.7674 28.1394 60.6461 25.4738C60.5248 22.8122 60.1026 20.9938 59.4842 19.4056C58.8438 17.7618 57.9889 16.3684 56.5989 14.977C55.2088 13.5856 53.8124 12.7316 52.1696 12.0934C50.5775 11.4754 48.7588 11.0514 46.0978 10.9322C43.4306 10.811 42.5779 10.7808 35.7846 10.7808C28.9913 10.7808 28.138 10.809 25.4694 10.9322Z" fill="url(#paint1_radial_7092_54471)" />
-                            <defs>
-                                <radialGradient id="paint0_radial_7092_54471" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(17.4144 61.017) scale(65.31 65.2708)">
-                                    <stop offset="0.09" stop-color="#FA8F21" />
-                                    <stop offset="0.78" stop-color="#D82D7E" />
-                                </radialGradient>
-                                <radialGradient id="paint1_radial_7092_54471" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(41.1086 63.257) scale(51.4733 51.4424)">
-                                    <stop offset="0.64" stop-color="#8C3AAA" stop-opacity="0" />
-                                    <stop offset="1" stop-color="#8C3AAA" />
-                                </radialGradient>
-                            </defs>
-                        </svg>
-                    </button>
-                </a>
+        nextBtn.addEventListener('click', () => {
+            scrollAmount += cardWidth;
+            
+            // If the end of the carousel is reached, jump to the first card
+            if (scrollAmount >= totalCards * cardWidth) {
+                scrollAmount = 0; // Reset to the start
+            }
+            
+            carousel.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
 
-                <!-- Link Youtube -->
-                <a href="https://www.youtube.com/@bethlehemkutisari4941" class="text-blue-600 hover:text-blue-800">
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
-                        <svg class="rounded-md transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 72 72" fill="none">
-                            <path d="M61.1026 23.7185C60.5048 21.471 58.7363 19.6981 56.4863 19.0904C52.4181 18 36.0951 18 36.0951 18C36.0951 18 19.7805 18 15.7039 19.0904C13.4622 19.6897 11.6937 21.4627 11.0876 23.7185C10 27.7971 10 36.3124 10 36.3124C10 36.3124 10 44.8276 11.0876 48.9063C11.6854 51.1537 13.4539 52.9267 15.7039 53.5343C19.7805 54.6247 36.0951 54.6247 36.0951 54.6247C36.0951 54.6247 52.4181 54.6247 56.4863 53.5343C58.728 52.935 60.4965 51.162 61.1026 48.9063C62.1902 44.8276 62.1902 36.3124 62.1902 36.3124C62.1902 36.3124 62.1902 27.7971 61.1026 23.7185Z" fill="#FF3000" />
-                            <path d="M30.8811 44.1617L44.4392 36.3124L30.8811 28.463V44.1617Z" fill="white" />
-                        </svg>
-                    </button>
-                </a>
+        prevBtn.addEventListener('click', () => {
+            scrollAmount -= cardWidth;
+            
+            // If the beginning of the carousel is reached, jump to the last card
+            if (scrollAmount < 0) {
+                scrollAmount = (totalCards - visibleCards) * cardWidth; // Jump to last visible card
+            }
+            
+            carousel.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 
-                <!-- Link Whatsapp -->
-                <a href="https://wa.me/+6287703370660" class="text-green-600 hover:text-green-800">
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white shadow-md shadow-gray-200 group transition-all duration-300">
-                        <svg class="rounded-md transition-all duration-300 group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28">
-                            <path fill="#25D366" d="M16 0C7.164 0 0 7.163 0 16c0 2.826.737 5.495 2.023 7.825L.014 32l8.348-2.018A15.936 15.936 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.736 23.457c-.337.948-1.7 1.676-2.396 1.798-.646.104-1.477.15-2.382-.153-.554-.175-1.26-.41-2.176-.801-3.835-1.58-6.335-5.482-6.529-5.74-.193-.257-1.563-2.072-1.563-3.956s.988-2.803 1.339-3.188c.35-.385.767-.482 1.017-.482s.508.002.732.012c.238.01.557-.09.872.665.337.783 1.09 2.666 1.188 2.857.096.192.159.417.032.674-.127.257-.191.416-.382.64-.192.223-.406.497-.582.669-.192.192-.392.402-.168.787.224.385.995 1.648 2.136 2.669 1.47 1.313 2.705 1.716 3.094 1.909.386.192.615.16.842-.095.23-.256.964-1.121 1.222-1.503.256-.385.512-.32.867-.192.353.127 2.231 1.053 2.615 1.244.385.192.641.288.737.448.096.16.096.954-.24 1.902z" />
-                        </svg>
-                    </button>
-                </a>
 
-            </div>
 
-            <p class="text-gray-600">Untuk informasi lebih lanjut, hubungi kami di: <a href="mailto:samuel.gppskutisari@gmail.com" class="text-blue-600 underline">samuel.gppskutisari@gmail.com</a></p>
-        </div>
-    </section>
-
-    <!-- Maps Section -->
-    <section id="maps" class="py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold text-black mb-8 fade-in-up-on-scroll">Lokasi Kami</h2>
-            <div class="flex justify-center">
+   <!-- Maps Section -->
+    <section id="maps" class="py-20 bg-gray-100">
+        <div class="container mx-auto max-w-5xl text-center p-6 rounded-lg shadow-lg bg-white">
+            <h2 class="text-4xl font-bold text-black mb-6 fade-in-up-on-scroll">Lokasi Kami</h2>
+            <div class="flex justify-center mb-6">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.117285116905!2d112.74864667476119!3d-7.340723992667856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbb282c280c5%3A0x20733d589d61a51a!2sGPPS%20Bethlehem%20Kutisari%20Surabaya!5e0!3m2!1sen!2sid!4v1727332708845!5m2!1sen!2sid"
                     width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
+
+
     @endsection
