@@ -25,6 +25,12 @@
           <li>
             <a href="{{ route('manajemenJemaat.index') }}" class="block py-2 px-3 rounded {{ Request::is('manajemen_jemaat.index') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">Manajemen Jemaat coba</a>
           </li>
+          <li>
+            <a href="{{ route('manajemen_faq.index') }}" class="block py-2 px-3 rounded {{ Request::is('manajemen_faq.index') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">Manajemen Faq</a>
+          </li>
+          <li>
+            <a href="{{ route('manajemen_liveStreaming.index') }}" class="block py-2 px-3 rounded {{ Request::is('manajemen_liveStreaming.index') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">Manajemen Live Streaming</a>
+          </li>
           {{-- <li>
             <a href="{{ route('faq') }}" class="block py-2 px-3 rounded {{ Request::is('faq') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">FAQ</a>
           </li> --}}

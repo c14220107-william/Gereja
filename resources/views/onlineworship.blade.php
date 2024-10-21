@@ -259,12 +259,20 @@
 </head>
 
 <body>
-    <div class="main-banner flex flex-col items-center bg-gray-100 p-6">
+
+    @if ($youtubeLink)
+        <div class="main-banner flex flex-col items-center bg-gray-100 p-6">
         <h2 class="text-6xl font-serif font-extrabold text-center -mt-6 mb-4">Live Streaming</h2>
-        <iframe height="400" src="https://www.youtube.com/embed/6stlCkUDG_s?si=wM4-VVX4O_ucSuZL" width="100%" style="max-width: 800px;" allowfullscreen>
+        <iframe height="400" src="{{ $youtubeLink->url }}" width="100%" style="max-width: 800px;" allowfullscreen>
         </iframe>
         <p class="text-xl text-center mt-3 text-gray-600">Selamat beribadah, Tuhan Yesus memberkati!</p>
     </div>
+    @else
+        <p>Belum Ada</p>
+        
+    @endif
+    
+   
 
     <!-- SERMON LIST SECTION -->
     <div class="sermons">
