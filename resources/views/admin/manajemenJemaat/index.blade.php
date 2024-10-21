@@ -58,7 +58,8 @@
                     <td class="py-2 px-4 border-b">{{ $item1->kecamatan_anak }}</td>
                     <td class="py-2 px-4 border-b">
                         @if($item1->pas_foto_anak)
-                            <img src="{{ asset('storage/' . $item1->pas_foto_anak) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover">
+                            <a href="{{ asset('storage/' . $item1->pas_foto_anak) }}" target="_blank"><img src="{{ asset('storage/' . $item1->pas_foto_anak) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover"> </a>
+                            {{-- <img src="{{ asset('storage/' . $item1->pas_foto_anak) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover"> --}}
                         @else
                             <p>Belum ada foto</p>
                         @endif
@@ -317,7 +318,7 @@
 
                     <td class="py-2 px-4 border-b">
                         @if($item3->file_foto_pemohon_baptis)
-                            <img src="{{ asset('storage/' . $item3->file_foto_pemohon_baptis) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover">
+                        <a href="{{ asset('storage/' . $item3->file_foto_pemohon_baptis) }}" target="_blank"><img src="{{ asset('storage/' . $item3->file_foto_pemohon_baptis) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover"> </a>
                         @else
                             <p>Belum ada foto</p>
                         @endif
