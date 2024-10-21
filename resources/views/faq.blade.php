@@ -138,8 +138,8 @@
 
 <section id="contact-form" class="py-4 bg-gray-100 fade-in -mt-12">
     <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-2">Kritik Dan Saran</h2>
-        <p class="mb-4">Silakan isi formulir di bawah ini untuk mengajukan kritik dan saran kepada kami.</p>
+        <h2 class="text-4xl font-bold mb-2">Ajukan Pertanyaan</h2>
+        <p class="mb-4">Silakan isi formulir di bawah ini untuk mengajukan pertanyaan kepada kami.</p>
 
         <form action="{{ route('kritikSaran.store')}}" method="POST" class="max-w-md mx-auto bg-white shadow-md rounded-lg p-8">
             @csrf
@@ -147,13 +147,13 @@
             <!-- Input Nama -->
             <div class="mb-4" id="nameField">
                 <label for="name" class="block text-left text-gray-700 font-semibold mb-2">Nama Lengkap</label>
-                <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" placeholder="Masukkan nama lengkap">
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" placeholder="Masukkan Nama Lengkap">
             </div>
 
             <!-- Input Pertanyaan -->
             <div class="mb-4">
-                <label for="kritikSaran" class="block text-left text-gray-700 font-semibold mb-2">Kritik / Saran</label>
-                <textarea id="kritikSaran" name="kritikSaran" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis Kritik / Saran Anda di sini"></textarea>
+                <label for="kritikSaran" class="block text-left text-gray-700 font-semibold mb-2">Pertanyaan</label>
+                <textarea id="kritikSaran" name="kritikSaran" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis Pertanyaan Anda di sini"></textarea>
             </div>
 
             <!-- Checkbox untuk sembunyikan nama -->
