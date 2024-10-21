@@ -49,15 +49,7 @@
         <label for="lama_ibadah_anak" class="block font-medium text-gray-700">Lama Ibadah:</label>
         <input type="text" id="lama_ibadah_anak" name="lama_ibadah_anak" value="{{ $formPenyerahanAnak->lama_ibadah_anak }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
-    <div>
-        <label for="pas_foto_anak" class="block font-medium text-gray-700">Pas Foto:</label>
-        <input type="file" id="pas_foto_anak" name="pas_foto_anak" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
-        @if($formPenyerahanAnak->pas_foto_anak)
-            <img src="{{ asset('storage/' . $formPenyerahanAnak->pas_foto_anak) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover mt-2">
-        @else
-            <p class="mt-2">Belum ada foto</p>
-        @endif
-    </div>
+    
     <div>
         <label for="tempat_asal_dibaptis" class="block font-medium text-gray-700">Tempat Asal Dibaptis:</label>
         <input type="text" id="tempat_asal_dibaptis" name="tempat_asal_dibaptis" value="{{ $formPenyerahanAnak->tempat_asal_dibaptis }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
@@ -81,6 +73,16 @@
     <div>
         <label for="tanggal_akte_pernikahan" class="block font-medium text-gray-700">Tanggal Akte Pernikahan:</label>
         <input type="date" id="tanggal_akte_pernikahan" name="tanggal_akte_pernikahan" value="{{ $formPenyerahanAnak->tanggal_akte_pernikahan }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+    </div>
+    <div>
+        <label for="pas_foto_anak" class="block font-medium text-gray-700">Pas Foto:</label>
+        
+        <input type="file" id="pas_foto_anak" name="pas_foto_anak" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
+        @if($formPenyerahanAnak->pas_foto_anak)
+            <img src="{{ asset('storage/' . $formPenyerahanAnak->pas_foto_anak) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover mt-2">
+        @else
+            <p class="mt-2">Belum ada foto</p>
+        @endif
     </div>
     <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Update Data</button>
 </form>

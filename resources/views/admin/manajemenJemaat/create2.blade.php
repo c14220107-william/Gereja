@@ -18,8 +18,21 @@
 
     <div>
         <label for="pukul_pemberkatan" class="block font-medium text-gray-700">Pukul Pemberkatan:</label>
-        <input type="text" id="pukul_pemberkatan" name="pukul_pemberkatan" placeholder="Pukul Pemberkatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+        <input type="time" id="pukul_pemberkatan" name="pukul_pemberkatan" placeholder="Pukul Pemberkatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+    
+
+    <div>
+        <label for="permohonan_pemberkatan1" class="block font-medium text-gray-700">Liturgi (Acara Kebaktian):</label>
+        <input type="checkbox" id="permohonan_pemberkatan1" name="permohonan_pemberkatan1" placeholder="Pukul Pemberkatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+    </div>
+
+    <div>
+        <label for="permohonan_pemberkatan2" class="block font-medium text-gray-700">Pemberkatan Saja:</label>
+        <input type="checkbox" id="permohonan_pemberkatan2" name="permohonan_pemberkatan2" placeholder="Pukul Pemberkatan" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
+    </div>
+
+
 
     <div>
         <label for="nama_calon_mempelai_pria" class="block font-medium text-gray-700">Nama Calon Mempelai Pria:</label>
