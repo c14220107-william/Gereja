@@ -110,7 +110,6 @@
         <input type="text" id="nomor_telp_orangtua_calon_mempelai_pria" name="nomor_telp_orangtua_calon_mempelai_pria" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
 
-    <!-- Persetujuan Orang Tua Calon Mempelai Pria -->
     <div>
         <label for="persetujuan_orangtua_calon_mempelai_pria" class="block font-medium text-gray-700">
             Persetujuan Orang Tua Calon Mempelai Pria:
@@ -153,70 +152,87 @@
 
     <!-- Calon Mempelai Wanita Section -->
     <h2 class="text-xl font-semibold mt-8">Data Calon Mempelai Wanita</h2>
+
     <div>
         <label for="nama_calon_mempelai_wanita" class="block font-medium text-gray-700">Nama Calon Mempelai Wanita:</label>
         <input type="text" id="nama_calon_mempelai_wanita" name="nama_calon_mempelai_wanita" value="{{ $formPernikahan->nama_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="nomor_telp_calon_mempelai_wanita" class="block font-medium text-gray-700">Nomor Telepon Calon Mempelai Wanita:</label>
         <input type="text" id="nomor_telp_calon_mempelai_wanita" name="nomor_telp_calon_mempelai_wanita" value="{{ $formPernikahan->nomor_telp_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="alamat_calon_mempelai_wanita" class="block font-medium text-gray-700">Alamat Calon Mempelai Wanita:</label>
         <input type="text" id="alamat_calon_mempelai_wanita" name="alamat_calon_mempelai_wanita" value="{{ $formPernikahan->alamat_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="tempat_lahir_calon_mempelai_wanita" class="block font-medium text-gray-700">Tempat Lahir Calon Mempelai Wanita:</label>
         <input type="text" id="tempat_lahir_calon_mempelai_wanita" name="tempat_lahir_calon_mempelai_wanita" value="{{ $formPernikahan->tempat_lahir_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="tanggal_lahir_calon_mempelai_wanita" class="block font-medium text-gray-700">Tanggal Lahir Calon Mempelai Wanita:</label>
         <input type="date" id="tanggal_lahir_calon_mempelai_wanita" name="tanggal_lahir_calon_mempelai_wanita" value="{{ $formPernikahan->tanggal_lahir_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="nomor_ktp_calon_mempelai_wanita" class="block font-medium text-gray-700">Nomor KTP Calon Mempelai Wanita:</label>
         <input type="text" id="nomor_ktp_calon_mempelai_wanita" name="nomor_ktp_calon_mempelai_wanita" value="{{ $formPernikahan->nomor_ktp_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="nomor_surat_baptis_calon_mempelai_wanita" class="block font-medium text-gray-700">Nomor Surat Baptis Calon Mempelai Wanita:</label>
         <input type="text" id="nomor_surat_baptis_calon_mempelai_wanita" name="nomor_surat_baptis_calon_mempelai_wanita" value="{{ $formPernikahan->nomor_surat_baptis_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="asal_gereja_baptis_calon_mempelai_wanita" class="block font-medium text-gray-700">Asal Gereja Baptis Calon Mempelai Wanita:</label>
         <input type="text" id="asal_gereja_baptis_calon_mempelai_wanita" name="asal_gereja_baptis_calon_mempelai_wanita" value="{{ $formPernikahan->asal_gereja_baptis_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="gereja_sekarang_calon_mempelai_wanita" class="block font-medium text-gray-700">Gereja Sekarang Calon Mempelai Wanita:</label>
         <input type="text" id="gereja_sekarang_calon_mempelai_wanita" name="gereja_sekarang_calon_mempelai_wanita" value="{{ $formPernikahan->gereja_sekarang_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="pekerjaan_calon_mempelai_wanita" class="block font-medium text-gray-700">Pekerjaan Calon Mempelai Wanita:</label>
         <input type="text" id="pekerjaan_calon_mempelai_wanita" name="pekerjaan_calon_mempelai_wanita" value="{{ $formPernikahan->gereja_sekarang_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="alamat_pekerjaan_calon_mempelai_wanita" class="block font-medium text-gray-700">Alamat Pekerjaan Calon Mempelai Wanita:</label>
         <input type="text" id="alamat_pekerjaan_calon_mempelai_wanita" name="alamat_pekerjaan_calon_mempelai_wanita" value="{{ $formPernikahan->gereja_sekarang_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="telp_pekerjaan_calon_mempelai_wanita" class="block font-medium text-gray-700">Nomor Telepon Pekerjaan Calon Mempelai Wanita:</label>
         <input type="text" id="telp_pekerjaan_calon_mempelai_wanita" name="telp_pekerjaan_calon_mempelai_wanita" value="{{ $formPernikahan->gereja_sekarang_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="nama_ayah_calon_mempelai_wanita" class="block font-medium text-gray-700">Nama Ayah Calon Mempelai Wanita:</label>
         <input type="text" id="nama_ayah_calon_mempelai_wanita" name="nama_ayah_calon_mempelai_wanita" value="{{ $formPernikahan->gereja_sekarang_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="nama_ibu_calon_mempelai_wanita" class="block font-medium text-gray-700">Nama Ibu Calon Mempelai Wanita:</label>
         <input type="text" id="nama_ibu_calon_mempelai_wanita" name="nama_ibu_calon_mempelai_wanita" value="{{ $formPernikahan->gereja_sekarang_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="alamat_orangtua_calon_mempelai_wanita" class="block font-medium text-gray-700">Alamat Orang Tua Calon Mempelai Wanita:</label>
         <input type="text" id="alamat_orangtua_calon_mempelai_wanita" name="alamat_orangtua_calon_mempelai_wanita" value="{{ $formPernikahan->gereja_sekarang_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="nomor_telp_orangtua_calon_mempelai_wanita" class="block font-medium text-gray-700">Nomor Telepon Orang Tua Calon Mempelai Wanita:</label>
         <input type="text" id="nomor_telp_orangtua_calon_mempelai_wanita" name="nomor_telp_orangtua_calon_mempelai_wanita" value="{{ $formPernikahan->gereja_sekarang_calon_mempelai_wanita }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
+
     <div>
         <label for="persetujuan_orangtua_calon_mempelai_wanita" class="block font-medium text-gray-700">
             Persetujuan Orang Tua Calon Mempelai Wanita:
@@ -229,6 +245,7 @@
             class="mt-1 rounded border-gray-300 shadow-sm"
             {{ $formPernikahan->persetujuan_orangtua_calon_mempelai_wanita ? 'checked' : '' }}>
     </div>
+
     <div>
         <label for="riwayat_calon_mempelai_wanita" class="block font-medium text-gray-700">
             Riwayat Pernikahan Calon Mempelai Wanita:
@@ -241,6 +258,7 @@
             class="mt-1 rounded border-gray-300 shadow-sm"
             {{ $formPernikahan->riwayat_calon_mempelai_wanita ? 'checked' : '' }}>
     </div>
+
     <div>
         <label for="status_calon_mempelai_wanita" class="block font-medium text-gray-700">
             Status Calon Mempelai Wanita:
@@ -253,6 +271,7 @@
             class="mt-1 rounded border-gray-300 shadow-sm"
             {{ $formPernikahan->status_calon_mempelai_wanita ? 'checked' : '' }}>
     </div>
+
     <!-- Surat Sipil-->
     <div>
         <label for="cek_surat_sipil" class="inline-flex items-center">
