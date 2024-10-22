@@ -275,13 +275,10 @@
    
 
     <!-- SERMON LIST SECTION -->
-    <div class="sermons">
-        <h2>
-            Sermons
+    <div class="sermons ">
+        <h2> 
+            Ibadah Lainnya
         </h2>
-        <p>
-            Explore our extensive library of sermons.
-        </p>
         <div class="sermon-list">
             <div class="sermon-item">
                 <iframe class="small-video" src="https://www.youtube.com/embed/NdzpCeRC9K8?si=sX1c5bOuImnE2akn" allowfullscreen></iframe>
