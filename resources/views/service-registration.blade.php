@@ -25,13 +25,7 @@
             <button id="openBaptismRequestModal" class="mt-4 bg-white text-yellow-600 px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-white transition duration-300">Open Form</button>
         </section>
 
-        <section class="bg-gray-100 py-16">
-            <div class="container mx-auto text-center">
-                <h1 class="text-4xl font-extrabold mb-4">Pendaftaran Layanan Gereja</h1>
-                <p class="text-lg text-gray-600">Daftarkan layanan anak-anak, pernikahan, dan baptisan dengan mudah.</p>
-            </div>
-        </section>
-
+        
 
 <!-- Modal for Child Dedication -->
 <div id="childDedicationModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
