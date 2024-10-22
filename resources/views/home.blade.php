@@ -188,7 +188,7 @@
                 <p class="text-4xl font-semibold mb-2" style="color: #4A5657;">
                     <span id="motto-text"></span>
                 </p>
-                <p class="text-lg text-justify" 
+                <p class="text-lg text-center" 
                 style="">
                     GPPS Bethlehem Kutisari memiliki jemaat yang saling memperhatikan, mengasihi, dan melayani 
                     dalam rangka menjadi kesatuan jemaat yang kuat dan tidak tergoncangkan. Motto ini diharap 
@@ -212,7 +212,7 @@
                         style="background-color: #FFFFFF; border-radius: 20px; width: 100%; max-width: 300px;">
                         <div class="text-center">
                             <h3 class="text-2xl font-bold mb-2" style="color: #1C2B2D;">Visi</h3>
-                            <p class="text-lg text-justify" style="color: #4A5657;">
+                            <p class="text-lg text-center" style="color: #4A5657;">
                                 Menjadi jemaat yang kuat dan tidak tergoncangkan.
                             </p>
                         </div>
@@ -223,7 +223,7 @@
                         style="background-color: #FFFFFF; border-radius: 20px; width: 100%; max-width: 300px;">
                         <div class="text-center">
                             <h3 class="text-2xl font-bold mb-2" style="color: #1C2B2D;">Misi</h3>
-                            <p class="text-lg text-justify" style="color: #4A5657;">
+                            <p class="text-lg text-center" style="color: #4A5657;">
                                 Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial, 
                                 dalam kehidupan pribadi maupun komunal (keluarga dan gereja).
                             </p>
