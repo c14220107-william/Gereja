@@ -27,7 +27,7 @@
 
         
 
-<!-- Modal for Child Dedication -->
+
 <div id="childDedicationModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
     <div class="modal-content bg-white rounded-lg p-6 w-full max-w-[40rem] max-h-[80vh] overflow-y-auto">
         <span class="close text-gray-600 cursor-pointer float-right text-xl font-bold" id="closeChildDedicationModal">&times;</span>

@@ -113,9 +113,9 @@ Route::post('/faq', [KritikSaranController::class, 'store'])->name('kritikSaran.
 
 
 Route::post('/service-registration', [Form_Controller::class, 'store'])->name('Form.store');
-Route::post('admin/manajemenJemaat/create1', [Form_Controller::class, 'storefromCreate'])->name('Form.store');
-Route::post('admin/manajemenJemaat/create2', [Form_Controller::class, 'storefromCreate'])->name('Form.store');
-Route::post('admin/manajemenJemaat/create3', [Form_Controller::class, 'storefromCreate'])->name('Form.store');
+Route::post('admin/manajemenJemaat/create1', [Form_Controller::class, 'storefromCreate'])->name('Form1.store');
+Route::post('admin/manajemenJemaat/create2', [Form_Controller::class, 'storefromCreate'])->name('Form2.store');
+Route::post('admin/manajemenJemaat/create3', [Form_Controller::class, 'storefromCreate'])->name('Form3.store');
 
 
 // Route::get('/admin/manajemenJemaat', [Form_Controller::class, 'index'])->name('manajemenJemaat.index');
