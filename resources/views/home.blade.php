@@ -244,22 +244,21 @@
 
     <!-- JavaScript untuk Looping Typing Effect -->
     <script>
-        const text = "Care Love Serve";
+        const text = "are Love Serve";
         let index = 0;
         let isDeleting = false;
         const speed = 200; // Kecepatan mengetik (ms)
-        const eraseSpeed = 150; // Kecepatan menghapus (ms)
-        const delayBetweenLoops = 9000; // Jeda sebelum mengetik ulang (ms)
+        const eraseSpeed = 200; // Kecepatan menghapus (ms)
+        const delayBetweenLoops = 3000; // Jeda sebelum mengetik ulang (ms)
         const pauseAtEnd = 3000; // Jeda setelah teks selesai (ms)
 
         function typeWriter() {
             const mottoText = document.getElementById("motto-text");
-
             if (!isDeleting && index <= text.length) {
-                mottoText.innerHTML = text.substring(0, index++);
+                mottoText.innerHTML = "C" + text.substring(0, index++);
                 setTimeout(typeWriter, speed);
             } else if (isDeleting && index >= 0) {
-                mottoText.innerHTML = text.substring(0, index--);
+                mottoText.innerHTML = "C" + text.substring(0, index--);
                 setTimeout(typeWriter, eraseSpeed);
             }
 
