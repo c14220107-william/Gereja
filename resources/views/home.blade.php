@@ -100,7 +100,14 @@
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
+
+    .swiper-wrapper {
+    width: 600px;
+    height: 300px;
+    }
+
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 <!-- JavaScript untuk animasi saat scroll -->
 <script>
@@ -242,7 +249,7 @@
         let isDeleting = false;
         const speed = 200; // Kecepatan mengetik (ms)
         const eraseSpeed = 150; // Kecepatan menghapus (ms)
-        const delayBetweenLoops = 2000; // Jeda sebelum mengetik ulang (ms)
+        const delayBetweenLoops = 9000; // Jeda sebelum mengetik ulang (ms)
         const pauseAtEnd = 3000; // Jeda setelah teks selesai (ms)
 
         function typeWriter() {
@@ -271,117 +278,101 @@
     </script>
     
     <!-- Seksi Ibadah Sepekan -->
-    <section id="sunday-services" class="py-20" style="background-color: #F4F4F4;">
+    <section id="sunday-services" class="py-10" style="background-color: #F4F4F4;">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-8" style="color: #1C2B2D;">Ibadah Sepekan</h2>
 
-            <div class="relative">
-                <!-- Tombol Kiri -->
-                <button id="prev-btn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full shadow-md">
-                    &larr;
-                </button>
-
-                <!-- Carousel Container -->
-                <div id="carousel" class="flex overflow-hidden gap-6">
+            <div class="relative swiper">
+                <!-- swiper Container -->
+                <div class="flex items-center swiper-wrapper">           
+                     
                     <!-- Kartu 1 -->
-                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
                         <h3 class="text-xl font-bold mb-2">Ibadah Umum</h3>
                         <p class="text-gray-700">Minggu | Pukul 07:45 - 09:30</p>
                         <p class="text-sm text-gray-500">Bergabunglah dalam ibadah utama dengan pujian dan khotbah yang menginspirasi.</p>
                     </div>
-
+                     
+                     
                     <!-- Kartu 2 -->
-                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
                         <h3 class="text-xl font-bold mb-2">Ibadah Kaum Wanita</h3>
                         <p class="text-gray-700">Selasa | Pukul 16:30 - 18:00</p>
                         <p class="text-sm text-gray-500">Ibadah khusus wanita dengan suasana sukacita dan pujian menyentuh hati.</p>
                     </div>
 
-                    <!-- Kartu 3 -->
-                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                    <!-- Kartu 3 -->                 
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
                         <h3 class="text-xl font-bold mb-2">Youth Commcell</h3>
                         <p class="text-gray-700">Rabu | Pukul 19:00 - 21:00</p>
                         <p class="text-sm text-gray-500">Komunitas muda dalam ibadah malam yang menyenangkan dan penuh semangat.</p>
                     </div>
-
+                     
+                     
                     <!-- Kartu 4 -->
-                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
                         <h3 class="text-xl font-bold mb-2">Doa Malam</h3>
                         <p class="text-gray-700">Kamis | Pukul 18:30 - 20:00</p>
                         <p class="text-sm text-gray-500">Akhiri hari dengan doa malam yang penuh damai dan refleksi rohani.</p>
                     </div>
-
+                     
+                      
                     <!-- Kartu 5 -->
-                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
                         <h3 class="text-xl font-bold mb-2">Doa Fajar</h3>
                         <p class="text-gray-700">Sabtu | Pukul 05:30 - 06:30</p>
                         <p class="text-sm text-gray-500">Mulailah pagi Anda dengan doa bersama untuk mendapatkan kekuatan dan berkat.</p>
                     </div>
-
+                     
+                     
                     <!-- Kartu 6 -->
-                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
                         <h3 class="text-xl font-bold mb-2">Sekolah Minggu</h3>
                         <p class="text-gray-700">Minggu | Pukul 08:00 - 09:30</p>
                         <p class="text-sm text-gray-500">Ibadah anak-anak yang menyenangkan untuk menumbuhkan iman sejak dini.</p>
                     </div>
-
+                     
+                     
                     <!-- Kartu 7 -->
-                    <div class="min-w-[300px] p-8 bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
                         <h3 class="text-xl font-bold mb-2">Ibadah Youth</h3>
                         <p class="text-gray-700">Minggu | Pukul 10:30 - 12:00</p>
                         <p class="text-sm text-gray-500">Bergabunglah dalam ibadah youth untuk bertumbuh dalam iman dan komunitas.</p>
-                    </div>
+                    </div>      
                 </div>
 
-                <!-- Tombol Kanan -->
-                <button id="next-btn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full shadow-md">
-                    &rarr;
-                </button>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    
-    <!-- JavaScript Carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper Javascript -->
     <script>
-        const carousel = document.getElementById('carousel');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
+        new Swiper('.swiper', {
+        loop: true,
 
-        const cardWidth = 300; // Width of each card
-        const totalCards = carousel.children.length; // Total number of cards
-        const visibleCards = 3; // Number of cards visible at a time
-        let scrollAmount = 0; // Current scroll amount
+        // pagination bullets
+        pagination: {
+            el: '.swiper-pagination',
+        },
 
-        nextBtn.addEventListener('click', () => {
-            scrollAmount += cardWidth;
-            
-            // If the end of the carousel is reached, jump to the first card
-            if (scrollAmount >= totalCards * cardWidth) {
-                scrollAmount = 0; // Reset to the start
-            }
-            
-            carousel.scrollTo({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        });
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
 
-        prevBtn.addEventListener('click', () => {
-            scrollAmount -= cardWidth;
-            
-            // If the beginning of the carousel is reached, jump to the last card
-            if (scrollAmount < 0) {
-                scrollAmount = (totalCards - visibleCards) * cardWidth; // Jump to last visible card
-            }
-            
-            carousel.scrollTo({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
+        autoplay: {
+        delay: 4000,
+        }
+        
         });
     </script>
-
+    
 
 
    <!-- Maps Section -->
