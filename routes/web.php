@@ -54,7 +54,7 @@ Route::get('/admin/tes', [PageController::class, 'tes'])->name('tes');
 //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    
+
 // });
 //admin
 Route::get('/admin/login', [ControllersAdminAuthController::class, 'showLoginForm'])->name('admin.login');
@@ -68,25 +68,27 @@ Route::post('/admin/login', [ControllersAdminAuthController::class, 'login']);
 Route::get('/admin/register', [ControllersAdminAuthController::class, 'showRegistrationForm'])->name('admin.register');
 Route::post('/admin/register', [ControllersAdminAuthController::class, 'register'])->name('admin.register.submit');
 
-Route::middleware('admin')->group(function() {
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('/admin/manajemenJemaat', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');
-Route::get('/admin/manajemen_faq', [KritikSaranController::class, 'index'])->name('manajemen_faq.index');
-Route::get('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'index'])->name('manajemen_liveStreaming.index');
-Route::post('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'store'])->name('admin.storeYoutubeLink');
+Route::middleware('admin')->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/manajemenJemaat', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');
+    Route::get('/admin/manajemen_faq', [KritikSaranController::class, 'index'])->name('manajemen_faq.index');
+    Route::get('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'index'])->name('manajemen_liveStreaming.index');
+    Route::post('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'store'])->name('admin.storeYoutubeLink');
 
 
 
     // Rute lain untuk manajemen jemaat, pelayanan, dll.
 });
 
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('admin');
-Route::resource('admin/congregation', CongregationController::class)->middleware('admin');
-Route::resource('admin/services', ServiceAdminController::class)->middleware('admin');
-Route::resource('admin/event', EventController::class)->middleware('admin');
-// Route::resource('admin/manajemenJemaat', form_penyerahan_anak_Controller::class)->middleware('admin');
-// Route::resource('admin/manajemenJemaat', form_pernikahan_Controller::class)->middleware('admin');
+Route::prefix('admin')->middleware('admin')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::resource('/congregation', CongregationController::class);
+    Route::resource('/services', ServiceAdminController::class);
+    Route::resource('/event', EventController::class);
+    // Route::resource('admin/manajemenJemaat', form_penyerahan_anak_Controller::class)
+    // Route::resource('admin/manajemenJemaat', form_pernikahan_Controller::class)
+});
 Route::get('/admin/manajemenJemaat/create1', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create1');
 Route::get('/admin/manajemenJemaat/create2', [Form_Controller::class, 'create2'])->name('manajemenJemaat.create2');
 Route::get('/admin/manajemenJemaat/create3', [Form_Controller::class, 'create3'])->name('manajemenJemaat.create3');
@@ -124,4 +126,4 @@ Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.lo
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
