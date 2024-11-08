@@ -157,7 +157,7 @@
             /* Lebar video kecil */
             height: 60%;
             margin: 10px 10px 10px;
-            Jarak antar video kecil border: none;
+            border: none;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
