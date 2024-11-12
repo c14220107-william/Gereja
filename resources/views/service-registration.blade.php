@@ -1,6 +1,14 @@
-    @extends('layouts.app')
+
+ @extends('layouts.app')
 
     @section('content')
+
+    <style>
+    .modal{
+        z-index: 1000;
+    }
+    </style> 
+
     <div class="container mx-auto p-4">
         <h1 class="text-3xl font-bold mb-6">Service Registration</h1>
 

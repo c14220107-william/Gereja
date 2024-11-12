@@ -154,7 +154,6 @@
 
         .small-video {
             width: 97%;
-            /* Lebar video kecil */
             height: 60%;
             margin: 10px 10px 10px;
             border: none;
