@@ -6,7 +6,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <nav class="bg-white border-gray-200 dark:bg-black">
     <div class="max-w-screen-xl flex items-center justify-between p-4">
       <a class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="{{ asset('img/logokutisari.png') }}" class="h-12" alt="GPPS Bethlehem Logo" />

@@ -1,47 +1,32 @@
+<div class="flex h-screen bg-gray-100">
+  <div class="w-64 bg-black text-white flex flex-col">
+    <a href="{{ route('admin.dashboard') }}" class="flex items-center p-4 space-x-3">
+      <img src="{{ asset('img/logokutisari.png') }}" class="h-12" alt="Logo" />
+      <span class="text-xl font-semibold">GPPS Bethlehem</span>
+    </a>
+    
+    <nav class="mt-6">
+      <ul class="space-y-2">
+        <li>
+          <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 rounded-md hover:bg-gray-700 {{ Request::is('/') ? 'bg-blue-700' : '' }}">Dashboard</a>
+        </li>
+        <li>
+          <a href="{{ route('manajemenJemaat.index') }}" class="block px-4 py-2 rounded-md hover:bg-gray-700 {{ Request::is('manajemen_jemaat.index') ? 'bg-blue-700' : '' }}">Manajemen Form</a>
+        </li>
+        <li>
+          <a href="{{ route('manajemen_faq.index') }}" class="block px-4 py-2 rounded-md hover:bg-gray-700 {{ Request::is('manajemen_faq.index') ? 'bg-blue-700' : '' }}">Manajemen FAQ</a>
+        </li>
+        <li>
+          <a href="{{ route('manajemen_liveStreaming.index') }}" class="block px-4 py-2 rounded-md hover:bg-gray-700 {{ Request::is('manajemen_liveStreaming.index') ? 'bg-blue-700' : '' }}">Manajemen Live Streaming</a>
+        </li>
+        <li>
+          <form action="{{ route('admin.logout') }}" method="POST" class="w-full">
+            @csrf
+            <button type="submit" class="w-full text-left px-4 py-2 rounded-md hover:bg-gray-700">Logout</button>
+          </form>
+        </li>
+      </ul>
+    </nav>
+  </div>
 
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between p-4">
-      <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="{{ asset('img/logokutisari.png') }}" class="h-12" alt=" Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">GPPS Bethlehem</span>
-      </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto mx-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-          <li>
-            <a href="{{ route('admin.dashboard') }}" class="block py-2 px-3 rounded {{ Request::is('/') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}" aria-current="page">Dashboard</a>
-          </li>
-          <li>
-            {{-- <a href="{{ route('congregation.index') }}" class="block py-2 px-3 rounded {{ Request::is('congregation.index') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">Manajemen Jemaat</a>
-          </li>
-          <li>
-            <a href="{{ route('services.index') }}" class="block py-2 px-3 rounded {{ Request::is('services.index') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">Manajemen Pelayanan</a>
-          </li> --}}
-          <li>
-            <a href="{{ route('manajemenJemaat.index') }}" class="block py-2 px-3 rounded {{ Request::is('manajemen_jemaat.index') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">Manajemen Form</a>
-          </li>
-          <li>
-            <a href="{{ route('manajemen_faq.index') }}" class="block py-2 px-3 rounded {{ Request::is('manajemen_faq.index') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">Manajemen Faq</a>
-          </li>
-          <li>
-            <a href="{{ route('manajemen_liveStreaming.index') }}" class="block py-2 px-3 rounded {{ Request::is('manajemen_liveStreaming.index') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">Manajemen Live Streaming</a>
-          </li>
-          {{-- <li>
-            <a href="{{ route('faq') }}" class="block py-2 px-3 rounded {{ Request::is('faq') ? 'text-white bg-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">FAQ</a>
-          </li> --}}
-          <li>
-            <form action="{{ route('admin.logout') }}" method="POST" class="inline">
-              @csrf
-              <button type="submit" class="block py-2 px-3 rounded text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-600 dark:text-white md:dark:hover:text-red-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Logout</button>
-            </form>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
