@@ -1,25 +1,26 @@
 <?php
 
-use App\Http\Controllers\AdminAuthController as ControllersAdminAuthController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\Auth\AdminAuthController;
-use App\Http\Controllers\CongregationController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\Form_Controller;
-use App\Http\Controllers\form_penyerahan_anak_Controller;
-use App\Http\Controllers\form_pernikahan_Controller;
-use App\Http\Controllers\FormBaptisanController;
+use App\Models\form_baptisan;
+use App\Models\form_pernikahan;
+use App\Http\Controllers\jemaatNew;
+use App\Models\form_penyerahan_anak;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\Form_Controller;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ServiceAdminController;
 use App\Http\Controllers\ServiceController;
-use App\Models\form_baptisan;
-use App\Models\form_penyerahan_anak;
-use App\Models\form_pernikahan;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KritikSaranController;
 use App\Http\Controllers\linkYoutubeController;
+use App\Http\Controllers\CongregationController;
+use App\Http\Controllers\FormBaptisanController;
+use App\Http\Controllers\ServiceAdminController;
+use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\form_pernikahan_Controller;
+use App\Http\Controllers\form_penyerahan_anak_Controller;
+use App\Http\Controllers\AdminAuthController as ControllersAdminAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/manajemen_faq', [KritikSaranController::class, 'index'])->name('manajemen_faq.index');
     Route::get('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'index'])->name('manajemen_liveStreaming.index');
     Route::post('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'store'])->name('admin.storeYoutubeLink');
+    Route::get('/admin/jemaatNew', [jemaatNew::class, 'index'])->name('jemaatNew.index');
 
 
 
