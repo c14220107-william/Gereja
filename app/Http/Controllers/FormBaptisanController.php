@@ -13,7 +13,7 @@ class FormBaptisanController extends Controller
     public function index()
     {
         $form_baptisans = form_baptisan::all();
-        return view('admin.manajemenJemaat.index', compact('form_baptisans'));
+        return view('admin.manajemenJemaat.index3', compact('form_baptisans'));
 
         
     }

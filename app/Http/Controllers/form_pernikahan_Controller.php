@@ -12,7 +12,8 @@ class form_pernikahan_Controller extends Controller
      */
     public function index()
     {
-        return view('admin.manajemenJemaat.index', compact('form_pernikahans'));
+        $form_pernikahans = form_pernikahan::all();
+        return view('admin.manajemenJemaat.index2', compact('form_pernikahans'));
     }
 
     /**
