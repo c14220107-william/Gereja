@@ -72,7 +72,7 @@ Route::post('/admin/register', [ControllersAdminAuthController::class, 'register
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/admin/manajemenJemaat/penyerahan_anak', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');
+    Route::get('/admin/manajemenJemaat/penyerahan_anak', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index ');
     Route::get('/admin/manajemenJemaat/pernikahan', [form_pernikahan_Controller::class, 'index'])->name('manajemenJemaat.index2');
     Route::get('/admin/manajemenJemaat/baptisan', [FormBaptisanController::class, 'index'])->name('manajemenJemaat.index3');
     Route::get('/admin/manajemen_faq', [KritikSaranController::class, 'index'])->name('manajemen_faq.index');

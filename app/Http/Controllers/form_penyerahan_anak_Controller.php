@@ -78,7 +78,7 @@ class form_penyerahan_anak_Controller extends Controller
         ]);
 
 
-        return redirect()->back()->with('success', 'Data Created successfully');
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Data Created successfully');
 
         
 

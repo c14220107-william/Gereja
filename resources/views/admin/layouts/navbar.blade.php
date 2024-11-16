@@ -1,6 +1,6 @@
 <div class="flex h-screen">
   <!-- Sidebar -->
-  <div class="w-64 bg-black text-white flex flex-col">
+  <div class="w-72 bg-black text-white flex flex-col">
     <a href="{{ route('admin.dashboard') }}" class="flex items-center p-4 space-x-3">
       <img src="{{ asset('img/logokutisari.png') }}" class="h-12" alt="Logo" />
       <span class="text-xl font-semibold">GPPS Bethlehem</span>
