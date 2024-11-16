@@ -138,22 +138,24 @@
 
 <section id="contact-form" class="py-4 bg-gray-100 fade-in -mt-12">
     <div class="container mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-2">Ajukan Pertanyaan</h2>
-        <p class="mb-4">Silakan isi formulir di bawah ini untuk mengajukan pertanyaan kepada kami.</p>
+        <h2 class="text-4xl font-bold mb-2">Ajukan Kritik dan Saran</h2>
+        <p class="mb-4">Silakan isi formulir di bawah ini untuk mengajukan kritik dan saran kepada kami.</p>
 
-        <form action="{{ route('kritikSaran.store')}}" method="POST" class="max-w-md mx-auto bg-white shadow-md rounded-lg p-8">
+        <form action="{{ route('kritikSaran.store')}}" method="POST" class="max-w-md mx-auto bg-white shadow-md rounded-lg p-8" onsubmit="return validateForm()">
             @csrf
 
             <!-- Input Nama -->
             <div class="mb-4" id="nameField">
                 <label for="name" class="block text-left text-gray-700 font-semibold mb-2">Nama Lengkap</label>
                 <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" placeholder="Masukkan Nama Lengkap">
+                <p id="nameError" class="text-red-500 text-left hidden mt-2">Nama wajib diisi.</p>
             </div>
 
-            <!-- Input Pertanyaan -->
+            <!-- Input Kritik dan Saran -->
             <div class="mb-4">
-                <label for="kritikSaran" class="block text-left text-gray-700 font-semibold mb-2">Pertanyaan</label>
-                <textarea id="kritikSaran" name="kritikSaran" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis Pertanyaan Anda di sini"></textarea>
+                <label for="kritikSaran" class="block text-left text-gray-700 font-semibold mb-2">Kritik dan Saran</label>
+                <textarea id="kritikSaran" name="kritikSaran" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis Kritik dan Saran Anda di sini"></textarea>
+                <p id="kritikSaranError" class="text-red-500 text-left hidden mt-2">Kritik dan Saran wajib diisi.</p>
             </div>
 
             <!-- Checkbox untuk sembunyikan nama -->
@@ -163,24 +165,43 @@
             </div>
 
             <!-- Tombol Submit -->
-            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700 transition duration-300">Kirim Pertanyaan</button>
+            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700 transition duration-300">Kirim</button>
         </form>
     </div>
 </section>
 
 <script>
-    function toggleAnswer(faqId) {
-        const answer = document.getElementById(faqId);
-        const toggle = document.getElementById(faqId + '-toggle');
+    // Validasi form
+    function validateForm() {
+        const nameField = document.getElementById('name');
+        const kritikSaranField = document.getElementById('kritikSaran');
+        const hideName = document.getElementById('hideName');
 
-        if (answer.classList.contains('hidden')) {
-            answer.classList.remove('hidden');
-            toggle.textContent = '-';
+        // Ambil elemen error
+        const nameError = document.getElementById('nameError');
+        const kritikSaranError = document.getElementById('kritikSaranError');
+
+        let valid = true;
+
+        // Validasi Nama
+        if (!hideName.checked && nameField.value.trim() === '') {
+            nameError.classList.remove('hidden');
+            valid = false;
         } else {
-            answer.classList.add('hidden');
-            toggle.textContent = '+';
+            nameError.classList.add('hidden');
         }
+
+        // Validasi Kritik dan Saran
+        if (kritikSaranField.value.trim() === '') {
+            kritikSaranError.classList.remove('hidden');
+            valid = false;
+        } else {
+            kritikSaranError.classList.add('hidden');
+        }
+
+        return valid;
     }
+
     // Fungsi untuk menyembunyikan atau menampilkan input nama
     function toggleNameField() {
         const nameField = document.getElementById('nameField');
