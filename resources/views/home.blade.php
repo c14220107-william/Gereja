@@ -134,8 +134,6 @@
 
         <!-- Konten Hero -->
         <div class="relative z-10 text-center max-w-2xl mx-auto">
-            <p class="text-lg mb-4 uppercase tracking-widest opacity-0 animate-fade-in">Made in Framer</p>
-            
             <!-- Animasi Reveal untuk Teks -->
             <h1 class="text-7xl font-extrabold leading-tight mb-6 animate-reveal-text">
                 Selamat Datang di GPPS Bethlehem Kutisari!
