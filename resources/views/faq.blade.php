@@ -40,41 +40,7 @@
     }
 </style>
 
-<script>
-    function toggleAnswer(faqId) {
-        const answer = document.getElementById(faqId);
-        const toggle = document.getElementById(faqId + '-toggle');
 
-        if (answer.classList.contains('open')) {
-            answer.classList.remove('open');
-            toggle.textContent = '+';
-        } else {
-            answer.classList.add('open');
-            toggle.textContent = '-';
-        }
-    }
-
-    // Fade-in animation on scroll
-    document.addEventListener('scroll', function() {
-        const fadeElements = document.querySelectorAll('.fade-in');
-        fadeElements.forEach(element => {
-            const position = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight;
-
-            if (position < screenPosition) {
-                element.classList.add('visible');
-            }
-        });
-    });
-
-    // Trigger fade-in when page is loaded
-    window.onload = function() {
-        const fadeElements = document.querySelectorAll('.fade-in');
-        fadeElements.forEach(element => {
-            element.classList.add('visible');
-        });
-    };
-</script>
 
 
 <section id="faq" class="py-20 bg-gray-100">
@@ -171,6 +137,54 @@
 </section>
 
 <script>
+    
+    function toggleAnswer(faqId) {
+        const answer = document.getElementById(faqId);
+        const toggle = document.getElementById(faqId + '-toggle');
+
+        if (answer.classList.contains('open')) {
+            answer.classList.remove('open');
+            toggle.textContent = '+';
+        }  else {
+            answer.classList.add('open');
+            toggle.textContent = '-';
+        }
+    }
+
+    // Fade-in animation on scroll
+    document.addEventListener('scroll', function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            const position = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight;
+
+            if (position < screenPosition) {
+                element.classList.add('visible');
+            }
+        });
+    });
+
+    // Trigger fade-in when page is loaded
+    window.onload = function() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(element => {
+            element.classList.add('visible');
+        });
+    };
+
+
+    function toggleAnswer(faqId) {
+            const answer = document.getElementById(faqId);
+            const toggle = document.getElementById(faqId + '-toggle');
+
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                toggle.textContent = '-';
+            } else {
+                answer.classList.add('hidden');
+                toggle.textContent = '+';
+            }
+        }
     // Validasi form
     function validateForm() {
         const nameField = document.getElementById('name');
