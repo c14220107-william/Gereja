@@ -97,6 +97,15 @@
                     <p>Gereja kami berlokasi di Jl. Raya Kutisari Indah No.60, Kutisari, Kec. Tenggilis Mejoyo, Surabaya, Jawa Timur . Anda dapat menggunakan peta di halaman utama kami untuk petunjuk lebih lanjut.</p>
                 </div>
             </div>
+            <div class="bg-white shadow-md rounded-lg mb-4">
+                <div class="flex justify-between items-center p-4 cursor-pointer" onclick="toggleAnswer('faq6')">
+                    <h3 class="text-xl font-semibold">6. Kalau Saya ingin bertanya lebih lanjut bagaimana ya?</h3>
+                    <span id="faq6-toggle" class="text-blue-600">+</span>
+                </div>
+                <div id="faq6" class="hidden px-4 pb-4">
+                    <p>Anda Bisa menghubungi di kontek kami yaitu di nomor 087703370660 ya.</p>
+                </div>
+            </div>
             <!-- FAQ Content as Before -->
         </div>
     </div>

@@ -7,6 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Di dalam <head> atau sebelum penutupan </body> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tambahkan AOS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+
 
     
     
@@ -61,6 +67,10 @@
 
         });
     </script>
+    <script>
+        AOS.init();
+    </script>
+    
     
 </body>
 

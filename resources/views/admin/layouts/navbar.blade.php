@@ -37,6 +37,10 @@
           <a href="{{ route('manajemen_liveStreaming.index') }}" class="block px-4 py-2 rounded-md hover:bg-gray-700 {{ Request::is('manajemen_liveStreaming.index') ? 'bg-blue-700' : '' }}">Manajemen Live Streaming</a>
         </li>
         <li>
+          <a href="{{ route('admin.manajemen_persembahan.index') }}" class="block px-4 py-2 rounded-md hover:bg-gray-700 {{ Request::is('manajemen_persembahan.index') ? 'bg-blue-700' : '' }}">Manajemen Persembahan</a>
+        </li>
+
+        <li>
           <form action="{{ route('admin.logout') }}" method="POST" class="w-full">
             @csrf
             <button type="submit" class="w-full text-left px-4 py-2 rounded-md hover:bg-gray-700">Logout</button>

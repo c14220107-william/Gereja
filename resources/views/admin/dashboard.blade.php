@@ -11,46 +11,76 @@
         </div>
     </div>
 
-    <!-- Grid Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- All Members Card -->
-        <div class="bg-blue-500 text-white rounded-lg p-6 shadow-md text-center">
-            <h3 class="text-xl font-semibold">All Members</h3>
+        <div data-aos="fade-up" class="bg-blue-500 text-white rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2-8a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd" />
+                </svg>
+                <h3 class="text-xl font-semibold">All Members</h3>
+            </div>
             <p class="text-3xl mt-4">0</p>
-            <a href="#" class="mt-4 inline-block text-blue-100">View Details</a>
+            <a href="#" class="mt-4 inline-block text-blue-100 hover:text-blue-200">View Details</a>
         </div>
-
+    
         <!-- New Members Card -->
-        <div class="bg-green-500 text-white rounded-lg p-6 shadow-md text-center">
-            <h3 class="text-xl font-semibold">New Members</h3>
+        <div data-aos="fade-up" class="bg-green-500 text-white rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M15 3a3 3 0 00-3-3 3 3 0 00-3 3v7a3 3 0 000 6v2h6v-2a3 3 0 000-6V3z" />
+                </svg>
+                <h3 class="text-xl font-semibold">New Members</h3>
+            </div>
             <p class="text-3xl mt-4">0</p>
-            <a href="#" class="mt-4 inline-block text-green-100">Add Member</a>
+            <a href="#" class="mt-4 inline-block text-green-100 hover:text-green-200">Add Member</a>
         </div>
-
+    
         <!-- Givings Card -->
-        <div class="bg-yellow-500 text-white rounded-lg p-6 shadow-md text-center">
-            <h3 class="text-xl font-semibold">Givings</h3>
+        <div data-aos="fade-up" class="bg-yellow-500 text-white rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2-8a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd" />
+                </svg>
+                <h3 class="text-xl font-semibold">Givings</h3>
+            </div>
             <p class="text-3xl mt-4">5</p>
-            <a href="#" class="mt-4 inline-block text-yellow-100">View Details</a>
+            <a href="#" class="mt-4 inline-block text-yellow-100 hover:text-yellow-200">View Details</a>
         </div>
-
+    
         <!-- Birthdays Card -->
-        <div class="bg-red-500 text-white rounded-lg p-6 shadow-md text-center">
-            <h3 class="text-xl font-semibold">Upcoming Birthdays</h3>
+        <div data-aos="fade-up" class="bg-red-500 text-white rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9 12h1V8h-1V6h4v2H9v4z" />
+                </svg>
+                <h3 class="text-xl font-semibold">Upcoming Birthdays</h3>
+            </div>
             <p class="text-3xl mt-4">0</p>
-            <a href="#" class="mt-4 inline-block text-red-100">View Birthdays</a>
+            <a href="#" class="mt-4 inline-block text-red-100 hover:text-red-200">View Birthdays</a>
         </div>
 
         <!-- Total Givings Card -->
-        <div class="bg-blue-600 text-white rounded-lg p-6 shadow-md text-center">
-            <h3 class="text-xl font-semibold">Total Givings</h3>
-            <p class="text-3xl mt-4">13500</p>
+        <div data-aos="fade-up" class="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M12 9V6h-1v3H8V6H7v3H5V6H4v3H2v4h4v3h2v3h6v-3h2v-3h4v-4h-2z" />
+                </svg>
+                <h3 class="text-xl font-semibold">Total Persembahan</h3>
+            </div>
+            <p class="text-3xl mt-4">Rp {{ number_format($totalAllPersembahan, 0, ',', '.') }}</p>
+            <a href="{{ route('admin.manajemen_persembahan.index') }}" class="mt-4 inline-block text-blue-200 hover:text-blue-300">View Persembahan</a>
         </div>
 
         <!-- Total Offerings Card -->
-        <div class="bg-green-600 text-white rounded-lg p-6 shadow-md text-center">
-            <h3 class="text-xl font-semibold">Total Offerings</h3>
-            <p class="text-3xl mt-4">18000</p>
+        <div data-aos="fade-up" class="bg-gradient-to-r from-green-600 via-green-700 to-green-800 text-white rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
+            <div class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2-8a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd" />
+                </svg>
+                <h3 class="text-xl font-semibold">Total Offerings</h3>
+            </div>
+            <p class="text-3xl mt-4">Rp 18,000</p>
         </div>
     </div>
 </div>
@@ -73,4 +103,6 @@
     setInterval(updateDateTime, 1000);
     updateDateTime();
 </script>
+
+
 @endsection

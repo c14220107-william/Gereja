@@ -273,7 +273,7 @@
     
    
 
-    <!-- SERMON LIST SECTION -->
+    {{-- <!-- SERMON LIST SECTION -->
     <div class="sermons ">
         <h2> 
             Ibadah Lainnya
@@ -308,7 +308,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
         <!-- NEW CONTAINER SECTION
         <div class="cs">
             <h1 style="color: black">
