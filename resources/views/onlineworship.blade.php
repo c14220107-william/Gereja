@@ -10,12 +10,24 @@
         Church Website
     </title>
     <style>
+        html,
         body {
-            /* font-family: 'Roboto', sans-serif; */
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        body {
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
         }
+
 
         .top-bar {
             background-color: #000;
@@ -258,20 +270,25 @@
 </head>
 
 <body>
-
-    @if ($youtubeLink)
-        <div class="main-banner flex flex-col items-center bg-gray-100 p-6">
-        <h2 class="text-6xl font-serif font-extrabold text-center -mt-6 mb-4">Live Streaming</h2>
-        <iframe height="400" src="{{ $youtubeLink->url }}" width="100%" style="max-width: 800px;" allowfullscreen>
-        </iframe>
-        <p class="text-xl text-center mt-3 text-gray-600">Selamat beribadah, Tuhan Yesus memberkati!</p>
-    </div>
+    @if ($isWorshipTime)
+        @if ($youtubeLink)
+            <div class="main-banner flex flex-col items-center bg-gray-100 p-6">
+                <h2 class="text-6xl font-serif font-extrabold text-center -mt-6 mb-4">Live Streaming</h2>
+                <iframe height="400" src="{{ $youtubeLink->url }}" width="100%" style="max-width: 800px;" allowfullscreen></iframe>
+                <p class="text-xl text-center mt-3 text-gray-600">Selamat beribadah, Tuhan Yesus memberkati!</p>
+            </div>
+        @else
+            <p class="text-xl text-center text-gray-600">Link streaming belum tersedia.</p>
+        @endif
     @else
-        <p>Belum Ada</p>
-        
+
+    <div class="animate-bounce">
+        <h2 class="text-4xl font-serif font-extrabold text-center p-36">Ibadah dimulai pukul 07:45 hingga 09:30 setiap hari Minggu.</h2> 
+    </div>
+
     @endif
-    
-   
+
+
 
     {{-- <!-- SERMON LIST SECTION -->
     <div class="sermons ">
@@ -309,7 +326,7 @@
             </div>
         </div>
     </div> --}}
-        <!-- NEW CONTAINER SECTION
+    <!-- NEW CONTAINER SECTION
         <div class="cs">
             <h1 style="color: black">
                 God wants to use you.
