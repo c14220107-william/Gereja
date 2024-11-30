@@ -11,6 +11,7 @@
     @endif
 
     @if($form_penyerahan_anaks->isEmpty())
+        <a href="{{ route('manajemenJemaat.create1') }}" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a>   
         <p class="text-center text-gray-500">Belum ada data yang tersedia.</p>
     @else
          <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Penyerahan Anak</h2>
