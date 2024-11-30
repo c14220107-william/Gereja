@@ -11,7 +11,7 @@
                 <label for="url" class="block text-gray-700 font-semibold">Link YouTube (embed) :</label>
                 <input type="url" name="url" id="url" required class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
             </div>
-            <button type="button" class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 confirmation-button">
+            <button type="button" class="w-full py-2 bg-gray-700 text-white rounded-lg hover:bg-black transition-all duration-300 confirmation-button">
                 Simpan
             </button>
         </form>
