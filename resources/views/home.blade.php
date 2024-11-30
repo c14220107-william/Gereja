@@ -284,10 +284,11 @@
                 <div class="flex items-center swiper-wrapper">           
                      
                     <!-- Kartu 1 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
                         <h3 class="text-xl font-bold mb-2">Ibadah Umum</h3>
                         <p class="text-gray-700">Minggu | Pukul 07:45 - 09:30</p>
                         <p class="text-sm text-gray-500">Bergabunglah dalam ibadah utama dengan pujian dan khotbah yang menginspirasi.</p>
+                        <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="mt-4 rounded-lg shadow-md w-1/3">
                     </div>
                      
                      
