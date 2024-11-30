@@ -92,6 +92,7 @@
     .animate-fadeInDelay {
         animation: fadeInDelay 1.5s ease-in-out;
     }
+
     #maps {
         background-color: #f4f4f4;
     }
@@ -102,10 +103,13 @@
     }
 
     .swiper-wrapper {
-    width: 600px;
-    height: 300px;
+        width: 600px;
+        height: 300px;
     }
 
+    .highlight-red {
+        color: red;
+    }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
@@ -124,10 +128,10 @@
 
 <body class="bg-gray-100">
 
-   <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="relative bg-black text-white min-h-screen flex items-center justify-center">
         <!-- Gambar Background dengan Overlay -->
-        <div class="absolute inset-0 bg-cover bg-center" 
+        <div class="absolute inset-0 bg-cover bg-center"
             style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
             <div class="absolute inset-0 bg-black bg-opacity-70"></div> <!-- Overlay Lebih Gelap -->
         </div>
@@ -187,16 +191,16 @@
                     Motto Kami
                 </h2>
                 <div class="flex justify-center mb-4">
-                    <img src="{{ asset('img/logokutisari.png') }}" alt="Logo Motto" 
+                    <img src="{{ asset('img/logokutisari.png') }}" alt="Logo Motto"
                         class="w-1/2 md:w-1/3 rounded-full">
                 </div>
                 <p class="text-4xl font-semibold mb-2" style="color: #4A5657;">
                     <span id="motto-text"></span>
                 </p>
-                <p class="text-lg text-center" 
-                style="">
-                    GPPS Bethlehem Kutisari memiliki jemaat yang saling memperhatikan, mengasihi, dan melayani 
-                    dalam rangka menjadi kesatuan jemaat yang kuat dan tidak tergoncangkan. Motto ini diharap 
+                <p class="text-lg text-center"
+                    style="">
+                    GPPS Bethlehem Kutisari memiliki jemaat yang saling memperhatikan, mengasihi, dan melayani
+                    dalam rangka menjadi kesatuan jemaat yang kuat dan tidak tergoncangkan. Motto ini diharap
                     menjadi dasar bagi para jemaat dalam menjalankan kehidupan kekristenannya hari lepas hari.
                 </p>
             </div>
@@ -229,7 +233,7 @@
                         <div class="text-center">
                             <h3 class="text-2xl font-bold mb-2" style="color: #1C2B2D;">Misi</h3>
                             <p class="text-lg text-center" style="color: #4A5657;">
-                                Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial, 
+                                Jemaat yang kuat dan saling menguatkan dalam aspek spiritual, psiko-sosial,
                                 dalam kehidupan pribadi maupun komunal (keluarga dan gereja).
                             </p>
                         </div>
@@ -239,6 +243,22 @@
         </div>
     </section>
 
+    <!-- Empat Pilar Section -->
+    <section class="py-10" style="background-color: #F4F4F4;">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-center">
+            <div class="flex flex-col text-center">
+                <h2 class="text-5xl font-bold mb-4" style="color: #1C2B2D;">
+                    Empat Pilar
+                </h2>
+                <div class="text-4xl font-semibold mb-6 text-center" style="color: #4A5657;">
+                    <p>Bertumbuh <strong class="highlight-red">Dewasa</strong> melalui <strong class="highlight-red">Penbinanan</strong></p>
+                    <p>Bertumbuh <strong class="highlight-red">Besar</strong> melalui <strong class="highlight-red">Pelayanan</strong></p>
+                    <p>Bertumbuh <strong class="highlight-red">Kuat</strong> melalui <strong class="highlight-red">Ibadah</strong></p>
+                    <p>Bertambah <strong class="highlight-red">Akrab</strong> melalui <strong class="highlight-red">Persekutuan</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- JavaScript untuk Looping Typing Effect -->
     <script>
@@ -273,75 +293,94 @@
 
         window.onload = typeWriter;
     </script>
-    
-    <!-- Seksi Ibadah Sepekan -->
+
+    <!-- Ibadah Sepekan Section -->
     <section id="sunday-services" class="py-10" style="background-color: #F4F4F4;">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold mb-8" style="color: #1C2B2D;">Ibadah Sepekan</h2>
 
             <div class="relative swiper">
                 <!-- swiper Container -->
-                <div class="flex items-center swiper-wrapper">           
-                     
+                <div class="flex items-center swiper-wrapper">
+
                     <!-- Kartu 1 -->
                     <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
                         <h3 class="text-xl font-bold mb-2">Ibadah Umum</h3>
                         <p class="text-gray-700">Minggu | Pukul 07:45 - 09:30</p>
                         <p class="text-sm text-gray-500">Bergabunglah dalam ibadah utama dengan pujian dan khotbah yang menginspirasi.</p>
-                        <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="mt-4 rounded-lg shadow-md w-1/3">
+                        <div class="flex justify-center items-center mt-4 mb-3">
+                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                        </div>
                     </div>
-                     
-                     
+
+
                     <!-- Kartu 2 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
                         <h3 class="text-xl font-bold mb-2">Ibadah Kaum Wanita</h3>
                         <p class="text-gray-700">Selasa | Pukul 16:30 - 18:00</p>
                         <p class="text-sm text-gray-500">Ibadah khusus wanita dengan suasana sukacita dan pujian menyentuh hati.</p>
+                        <div class="flex justify-center items-center mt-4 mb-3">
+                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                        </div>
                     </div>
 
-                    <!-- Kartu 3 -->                 
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
+                    <!-- Kartu 3 -->
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
                         <h3 class="text-xl font-bold mb-2">Youth Commcell</h3>
                         <p class="text-gray-700">Rabu | Pukul 19:00 - 21:00</p>
-                        <p class="text-sm text-gray-500">Komunitas muda dalam ibadah malam yang menyenangkan dan penuh semangat.</p>
+                        <p class="text-sm text-gray-500">Komunitas muda yang menyenangkan dan penuh semangat.</p>
+                        <div class="flex justify-center items-center mt-4 mb-3">
+                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                        </div>
                     </div>
-                     
-                     
+
+
                     <!-- Kartu 4 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
                         <h3 class="text-xl font-bold mb-2">Doa Malam</h3>
                         <p class="text-gray-700">Kamis | Pukul 18:30 - 20:00</p>
                         <p class="text-sm text-gray-500">Akhiri hari dengan doa malam yang penuh damai dan refleksi rohani.</p>
+                        <div class="flex justify-center items-center mt-4 mb-3">
+                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                        </div>
                     </div>
-                     
-                      
+
+
                     <!-- Kartu 5 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
                         <h3 class="text-xl font-bold mb-2">Doa Fajar</h3>
                         <p class="text-gray-700">Sabtu | Pukul 05:30 - 06:30</p>
                         <p class="text-sm text-gray-500">Mulailah pagi Anda dengan doa bersama untuk mendapatkan kekuatan dan berkat.</p>
+                        <div class="flex justify-center items-center mt-4 mb-3">
+                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                        </div>
                     </div>
-                     
-                     
+
+
                     <!-- Kartu 6 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
                         <h3 class="text-xl font-bold mb-2">Sekolah Minggu</h3>
                         <p class="text-gray-700">Minggu | Pukul 08:00 - 09:30</p>
                         <p class="text-sm text-gray-500">Ibadah anak-anak yang menyenangkan untuk menumbuhkan iman sejak dini.</p>
+                        <div class="flex justify-center items-center mt-4 mb-3">
+                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                        </div>
                     </div>
-                     
-                     
+
+
                     <!-- Kartu 7 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg">
+                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
                         <h3 class="text-xl font-bold mb-2">Ibadah Youth</h3>
                         <p class="text-gray-700">Minggu | Pukul 10:30 - 12:00</p>
                         <p class="text-sm text-gray-500">Bergabunglah dalam ibadah youth untuk bertumbuh dalam iman dan komunitas.</p>
-                    </div>      
+                        <div class="flex justify-center items-center mt-4 mb-3">
+                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-
                 <div class="swiper-pagination"></div>
             </div>
         </div>
@@ -351,29 +390,29 @@
     <!-- Swiper Javascript -->
     <script>
         new Swiper('.swiper', {
-        loop: true,
+            loop: true,
 
-        // pagination bullets
-        pagination: {
-            el: '.swiper-pagination',
-        },
+            // pagination bullets
+            pagination: {
+                el: '.swiper-pagination',
+            },
 
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
 
-        autoplay: {
-        delay: 4000,
-        }
-        
+            autoplay: {
+                delay: 4000,
+            }
+
         });
     </script>
-    
 
 
-   <!-- Maps Section -->
+
+    <!-- Maps Section -->
     <section id="maps" class="py-20 bg-gray-100">
         <div class="container mx-auto max-w-5xl text-center p-6 rounded-lg shadow-lg bg-white">
             <h2 class="text-4xl font-bold text-black mb-6 fade-in-up-on-scroll">Lokasi Kami</h2>
