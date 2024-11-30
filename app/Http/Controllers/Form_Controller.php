@@ -35,6 +35,10 @@ class Form_Controller extends Controller
         
     }
 
+    public function form() {
+        return view('service-registration');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -115,6 +119,46 @@ class Form_Controller extends Controller
         }
 
         return redirect()->route('manajemenJemaat.index')->with('success', 'Data created successfully');
+    }
+    public function storefromCreate2(Request $request)
+    {
+        // Validasi data
+        $validatedData = $request->validate([
+            'form_type' => 'required|string',
+            // Tambahkan validasi lain sesuai kebutuhan
+        ]);
+
+        // Proses penyimpanan berdasarkan jenis form
+        switch ($validatedData['form_type']) {
+            case 'penyerahan_anak':
+                return $this->form_penyerahan_anak_Controller->storefromCreate($request);
+            case 'pernikahan':
+                return $this->form_penikahan_Controller->storefromCreate($request);
+            case 'baptisan':
+                return $this->FormBaptisanController->storefromCreate($request);
+        }
+
+        return redirect()->route('manajemenJemaat.index2')->with('success', 'Data created successfully');
+    }
+    public function storefromCreate3(Request $request)
+    {
+        // Validasi data
+        $validatedData = $request->validate([
+            'form_type' => 'required|string',
+            // Tambahkan validasi lain sesuai kebutuhan
+        ]);
+
+        // Proses penyimpanan berdasarkan jenis form
+        switch ($validatedData['form_type']) {
+            case 'penyerahan_anak':
+                return $this->form_penyerahan_anak_Controller->storefromCreate($request);
+            case 'pernikahan':
+                return $this->form_penikahan_Controller->storefromCreate($request);
+            case 'baptisan':
+                return $this->FormBaptisanController->storefromCreate($request);
+        }
+
+        return redirect()->route('manajemenJemaat.index3')->with('success', 'Data created successfully');
     }
 
     /**
@@ -199,13 +243,13 @@ class Form_Controller extends Controller
         $formPernikahan = form_pernikahan::find($id); // atau sesuai dengan model Anda
         if ($formPernikahan) {
             $formPernikahan->delete();
-            return redirect()->route('manajemenJemaat.index')->with('success', 'Data berhasil dihapus');
+            return redirect()->route('manajemenJemaat.index2')->with('success', 'Data berhasil dihapus');
         }
 
         $form_baptisan = form_baptisan::find($id);
         if ($form_baptisan) {
             $form_baptisan->delete();
-            return redirect()->route('manajemenJemaat.index')->with('success', 'Data berhasil dihapus');
+            return redirect()->route('manajemenJemaat.index3')->with('success', 'Data berhasil dihapus');
         } 
         
         return redirect()->route('manajemenJemaat.index')->with('error', 'Data tidak ditemukan');

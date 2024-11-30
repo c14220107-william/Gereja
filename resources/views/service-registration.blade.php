@@ -106,8 +106,8 @@
                     <label for="childDedication" class="text-sm font-medium text-gray-700">Apakah Suami & Istri sudah dibaptis?</label>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="tempat_asal_dibaptis" id="tempat_asal_dibaptis" class="hidden border rounded p-2" placeholder="Dimana?">
-                    <input type="date" name="tanggal_dibaptis_gereja_lama" id="tanggal_dibaptis_gereja_lama" class="hidden border rounded p-2">
+                    <input type="text" name="tempat_asal_dibaptis" id="tempat_asal_dibaptis"  class="hidden border rounded p-2" placeholder="Dimana?">
+                    <input type="date" name="tanggal_dibaptis_gereja_lama" id="tanggal_dibaptis_gereja_lama"  class="hidden border rounded p-2">
                 </div>
 
                 <div class="flex items-center space-x-4">
@@ -115,8 +115,8 @@
                     <label for="childDedication2" class="text-sm font-medium text-gray-700">Apakah Suami & Istri sudah diberkati dalam nikah gereja?</label>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="nomor_piagam_pernikahan_parent" id="nomor_piagam_pernikahan_parent" class="hidden border rounded p-2" placeholder="Nomor Piagam Pernikahan Gereja">
-                    <input type="date" name="tanggal_pernikahan" id="tanggal_pernikahan" class="hidden border rounded p-2">
+                    <input type="text" name="nomor_piagam_pernikahan_parent" id="nomor_piagam_pernikahan_parent"  class="hidden border rounded p-2" placeholder="Nomor Piagam Pernikahan Gereja">
+                    <input type="date" name="tanggal_pernikahan" id="tanggal_pernikahan"  class="hidden border rounded p-2">
                 </div>
 
                 <div class="flex items-center space-x-4">
@@ -124,8 +124,8 @@
                     <label for="childDedication3" class="text-sm font-medium text-gray-700">Apakah Suami & Istri sudah mengurus akte pernikahan di catatan sipil?</label>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" name="nomor_akte_pernikahan_parent" id="nomor_akte_pernikahan_parent" class="hidden border rounded p-2" placeholder="Nomor Akte Pernikahan Gereja">
-                    <input type="date" name="tanggal_akte_pernikahan" id="tanggal_akte_pernikahan" class="hidden border rounded p-2">
+                    <input type="text" name="nomor_akte_pernikahan_parent" id="nomor_akte_pernikahan_parent"  class="hidden border rounded p-2" placeholder="Nomor Akte Pernikahan Gereja">
+                    <input type="date" name="tanggal_akte_pernikahan" id="tanggal_akte_pernikahan"  class="hidden border rounded p-2">
                 </div>
 
                 <div>
@@ -133,7 +133,7 @@
                     <input type="file" name="pas_foto_anak" id="pas_foto_anak" required class="border rounded p-2 w-full">
                 </div>
 
-                <button type="submit"   class="mt-2 bg-blue-600 text-white px-4 py-2 rounded">Submit</button>
+                <button type="button"   class="mt-2 bg-blue-600 text-white px-4 py-2 rounded confirmation-button">Submit</button>
             </form>
         </div>
     </div>
@@ -302,7 +302,7 @@
             <input type="file" name="file_surat_catatan_sipil" id="file_surat_catatan_sipil" required class="mt-2 border hidden border border-gray-300 rounded px-2 py-1">
             
             </div>
-            <button type="submit"   class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Submit</button>
+            <button type="button"   class="mt-2 bg-green-500 text-white px-4 py-2 rounded confirmation-button">Submit</button>
         </form>
     </div>
 </div>
@@ -366,7 +366,7 @@
             <label for="file_foto_pemohon_baptis" class="block text-sm font-medium text-gray-700">File Foto Pemohon Baptis (Pas foto 4x6cm) <span class="text-red-500">*</span></label>
             <input type="file" name="file_foto_pemohon_baptis" id="file_foto_pemohon_baptis" required class="mt-2 border border border-gray-300 rounded px-2 py-1">
         </div>
-        <button type="submit"   class="mt-2 bg-yellow-500 text-white px-4 py-2 rounded">Submit</button>
+        <button type="button"   class="mt-2 bg-yellow-500 text-white px-4 py-2 rounded confirmation-button">Submit</button>
         </form>
     </div>
 </div>

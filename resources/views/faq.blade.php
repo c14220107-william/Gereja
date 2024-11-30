@@ -99,11 +99,11 @@
             </div>
             <div class="bg-white shadow-md rounded-lg mb-4">
                 <div class="flex justify-between items-center p-4 cursor-pointer" onclick="toggleAnswer('faq6')">
-                    <h3 class="text-xl font-semibold">6. Kalau Saya ingin bertanya lebih lanjut bagaimana ya?</h3>
+                    <h3 class="text-xl font-semibold">6. Gimana saya bisa bertanya lebih lanjut?</h3>
                     <span id="faq6-toggle" class="text-blue-600">+</span>
                 </div>
                 <div id="faq6" class="hidden px-4 pb-4">
-                    <p>Anda Bisa menghubungi di kontek kami yaitu di nomor 087703370660 ya.</p>
+                    <p>Anda bisa menghubungi di kontek kami yaitu di nomor 087703370660 ya.</p>
                 </div>
             </div>
             <!-- FAQ Content as Before -->
@@ -140,7 +140,7 @@
             </div>
 
             <!-- Tombol Submit -->
-            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700 transition duration-300">Kirim</button>
+            <button type="button" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg hover:bg-blue-700 transition duration-300 confirmation-button  ">Kirim</button>
         </form>
     </div>
 </section>

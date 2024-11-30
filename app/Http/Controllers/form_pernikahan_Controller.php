@@ -257,7 +257,7 @@ class form_pernikahan_Controller extends Controller
             'file_surat_catatan_sipil' => $filePath
         ]);
 
-        return redirect()->route('manajemenJemaat.index')->with('success', 'Data created successfully');
+        return redirect()->route('manajemenJemaat.index2')->with('success', 'Data created successfully');
     }
 
     /**
@@ -290,6 +290,6 @@ class form_pernikahan_Controller extends Controller
     public function destroy(form_pernikahan $form_pernikahan)
     {
         $form_pernikahan->delete();
-        return redirect()->route('manajemenJemaat.index')->with('success', 'Jemaat berhasil dihapus.');
+        return redirect()->route('admin.manajemenJemaat.index2')->with('success', 'Jemaat berhasil dihapus.');
     }
 }

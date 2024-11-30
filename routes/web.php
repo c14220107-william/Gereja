@@ -37,107 +37,101 @@ use App\Models\Persembahan;
 // Route::get('/',function(){
 //     return view('welcome');
 // });
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//home page
+Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
-Route::get('/service-registration', [ServiceController::class, 'form'])->name('service-registration');
-Route::post('/service-registration', [ServiceController::class, 'register']);
+Route::get('/service-registration', [PageController::class, 'form'])->name('service-registration');
 Route::get('/onlineworship', [PageController::class, 'onlineworship'])->name('onlineworship');
+Route::get('/faq', [PageController::class, 'faq'])->name('faq');
 
-Route::get('/admin/tes', [PageController::class, 'tes'])->name('tes');
-
-
-
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::post('/service-registration', [Form_Controller::class, 'store'])->name('Form.store');
+Route::post('/faq', [KritikSaranController::class, 'store'])->name('kritikSaran.store');
 
 
-// });
-//admin
+
+
+
+
 Route::get('/admin/login', [ControllersAdminAuthController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [ControllersAdminAuthController::class, 'login']);
-
-// Route::get('/admin/tes', [ControllersAdminAuthController::class, 'showLoginForm'])->name('admin.tes');
-// Route::post('/admin/tes', [ControllersAdminAuthController::class, 'tes']);
-
-
-
 Route::get('/admin/register', [ControllersAdminAuthController::class, 'showRegistrationForm'])->name('admin.register');
 Route::post('/admin/register', [ControllersAdminAuthController::class, 'register'])->name('admin.register.submit');
 
 Route::middleware('admin')->group(function () {
+    //dashboard
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::get('/admin/manajemenJemaat/penyerahan_anak', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index ');
+
+
+    //form1
+    Route::get('/admin/manajemenJemaat/penyerahan_anak', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');
+    Route::get('/admin/manajemenJemaat/create1', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create1');
+    Route::post('admin/manajemenJemaat/create1', [Form_Controller::class, 'storefromCreate'])->name('Form1.store');
+    Route::get('/admin/manajemenJemaat/edit1/{id}', [Form_Controller::class, 'edit1'])->name('form1.edit');
+    Route::put('/admin/manajemenJemaat/edit1/{id}', [Form_Controller::class, 'update1'])->name('form1.update');
+    Route::delete('/admin/manajemenJemaat/{id}', [Form_Controller::class, 'destroy'])->name('manajemenJemaat.destroy');
+
+
+
+
+
+    //form2
     Route::get('/admin/manajemenJemaat/pernikahan', [form_pernikahan_Controller::class, 'index'])->name('manajemenJemaat.index2');
+    Route::get('/admin/manajemenJemaat/create2', [Form_Controller::class, 'create2'])->name('manajemenJemaat.create2');
+    Route::post('admin/manajemenJemaat/create2', [Form_Controller::class, 'storefromCreate2'])->name('Form2.store');
+    Route::get('/admin/manajemenJemaat/edit2/{id}', [Form_Controller::class, 'edit2'])->name('form2.edit');
+    Route::put('/admin/manajemenJemaat/edit2/{id}', [Form_Controller::class, 'update2'])->name('form2.update');
+    Route::delete('/admin/manajemenJemaat/{id}', [Form_Controller::class, 'destroy'])->name('manajemenJemaat.destroy');
+
+    
+
+
+    //form3
     Route::get('/admin/manajemenJemaat/baptisan', [FormBaptisanController::class, 'index'])->name('manajemenJemaat.index3');
+    Route::get('/admin/manajemenJemaat/create3', [Form_Controller::class, 'create3'])->name('manajemenJemaat.create3');
+    Route::post('admin/manajemenJemaat/create3', [Form_Controller::class, 'storefromCreate3'])->name('Form3.store');
+    Route::get('/admin/manajemenJemaat/edit3/{id}', [Form_Controller::class, 'edit3'])->name('form3.edit');
+    Route::put('/admin/manajemenJemaat/edit3/{id}', [Form_Controller::class, 'update3'])->name('form3.update');
+    Route::delete('/admin/manajemenJemaat/{id}', [Form_Controller::class, 'destroy'])->name('manajemenJemaat.destroy');
+
+
+
+    //faq
     Route::get('/admin/manajemen_faq', [KritikSaranController::class, 'index'])->name('manajemen_faq.index');
+
+    //livestreaming
     Route::get('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'index'])->name('manajemen_liveStreaming.index');
     Route::post('/admin/manajemen_liveStreaming', [linkYoutubeController::class, 'store'])->name('admin.storeYoutubeLink');
+
+    //belum fix
     Route::get('/admin/jemaatNew', [jemaatNew::class, 'index'])->name('jemaatNew.index');
+
+
+    //persembahan
     Route::get('/admin/manajemen_persembahan', [PersembahanController::class, 'index'])->name('admin.manajemen_persembahan.index');
     Route::post('/admin/manajemen_persembahan', [PersembahanController::class, 'store'])->name('admin.storePersembahan');
     Route::get('/admin/manajemenPersembahan/edit/{id}', [PersembahanController::class, 'edit'])->name('admin.manajemenPersembahan.edit');
     Route::put('/admin/manajemenPesembahan/edit/{id}', [PersembahanController::class, 'update'])->name('admin.manajemenPersembahan.update');
     Route::delete('/admin/manajemen_persembahan/{id}', [PersembahanController::class, 'destroy'])->name('admin.manajemenPersembahan.destroy');
+
+    // Route::resource('admin/manajemenJemaat', Form_Controller::class)->middleware('admin');
+
+
+   
     
-    
-
-
-    Route::get('/admin/manajemenJemaat/create1', [Form_Controller::class, 'create1'])->name('manajemenJemaat.create1');
-    Route::get('/admin/manajemenJemaat/create2', [Form_Controller::class, 'create2'])->name('manajemenJemaat.create2');
-    Route::get('/admin/manajemenJemaat/create3', [Form_Controller::class, 'create3'])->name('manajemenJemaat.create3');
-    // Route::get('/admin/manajemenJemaat/edit', [Form_Controller::class, 'edit1'])->name('manajemenJemaat.edit1');
-    Route::get('/admin/manajemenJemaat/edit1/{id}', [Form_Controller::class, 'edit1'])->name('form1.edit');
-    Route::put('/admin/manajemenJemaat/edit1/{id}', [Form_Controller::class, 'update1'])->name('form1.update');
-    Route::get('/admin/manajemenJemaat/edit2/{id}', [Form_Controller::class, 'edit2'])->name('form2.edit');
-    Route::put('/admin/manajemenJemaat/edit2/{id}', [Form_Controller::class, 'update2'])->name('form2.update');
-    Route::get('/admin/manajemenJemaat/edit3/{id}', [Form_Controller::class, 'edit3'])->name('form3.edit');
-    Route::put('/admin/manajemenJemaat/edit3/{id}', [Form_Controller::class, 'update3'])->name('form3.update');
-    
-
-        
-
-
-
-    // Rute lain untuk manajemen jemaat, pelayanan, dll.
-});
-
-Route::prefix('admin')->middleware('admin')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-    Route::resource('/congregation', CongregationController::class);
-    Route::resource('/services', ServiceAdminController::class);
-    Route::resource('/event', EventController::class);
-    // Route::resource('admin/manajemenJemaat', form_penyerahan_anak_Controller::class)
-    // Route::resource('admin/manajemenJemaat', form_pernikahan_Controller::class)
 });
 
 
 
 
 
-Route::resource('admin/manajemenJemaat', Form_Controller::class)->middleware('admin');
-
-Route::get('/faq', [KritikSaranController::class, 'faq'])->name('faq');
-Route::post('/faq', [KritikSaranController::class, 'store'])->name('kritikSaran.store');
-
-// Route::post('/service-registration', [form_penyerahan_anak_Controller::class, 'store'])->name('form_penyerahan_anak.store');
-// Route::get('/admin/manajemenJemaat', [form_penyerahan_anak_Controller::class, 'index'])->name('manajemenJemaat.index');
 
 
 
-
-Route::post('/service-registration', [Form_Controller::class, 'store'])->name('Form.store');
 Route::post('admin/manajemenJemaat/create1', [Form_Controller::class, 'storefromCreate'])->name('Form1.store');
-Route::post('admin/manajemenJemaat/create2', [Form_Controller::class, 'storefromCreate'])->name('Form2.store');
-Route::post('admin/manajemenJemaat/create3', [Form_Controller::class, 'storefromCreate'])->name('Form3.store');
+Route::post('admin/manajemenJemaat/create2', [Form_Controller::class, 'storefromCreate2'])->name('Form2.store');
+Route::post('admin/manajemenJemaat/create3', [Form_Controller::class, 'storefromCreate3'])->name('Form3.store');
 
 
 // Route::get('/admin/manajemenJemaat', [Form_Controller::class, 'index'])->name('manajemenJemaat.index');

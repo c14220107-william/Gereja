@@ -78,7 +78,7 @@ class form_penyerahan_anak_Controller extends Controller
         ]);
 
 
-        return redirect()->route('manajemenJemaat.index')->with('success', 'Data Created successfully');
+        return redirect()->back()->with('success', 'Data Created successfully');
 
         
 
@@ -223,7 +223,7 @@ class form_penyerahan_anak_Controller extends Controller
             'pas_foto_anak' => $path,
         ]);
     
-        return redirect()->back()->with('success', 'Data berhasil diperbarui!');
+        return redirect()->route('manajemenJemaat.index')->with('success', 'Data berhasil diperbarui!');
     }
 
     /**

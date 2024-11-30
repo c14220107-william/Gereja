@@ -45,27 +45,54 @@
                     });
                 });
             });
-
-            const confirmButton = document.querySelectorAll('.confirmation-button')
+            const confirmButton = document.querySelectorAll('.confirmation-button');
             confirmButton.forEach(button => {
                 button.addEventListener('click', (e) => {
+                    e.preventDefault(); // Mencegah form langsung submit
+
+                    const form = e.target.closest('form');
+
+                    // Validasi form secara manual
+                    if (!form.checkValidity()) {
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'Harap lengkapi semua field yang wajib diisi.',
+                            icon: 'error',
+                            confirmButtonText: 'OK'
+                        });
+                        return; // Hentikan proses jika form tidak valid
+                    }
+
+                    // Jika validasi berhasil, tampilkan SweetAlert untuk konfirmasi
                     Swal.fire({
                         title: 'Konfirmasi',
-                        text: "Data ini akan dihapus secara permanen!",
+                        text: "Apakah data sudah sesuai semua? Data ini akan dikirim dan tidak bisa diulang lagi!",
                         icon: 'info',
                         showCancelButton: true,
                         confirmButtonText: 'Ya, yakin',
                         cancelButtonText: 'Batal'
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            // Kirim form jika pengguna mengonfirmasi
-                            e.target.closest('form').submit();
+                            form.submit(); // Submit form jika konfirmasi disetujui
+
+                            Swal.fire({
+                                title: 'Berhasil!',
+                                text: 'Data telah berhasil dikirim.',
+                                icon: 'success',
+                                confirmButtonText: 'OK'
+                            });
                         }
                     });
                 });
             });
 
-        });
+
+                        
+                    });
+
+        
+        
+
     </script>
     <script>
         AOS.init();

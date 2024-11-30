@@ -1,8 +1,8 @@
 @extends('admin.layouts.app')
 
 @section('content')
-<h1 class="text-2xl font-bold mb-6">Baptism Request</h1>
-<form action="{{ route('Form.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+<h1 class="text-2xl font-bold mb-6">Pernikahan Request</h1>
+<form action="{{ route('Form2.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
     @csrf
     <input type="hidden" name="form_type" value="pernikahan">
     
@@ -236,6 +236,6 @@
     </div>
 
 
-    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Submit</button>
+    <button type="button" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 confirmation-button">Submit</button>
 </form>
 @endsection

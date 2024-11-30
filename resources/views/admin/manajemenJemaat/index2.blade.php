@@ -12,6 +12,7 @@
 
     @if($form_pernikahans->isEmpty())
         <p class="text-center text-gray-500">Belum ada data yang tersedia.</p>
+        <a href="{{ route('manajemenJemaat.create2') }}" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a>
     @else
          
         
@@ -184,10 +185,10 @@
                     </td>
                         <td class="py-2 px-4 border-b">
                             <a href="{{ route('form2.edit', $item2->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
-                            <form action="{{ route('manajemenJemaat.destroy', $item2->id) }}" method="POST" class="inline-block">
+                            <form action="{{ route('manajemenJemaat.destroy', $item2->id) }}" method="POST" class="inline-block delete-form">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">Hapus</button>
+                                <button type="button" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 delete-button">Hapus</button>
                             </form>
                         </td>
                     </td>

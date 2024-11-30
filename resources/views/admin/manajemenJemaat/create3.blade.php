@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 class="text-2xl font-bold mb-6">Baptism Request</h1>
-<form action="{{ route('Form.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+<form action="{{ route('Form3.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
     @csrf
     <input type="hidden" name="form_type" value="baptisan">
     
@@ -66,6 +66,6 @@
         <input type="file" id="file_foto_pemohon_baptis" name="file_foto_pemohon_baptis" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" required>
     </div>
 
-    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Submit</button>
+    <button type="button" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 confirmation-button">Submit</button>
 </form>
 @endsection

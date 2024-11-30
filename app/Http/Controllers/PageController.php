@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+
+    public function index() {
+        return view('home');
+    }
+
     public function about() {
         return view('about');
     }
@@ -20,8 +25,9 @@ class PageController extends Controller
 
         return view('onlineworship',compact('youtubeLink'));
     }
-    public function tes(){
-        return view('admin/tes');
+    
+    public function form() {
+        return view('service-registration');
     }
     
     

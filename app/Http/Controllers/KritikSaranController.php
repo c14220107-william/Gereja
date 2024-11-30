@@ -7,9 +7,7 @@ use App\Models\kritikSaran;
 
 class KritikSaranController extends Controller
 {
-    public function faq() {
-        return view('faq');
-    }
+    
 
     public function store(Request $request)
     {
