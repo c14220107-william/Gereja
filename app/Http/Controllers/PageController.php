@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\YouTubeLink;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -21,9 +22,21 @@ class PageController extends Controller
     public function onlineworship(){
         $youtubeLink = YouTubeLink::latest()->first();
 
+        $currentTime = Carbon::now('Asia/Jakarta');
+
+        // Rentang waktu ibadah
+        $startTime = Carbon::createFromTime(7, 45, 0, 'Asia/Jakarta');
+        $endTime = Carbon::createFromTime(13, 20, 0, 'Asia/Jakarta');
+
+        // Cek apakah waktu saat ini adalah hari Minggu dan dalam rentang waktu
+        $isWorshipTime = $currentTime->isSaturday() && $currentTime->between($startTime, $endTime);
+
+
         // $youtubeLink->url = str_replace('watch?v=', 'embed/', $youtubeLink->url);
 
-        return view('onlineworship',compact('youtubeLink'));
+
+
+        return view('onlineworship',compact('youtubeLink','isWorshipTime'));
     }
     
     public function form() {

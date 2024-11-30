@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\YouTubeLink;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class linkYoutubeController extends Controller
@@ -12,6 +13,8 @@ class linkYoutubeController extends Controller
     public function index(){
 
         $link = YouTubeLink::all();
+        
+
         return view('admin.manajemen_liveStreaming.index',compact('link'));
     }
     public function store(Request $request) {

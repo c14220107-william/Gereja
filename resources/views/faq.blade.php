@@ -129,7 +129,7 @@
             <!-- Input Kritik dan Saran -->
             <div class="mb-4">
                 <label for="kritikSaran" class="block text-left text-gray-700 font-semibold mb-2">Kritik dan Saran</label>
-                <textarea id="kritikSaran" name="kritikSaran" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis Kritik dan Saran Anda di sini"></textarea>
+                <textarea id="kritikSaran" name="kritikSaran" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-400" rows="4" placeholder="Tulis Kritik dan Saran Anda di sini"></textarea>
                 <p id="kritikSaranError" class="text-red-500 text-left hidden mt-2">Kritik dan Saran wajib diisi.</p>
             </div>
 
