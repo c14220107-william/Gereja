@@ -270,19 +270,20 @@
 </head>
 
 <body>
-<section id="onlineworship" class="py-20">
     @if ($youtubeLink)
-    <div class="main-banner flex flex-col items-center bg-gray-100 p-6">
-        <h2 class="text-6xl font-serif font-extrabold text-center -mt-6 mb-4">Live Streaming</h2>
+    <div class="main-banner flex flex-col items-center bg-gray-100">
+        <h2 class="text-6xl font-serif font-extrabold text-center mb-4">Live Streaming</h2>
         <iframe height="400" src="{{ $youtubeLink->url }}" width="100%" style="max-width: 800px;" allowfullscreen>
         </iframe>
         <p class="text-xl text-center mt-3 text-gray-600">Selamat beribadah, Tuhan Yesus memberkati!</p>
     </div>
     @else
-    <p>Belum Ada</p>
+    <div class="flex flex-col items-center p-20">
+        <p>Belum ada</p>
+    </div>
+    
 
     @endif
-</section>
 
 
 
