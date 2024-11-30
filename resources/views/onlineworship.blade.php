@@ -270,7 +270,7 @@
 </head>
 
 <body>
-
+<section id="onlineworship" class="py-20">
     @if ($youtubeLink)
     <div class="main-banner flex flex-col items-center bg-gray-100 p-6">
         <h2 class="text-6xl font-serif font-extrabold text-center -mt-6 mb-4">Live Streaming</h2>
@@ -282,6 +282,7 @@
     <p>Belum Ada</p>
 
     @endif
+</section>
 
 
 
