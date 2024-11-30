@@ -36,14 +36,14 @@ body, .container {
     </section>
 
     <!-- Marriage Blessing Section (Hero Style) -->
-    <section class="relative mb-8 bg-gradient-to-r from-gray-200 to-gray-400 p-8 rounded-lg shadow-lg text-black h-auto" data-aos="fade-left">
+    <section class="relative mb-8 bg-gradient-to-r from-gray-100 to-gray-300 p-8 rounded-lg shadow-lg text-black h-auto" data-aos="fade-left">
         <h2 class="text-4xl font-bold mb-4">PERMOHONAN PEMBERKATAN PERNIKAHAN/DIDOAKAN</h2>
         <p class="text-lg">Daftarkan pemberkatan pernikahan Anda dan dapatkan doa khusus.</p>
         <button id="openMarriageBlessingModal" class="mt-4 bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-900 hover:text-gray-200 transition duration-300">Open Form</button>
     </section>
 
     <!-- Baptism Request Section (Hero Style) -->
-    <section class="relative mb-8 bg-gradient-to-r from-gray-300 to-gray-500 p-8 rounded-lg shadow-lg text-black h-auto" data-aos="fade-right">
+    <section class="relative mb-8 bg-gradient-to-r from-gray-100 to-gray-300 p-8 rounded-lg shadow-lg text-black h-auto" data-aos="fade-right">
         <h2 class="text-4xl font-bold mb-4">PERMOHONAN BAPTISAN AIR</h2>
         <p class="text-lg">Daftar untuk mengikuti upacara baptisan air di gereja.</p>
         <button id="openBaptismRequestModal" class="mt-4 bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-900 hover:text-gray-200 transition duration-300">Open Form</button>
