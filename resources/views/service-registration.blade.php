@@ -1,39 +1,74 @@
+@extends('layouts.app')
 
- @extends('layouts.app')
+@section('content')
 
-    @section('content')
+<style>
+.modal {
+    z-index: 1000;
+}
 
-    <style>
-    .modal{
-        z-index: 1000;
-    }
-    </style> 
+/* Tambahkan margin nol pada elemen body/container utama */
+body, .container {
+    margin: 0;
+    padding: 0;
+}
+</style> 
 
-    <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold mb-6">Service Registration</h1>
+<div class="container mx-auto p-0">
+    <h1 class="text-3xl font-bold mb-6">Service Registration</h1>
 
-        <!-- Child Dedication Section (Hero Style) -->
-        <section class="relative mb-8 bg-gradient-to-r from-blue-400 to-blue-600 p-8 rounded-lg shadow-lg text-white" data-aos="fade-right">
-            <h2 class="text-4xl font-bold mb-4">Permohonan Penyerahan Anak</h2>
-            <p class="text-lg">Ajukan permohonan penyerahan anak Anda secara mudah melalui form online.</p>
-            <button id="openChildDedicationModal" class="mt-4 bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition duration-300">Open Form</button>
-        </section>
+    <!-- Hero Section -->
+    <section class="relative bg-black text-white min-h-screen flex items-center justify-center">
+        <!-- Gambar Background dengan Overlay -->
+        <div class="absolute inset-0 bg-cover bg-center" 
+            style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
+            <div class="absolute inset-0 bg-black bg-opacity-70"></div> 
+        </div>
+
+       <!-- Konten Hero -->
+<div class="relative z-10 text-center max-w-2xl mx-auto">
+    <!-- Animasi Reveal untuk Teks -->
+    <!-- Child Dedication Section (Hero Style) -->
+    <section class="relative mb-8 bg-gradient-to-r from-gray-100 to-gray-300 p-8 rounded-lg shadow-lg text-black mt-8 h-auto" data-aos="fade-right"> <!-- Menambah h-auto untuk panjang -->
+        <h2 class="text-4xl font-bold mb-4">PERMOHONAN PENYERAHAN ANAK</h2>
+        <p class="text-lg">Ajukan permohonan penyerahan anak Anda secara mudah melalui form online.</p>
+        <button id="openChildDedicationModal" class="mt-4 bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-900 hover:text-gray-200 transition duration-300">Open Form</button>
+    </section>
 
     <!-- Marriage Blessing Section (Hero Style) -->
-        <section class="relative mb-8 bg-gradient-to-r from-green-400 to-green-600 p-8 rounded-lg shadow-lg text-white" data-aos="fade-left">
-            <h2 class="text-4xl font-bold mb-4">Permohonan Pemberkatan Pernikahan/Didoakan</h2>
-            <p class="text-lg">Daftarkan pemberkatan pernikahan Anda dan dapatkan doa khusus.</p>
-            <button id="openMarriageBlessingModal" class="mt-4 bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-green-500 hover:text-white transition duration-300">Open Form</button>
-        </section>
+    <section class="relative mb-8 bg-gradient-to-r from-gray-200 to-gray-400 p-8 rounded-lg shadow-lg text-black h-auto" data-aos="fade-left">
+        <h2 class="text-4xl font-bold mb-4">PERMOHONAN PEMBERKATAN PERNIKAHAN/DIDOAKAN</h2>
+        <p class="text-lg">Daftarkan pemberkatan pernikahan Anda dan dapatkan doa khusus.</p>
+        <button id="openMarriageBlessingModal" class="mt-4 bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-900 hover:text-gray-200 transition duration-300">Open Form</button>
+    </section>
 
     <!-- Baptism Request Section (Hero Style) -->
-        <section class="relative mb-8 bg-gradient-to-r from-yellow-400 to-yellow-600 p-8 rounded-lg shadow-lg text-white" data-aos="fade-right">
-            <h2 class="text-4xl font-bold mb-4">Permohonan Baptisan Air</h2>
-            <p class="text-lg">Daftar untuk mengikuti upacara baptisan air di gereja.</p>
-            <button id="openBaptismRequestModal" class="mt-4 bg-white text-yellow-600 px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 hover:text-white transition duration-300">Open Form</button>
-        </section>
+    <section class="relative mb-8 bg-gradient-to-r from-gray-300 to-gray-500 p-8 rounded-lg shadow-lg text-black h-auto" data-aos="fade-right">
+        <h2 class="text-4xl font-bold mb-4">PERMOHONAN BAPTISAN AIR</h2>
+        <p class="text-lg">Daftar untuk mengikuti upacara baptisan air di gereja.</p>
+        <button id="openBaptismRequestModal" class="mt-4 bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-900 hover:text-gray-200 transition duration-300">Open Form</button>
+    </section>
+</div>
 
-        
+        </div>
+    </section>
+</div>
+
+<script>
+    document.querySelector('a[href="#tentang"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    });
+</script>
+
+@include('components.marquee')
+
+       
+
 
 
     <div id="childDedicationModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -133,7 +168,12 @@
                     <input type="file" name="pas_foto_anak" id="pas_foto_anak" required class="border rounded p-2 w-full">
                 </div>
 
-                <button type="button"   class="mt-2 bg-blue-600 text-white px-4 py-2 rounded confirmation-button">Submit</button>
+                <button 
+    type="button" 
+    class="mt-2 bg-gray-500 text-white px-10 py-2 rounded confirmation-button w-full hover:bg-gray-700 transition duration-300">
+    Submit
+</button>
+              
             </form>
         </div>
     </div>
@@ -302,8 +342,12 @@
             <input type="file" name="file_surat_catatan_sipil" id="file_surat_catatan_sipil" required class="mt-2 border hidden border border-gray-300 rounded px-2 py-1">
             
             </div>
-            <button type="button"   class="mt-2 bg-green-500 text-white px-4 py-2 rounded confirmation-button">Submit</button>
-        </form>
+            <button 
+    type="button" 
+    class="mt-2 bg-gray-500 text-white px-10 py-2 rounded confirmation-button w-full hover:bg-gray-700 transition duration-300">
+    Submit
+</button>
+    </form>
     </div>
 </div>
 
@@ -366,8 +410,13 @@
             <label for="file_foto_pemohon_baptis" class="block text-sm font-medium text-gray-700">File Foto Pemohon Baptis (Pas foto 4x6cm) <span class="text-red-500">*</span></label>
             <input type="file" name="file_foto_pemohon_baptis" id="file_foto_pemohon_baptis" required class="mt-2 border border border-gray-300 rounded px-2 py-1">
         </div>
-        <button type="button"   class="mt-2 bg-yellow-500 text-white px-4 py-2 rounded confirmation-button">Submit</button>
-        </form>
+        <button 
+    type="button" 
+    class="mt-2 bg-gray-500 text-white px-10 py-2 rounded confirmation-button w-full hover:bg-gray-700 transition duration-300">
+    Submit
+</button>    
+    
+    </form>
     </div>
 </div>
 
