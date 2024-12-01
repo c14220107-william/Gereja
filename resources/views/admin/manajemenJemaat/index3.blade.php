@@ -1,90 +1,208 @@
 @extends('admin.layouts.app')
 
 @section('content')
-<div class="container mx-auto py-8 px-9">
-    @if(session('success'))
-        <div class="bg-green-500 text-white p-4 rounded mb-6">
-            {{ session('success') }}
-        </div>
-    @endif
-
+@if(session('success'))
+    <div class="bg-green-500 text-white p-4 rounded mb-6">
+        {{ session('success') }}
+    </div>
+@endif
+<div class="container mx-auto py-8" style="background-color: #F4F4F4;">
     @if($form_baptisans->isEmpty())
-        <a href="{{ route('manajemenJemaat.create3') }}" class="mb-4 inline-block px-4 py-2  bg-gray-700 text-white rounded-md hover:bg-black">Tambah secara manual</a>
+    <h2 class="text-2xl font-semibold m-4">Manajemen Jemaat - Pendaftaran Baptisan Air</h2>
+        <a href="{{ route('manajemenJemaat.create3') }}" class="m-4 inline-block px-4 py-2  bg-gray-700 text-white rounded-md hover:bg-black">Tambah secara manual</a>
         <p class="text-center text-gray-500">Belum ada data yang tersedia.</p>
     @else
-        <h2 class="text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Baptisan Air</h2>
+    <div class="w-full">
+        <div class="flex justify-between">
+            <h2 class="text-2xl font-semibold m-4">Manajemen Jemaat - Pendaftaran Baptisan Air</h2>
+            <a href="{{ route('manajemenJemaat.create3') }}" class="m-4 inline-block px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-black">Tambah secara manual</a>
+        </div>
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Cari nama..." 
+            class="m-4 px-4 border w-[97%] border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+        <div class="absolute inset-y-0 left-3 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a7 7 0 100 14 7 7 0 000-14zm0 0l6 6" />
+        </svg>
+    </div>
 
-        <a href="{{ route('manajemenJemaat.create3') }}" class="mb-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Tambah secara manual</a>
-        {{-- <a href="#" class="mb-4 inline-block px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-black">Tambah secara manual</a> --}}
+    <section class=" mx-4 mb-4 p-4 bg-white shadow-xl rounded-xl h-screen">
+        <!-- Tabel Daftar Nama Anak -->
+        <div class="overflow-x-auto">
+            <table class="table-auto w-full border-collapse border border-gray-200">
+                <thead class="">
+                    <tr class="bg-gray-100 text-left">
+                        <th class="px-4 py-2 border border-gray-200">No</th>
+                        <th class="px-4 py-2 border border-gray-200">Nama</th>
+                        <th class="px-4 py-2 border border-gray-200">Tanggal Pengisian</th>
+                        <th class="px-4 py-2 border border-gray-200">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    @foreach($form_baptisans as $index => $item3)
+                        <tr>
+                            <td class="px-4 py-2 border border-gray-200 text-center">
+                            <div class="relative">
+                                <button 
+                                    class="text-blue-600 font-semibold hover:text-xl hover:underline relative group" 
+                                    onclick="openModal('modal-{{ $item3->id }}')">
+                                        {{ $index + 1 }}.
+                                    <!-- Tooltip -->
+                                    <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-2 z-10 hidden group-hover:block bg-gray-800 text-white text-sm rounded-md px-3 py-2 shadow-lg">
+                                        Detail informasi
+                                    </div>
+                                </button>
+                            </div>
+                            </td>
+                            <td class="px-4 py-2 border border-gray-200">{{ $item3->nama_anak }}</td>
+                            <td class="px-4 py-2 border border-gray-200">{{ $item3->created_at }}</td>
+                            <td class="px-4 py-2 border border-gray-200 flex">
+                                <!-- Tombol Edit -->
+                                <a href="{{ route('form3.edit', ['id' => $item3->id]) }}" 
+                                class="px-3 py-1 w-10 m-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 flex items-center">
+                                    <i class="fas fa-pencil-alt"></i> <!-- Ikon Pensil -->
+                                </a>
 
-        <table class="min-w-full bg-white border rounded-lg shadow-md">
-            <thead>
-                <tr>
-                    <th class="py-2 px-4 border-b">Nama </th>
-                    <th class="py-2 px-4 border-b">Nomor Telepon</th>
-                    <th class="py-2 px-4 border-b">Tempat Lahir</th>
-                    <th class="py-2 px-4 border-b">Tanggal Lahir</th>
-                    <th class="py-2 px-4 border-b">Alamat</th>
-                    <th class="py-2 px-4 border-b">Kelurahan</th>
-                    <th class="py-2 px-4 border-b">Beribadah Di</th>
-                    <th class="py-2 px-4 border-b">Nama Ayah</th>
-                    <th class="py-2 px-4 border-b">Nama Ibu</th>
-                    <th class="py-2 px-4 border-b">Tanggal Baptis</th>
-                    <th class="py-2 px-4 border-b">Gembala Yang Membaptis</th>
-                    <th class="py-2 px-4 border-b">Foto</th>
-                    <th class="py-2 px-4 border-b">Aksi</th>
-                </tr>
+                                <!-- Tombol Hapus -->
+                                <form action="{{ route('manajemenJemaat.destroy', $item3->id) }}" method="POST" class="delete-form">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" 
+                                            class="px-3 py-1 m-2 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center">
+                                        <i class="fas fa-trash-alt"></i> <!-- Ikon Tong Sampah -->
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Modal -->
+        @foreach($form_baptisans as $item3)
+        <div id="modal-{{ $item3->id }}" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden px-4">
+                            
+            <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto p-6 shadow-lg relative">
+                <!-- Tombol Silang -->
+                <button 
+                    onclick="closeModal('modal-{{ $item3->id }}')" 
+                    class="absolute top-3 right-3 text-gray-600 hover:text-gray-800 text-4xl font-semibold">
+                    &times;
+                </button>
 
-            </thead>
-            <tbody>
-                @foreach($form_baptisans as $item3)
-                <tr class="text-center">
-                    <td class="py-2 px-4 border-b">{{ $item3->nama_anak }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->nomor_telp }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->tempat_lahir }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->tanggal_lahir }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->alamat}}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->kelurahan }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->beribadah_di }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->nama_ayah }}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->nama_ibu}}</td>   
-                    <td class="py-2 px-4 border-b">{{ $item3->tanggal_baptis}}</td>
-                    <td class="py-2 px-4 border-b">{{ $item3->pembaptis}}</td>
+                <!-- Header Nama -->
+                <div class="text-center mb-6">
+                    <h3 class="text-3xl font-bold">Detail Informasi Baptisan Air</h3>
+                    <h1 class="text-lg text-gray-600">{{ $item3->nama_anak }}</h1>
+                </div>
 
-                    <td class="py-2 px-4 border-b">
-                        @if($item3->file_foto_pemohon_baptis)
-                        <a href="{{ asset('storage/' . $item3->file_foto_pemohon_baptis) }}" target="_blank"><img src="{{ asset('storage/' . $item3->file_foto_pemohon_baptis) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover"> </a>
-                        @else
-                            <p>Belum ada foto</p>
-                        @endif
-                    </td>
-                    <td class="py-2 px-4 border-b">
-                        <a href="{{ route('form3.edit', $item3->id) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">Edit</a>
-                        <form action="{{ route('manajemenJemaat.destroy', $item3->id) }}" method="POST" class="inline-block">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600">Hapus</button>
-                        </form>
+                <!-- Detail Informasi -->
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Nomor Telepon:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->nomor_telp }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Tempat Lahir:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->tempat_lahir }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Tanggal Lahir:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->tanggal_lahir }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Nama Ayah:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->nama_ayah }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Nama Ibu:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->nama_ibu }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Alamat:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->alamat }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Kelurahan:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->kelurahan }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Beribadah di:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->beribadah_di }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Tanggal Baptis:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->tanggal_baptis }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Gembala yang Membaptis:</span>
+                        <span class="ml-2 w-2/3">{{ $item3->pembaptis }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold w-1/3">Pas Foto:</span>
+                        <span class="ml-2 w-2/3">
+                            @if($item3->file_foto_pemohon_baptis)
+                                <a href="{{ asset('storage/' . $item3->file_foto_pemohon_baptis) }}" target="_blank">
+                                    <img src="{{ asset('storage/' . $item3->file_foto_pemohon_baptis) }}" alt="Pas Foto" class="w-16 h-16 rounded-full object-cover mt-2">
+                                </a>
+                            @else
+                                Belum ada foto
+                            @endif
+                        </span>
+                    </div>
+                </div>
+                
+                 <!-- Tombol Edit dan Hapus -->
+            <div class="mt-6 flex justify-between">
+                <!-- Tombol Edit -->
+                <a href="{{ route('form3.edit', ['id' => $item3->id]) }}" 
+                class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 flex items-center">
+                    <i class="fas fa-pencil-alt"></i> <!-- Ikon Pensil -->
+                </a>
 
-
-                        </td>
-                    {{-- <td class="py-2 px-4 border-b">
-                        <!-- Aksi Edit atau Hapus -->
-                        <a href="{{ route('admin.child-registrations.edit', $item1->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded">Edit</a>
-                        <form action="{{ route('admin.child-registrations.destroy', $item1->id) }}" method="POST" class="inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Hapus</button>
-                        </form>
-                    </td> --}}
-                </tr>
-
-            @endforeach
-            </tbody>
-
-        </table>
-
-@endif
+                <!-- Tombol Hapus -->
+                <form action="{{ route('manajemenJemaat.destroy', $item3->id) }}" method="POST" class="delete-form">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" 
+                            class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center">
+                        <i class="fas fa-trash-alt"></i> <!-- Ikon Tong Sampah -->
+                    </button>
+                </form>
+            </div>          
+        </div>
+        @endforeach
+    </section>
+    @endif
 </div>
+<script>
+    function openModal(id) {
+        document.getElementById(id).classList.remove('hidden');
+    }
 
+    function closeModal(id) {
+        document.getElementById(id).classList.add('hidden');
+    }
+
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+        const searchQuery = this.value.toLowerCase();
+        const tableRows = document.querySelectorAll('#tableBody tr');
+
+        tableRows.forEach(row => {
+            const nameCell = row.querySelector('td:nth-child(2)'); // Kolom kedua (Nama Anak)
+            if (nameCell) {
+                const name = nameCell.textContent.toLowerCase();
+                if (name.includes(searchQuery)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+        });
+    });
+</script>
 @endsection
