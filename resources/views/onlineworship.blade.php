@@ -264,7 +264,6 @@
 
 <body>
 <section class="relative bg-black text-white min-h-screen flex items-center justify-center">
-        <!-- Gambar Background dengan Overlay -->
         <div class="absolute inset-0 bg-cover bg-center"
             style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
             <div class="absolute inset-0 bg-black bg-opacity-70"></div>
