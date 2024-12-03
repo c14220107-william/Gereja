@@ -1,14 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>
-    Ibadah Online
-</h1>
-
 <head>
-    <title>
-        Church Website
-    </title>
     <style>
         html,
         body {
@@ -270,6 +263,12 @@
 </head>
 
 <body>
+<section class="relative bg-black text-white min-h-screen flex items-center justify-center">
+        <!-- Gambar Background dengan Overlay -->
+        <div class="absolute inset-0 bg-cover bg-center"
+            style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
+            <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+        </div>
     @if ($isWorshipTime)
         @if ($youtubeLink)
             <div class="main-banner flex flex-col items-center bg-gray-100 p-6">
@@ -283,60 +282,12 @@
     @else
 
     <div class="animate-bounce">
-        <h2 class="text-4xl font-serif font-extrabold text-center p-36">Ibadah dimulai pukul 07:45 hingga 09:30 setiap hari Minggu.</h2> 
+        <h2 class="text-4xl font-serif font-extrabold text-center p-48">Ibadah dimulai pukul 07:45 hingga 09:30 setiap hari Minggu.</h2> 
     </div>
 
     @endif
 
-
-
-    {{-- <!-- SERMON LIST SECTION -->
-    <div class="sermons ">
-        <h2> 
-            Ibadah Lainnya
-        </h2>
-        <div class="sermon-list">
-            <div class="sermon-item">
-                <iframe class="small-video" src="https://www.youtube.com/embed/NdzpCeRC9K8?si=sX1c5bOuImnE2akn" allowfullscreen></iframe>
-                <div class="content">
-                    <h3>
-                        Judul Video
-                    </h3>
-                    <p>
-                        Nad
-                    </p>
-                    <a class="btn-watch" href="#">
-                        Watch
-                    </a>
-                </div>
-            </div>
-            <div class="sermon-item">
-                <iframe class="small-video" src="https://www.youtube.com/embed/VIDEO_ID_2" height="200" allowfullscreen></iframe>
-                <div class="content">
-                    <h3>
-                        Judul video
-                    </h3>
-                    <p>
-                        Nicel
-                    </p>
-                    <a class="btn-watch" href="#">
-                        Watch
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!-- NEW CONTAINER SECTION
-        <div class="cs">
-            <h1 style="color: black">
-                God wants to use you.
-            </h1>
-            <p style="color: black">
-                We're here to support you regardless of where you are on your faith journey. Let us guide you towards your next step and discover what God has in store for your life.
-            </p>
-            <a class="btn-learn" href="#" style="color: black;">
-                Learn More
-            </a>
-        </div> -->
+</section>
+@include('components.marquee')
 </body>
 @endsection
