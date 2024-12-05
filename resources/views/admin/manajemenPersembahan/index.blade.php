@@ -37,10 +37,42 @@
         </form>
     </div>
 
+    <!-- Filter dan Pengaturan -->
+    <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 sm:gap-6">
+        <!-- Kolom Pencarian -->
+        <input type="text" id="searchInput" onkeyup="searchTable()" 
+               placeholder="Cari Nama atau Kritik" 
+               class="py-3 px-6 w-full sm:w-128 rounded-lg bg-[#E6E6E9] text-[#000000] border border-[#9999A1] shadow-sm focus:outline-none">
+
+        <!-- Dropdown Filter dan Tampilkan -->
+        <div class="flex space-x-4">
+            <!-- Dropdown Filter Anonymous/Nama (tanpa tanda panah) -->
+            <select id="filterType" onchange="filterType()" class="py-2 px-6 rounded-lg bg-[#E6E6E9] text-[#000000] border border-[#9999A1] shadow-sm text-sm">
+                <option value="all">Semua</option>
+                <option value="Umum">Umum</option>
+                <option value="Youth">Youth</option>
+                <option value="Sekolah_Minggu">Sekolah Minggu</option>
+            </select>
+
+
+            <!-- Dropdown Tampilkan Records -->
+            <div class="flex items-center">
+                <label for="recordsPerPage" class="text-sm font-semibold text-[#000000] mr-2">Tampilkan:</label>
+                <select id="recordsPerPage" class="py-2 px-6 rounded-lg bg-[#E6E6E9] text-[#000000] border border-[#9999A1] shadow-sm text-sm" 
+                        onchange="changeRecordsPerPage()">
+                    <option value="10" @if(request()->get('per_page') == 10) selected @endif>10</option>
+                    <option value="20" @if(request()->get('per_page') == 20) selected @endif>20</option>
+                    <option value="30" @if(request()->get('per_page') == 30) selected @endif>30</option>
+                    <option value="100" @if(request()->get('per_page') == 100) selected @endif>100</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
     <!-- Table Display -->
     <div class="bg-white shadow-md rounded p-6">
         <h2 class="text-xl font-semibold text-gray-800 mb-4">Daftar Persembahan</h2>
-        <table class="min-w-full table-auto border-collapse border border-gray-300">
+        <table id="tableDisplay" class="min-w-full table-auto border-collapse border border-gray-300">
             <thead class="bg-gray-100">
                 <tr>
                     <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Tanggal</th>
@@ -71,6 +103,7 @@
                 @endforeach
             </tbody>
         </table>
+        
     </div>
     <!-- Total Persembahan per Kategori -->
     <div class="bg-white shadow-md rounded p-6 mb-8">
@@ -133,5 +166,23 @@
             }
         }
     });
+
+    function searchTable() {
+        const input = document.getElementById("searchInput").value.toLowerCase();
+        const rows = document.querySelectorAll("table tbody tr");
+        rows.forEach(row => {
+            row.style.display = row.innerText.toLowerCase().includes(input) ? "" : "none";
+        });
+    }
+
+    function filterType() {
+        const filterType = document.getElementById("filterType").value;
+        const rows = document.querySelectorAll("table tbody tr");
+        rows.forEach(row => {
+            const category = row.querySelector('td:nth-child(2)').textContent.trim();
+            row.style.display = filterType === "all" || category === filterType ? "" : "none";
+        });
+    }
+
 </script>
 @endsection
