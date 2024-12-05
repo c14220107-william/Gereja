@@ -6,7 +6,7 @@
         {{ session('success') }}
     </div>
 @endif
-<div class="container mx-auto py-8" style="background-color: #F4F4F4;">
+<div class="container mx-auto py-6" style="background-color: #F4F4F4;">
     @if($form_baptisans->isEmpty())
     <h2 class="text-2xl font-semibold m-4">Manajemen Jemaat - Pendaftaran Baptisan Air</h2>
         <a href="{{ route('manajemenJemaat.create3') }}" class="m-4 inline-block px-4 py-2  bg-gray-700 text-white rounded-md hover:bg-black">Tambah secara manual</a>
@@ -23,13 +23,10 @@
             placeholder="Cari nama..." 
             class="m-4 px-4 border w-[97%] border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <div class="absolute inset-y-0 left-3 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a7 7 0 100 14 7 7 0 000-14zm0 0l6 6" />
-        </svg>
+        
     </div>
 
-    <section class=" mx-4 mb-4 p-4 bg-white shadow-xl rounded-xl h-screen">
+    <section class=" mx-4 mb-2 p-4 bg-white shadow-xl rounded-xl h-screen">
         <!-- Tabel Daftar Nama Anak -->
         <div class="overflow-x-auto">
             <table class="table-auto w-full border-collapse border border-gray-200">

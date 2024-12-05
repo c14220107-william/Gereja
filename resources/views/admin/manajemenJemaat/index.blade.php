@@ -8,7 +8,7 @@
         {{ session('success') }}
     </div>
 @endif
-<div class="container mx-auto py-8" style="background-color: #F4F4F4;">
+<div class="container mx-auto py-6" style="background-color: #F4F4F4;">
     @if($form_penyerahan_anaks->isEmpty())
     <div class=" w-full flex-col content-center">
         <h2 class="ml-4 text-2xl font-semibold mb-6">Manajemen Jemaat - Pendaftaran Penyerahan Anak</h2>

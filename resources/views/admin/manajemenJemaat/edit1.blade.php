@@ -1,8 +1,8 @@
 @extends('admin.layouts.app')
 
 @section('content')
-<h1 class="text-2xl font-bold mb-6">Edit Data Penyerahan Anak</h1>
-<form action="{{ route('form1.update', $formPenyerahanAnak->id) }}" method="POST" class="space-y-4" enctype="multipart/form-data">
+<h1 class="text-2xl font-bold m-4">Edit Data Penyerahan Anak</h1>
+<form action="{{ route('form1.update', $formPenyerahanAnak->id) }}" method="POST" class="space-y-4 m-4" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div>
