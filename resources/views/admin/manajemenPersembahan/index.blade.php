@@ -3,23 +3,35 @@
 @section('content')
 <div class="container mx-auto p-6">
     <!-- Heading -->
-    
-        <h1 class="text-4xl font-extrabold text-[#000000] text-left mb-1">Manajemen Persembahan Gereja</h1>
-        <h3 class="text-xl font-semibold text-gray-500">Kelola data persembahan dengan mudah.</h3>
+    <div class="flex justify-between items-center mb-4">
+        <div>
+            <h1 class="text-4xl font-extrabold text-[#000000] text-left mb-1">Manajemen Persembahan Gereja</h1>
+            <h3 class="text-xl font-semibold text-gray-500">Kelola data persembahan dengan mudah.</h3>
+        </div>
+        <!-- Button Tambah Persembahan -->
+        <button id="toggleFormButton" 
+            class="m-4 inline-block px-4 py-2 bg-gray-700 text-white rounded-md hover:bg-black">
+        Tambah Persembahan
+        </button>
+    </div>
     
 
     <!-- Form Input -->
-    <div class="bg-white shadow-md rounded p-6 mb-8">
+    <div id="formTambahPersembahan" class="bg-white shadow-md rounded p-6 mb-8 hidden">
         <h2 class="text-xl font-semibold text-gray-800 mb-4">Tambah Persembahan</h2>
         <form action="{{ route('admin.storePersembahan') }}" method="POST" class="space-y-4">
             @csrf
             <div>
                 <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal</label>
-                <input type="date" id="tanggal" name="tanggal" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                <input type="date" id="tanggal" name="tanggal" 
+                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" 
+                       required>
             </div>
             <div>
                 <label for="kategori" class="block text-sm font-medium text-gray-700">Kategori</label>
-                <select id="kategori" name="kategori" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" required>
+                <select id="kategori" name="kategori" 
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" 
+                        required>
                     <option value="Umum">Umum</option>
                     <option value="Youth">Youth</option>
                     <option value="Sekolah_Minggu">Sekolah Minggu</option>
@@ -27,16 +39,18 @@
             </div>
             <div>
                 <label for="jumlah" class="block text-sm font-medium text-gray-700">Jumlah (Rp)</label>
-                <input type="number" id="jumlah" name="jumlah" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                <input type="number" id="jumlah" name="jumlah" 
+                       class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" 
+                       required>
             </div>
             <div>
                 <label for="detail" class="block text-sm font-medium text-gray-700">Detail</label>
-                <textarea id="detail" name="detail" rows="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
+                <textarea id="detail" name="detail" rows="1" 
+                          class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
             </div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md shadow hover:bg-blue-600">Simpan</button>
         </form>
     </div>
-
 
     <!-- Table Display -->
     <div class="bg-white shadow-md rounded p-6">
@@ -186,6 +200,11 @@
             row.style.display = filterType === "all" || category === filterType ? "" : "none";
         });
     }
+
+    document.getElementById('toggleFormButton').addEventListener('click', function() {
+        const form = document.getElementById('formTambahPersembahan');
+        form.classList.toggle('hidden');
+    });
 
 </script>
 @endsection
