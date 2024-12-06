@@ -24,7 +24,7 @@
         <h3 class="text-xl font-semibold">Manajemen Form Penyerahan Anak</h3>
     </div>
     <p class="text-3xl mt-4">{{$form_penyerahan_anak}}</p>
-    <a href="{{ route('manajemenJemaat.index')}}" class="mt-4 inline-block text-gray-200 hover:text-gray-300">View Details</a>
+    <a href="{{ route('manajemenJemaat.index')}}" class="mt-4 inline-block text-gray-700 hover:text-gray-900">View Details</a>
 </div>
 
 <!-- New Members Card -->
@@ -72,7 +72,7 @@
         <h3 class="text-xl font-semibold">Total Persembahan</h3>
     </div>
     <p class="text-3xl mt-4">Rp {{ number_format($totalAllPersembahan, 0, ',', '.') }}</p>
-    <a href="{{ route('admin.manajemen_persembahan.index') }}" class="mt-4 inline-block text-gray-200 hover:text-gray-300">View Persembahan</a>
+    <a href="{{ route('admin.manajemen_persembahan.index') }}" class="mt-4 inline-block text-gray-700 hover:text-gray-900">View Persembahan</a>
 </div>
 
 <!-- Total Offerings Card -->
