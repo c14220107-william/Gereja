@@ -19,7 +19,7 @@
 <div data-aos="fade-up" class="bg-[#ECEBE4] text-black rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
     <div class="flex items-center mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-black" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2-8a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M12 2a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zM7 14a5 5 0 00-5 5v1a1 1 0 001 1h16a1 1 0 001-1v-1a5 5 0 00-5-5H7zm2 2h6a3 3 0 013 3H6a3 3 0 013-3z" clip-rule="evenodd" />
         </svg>
         <h3 class="text-xl font-semibold">Manajemen Form Penyerahan Anak</h3>
     </div>
@@ -31,7 +31,7 @@
 <div data-aos="fade-up" class="bg-[#DADDD8] text-black rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
     <div class="flex items-center mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-black" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M15 3a3 3 0 00-3-3 3 3 0 00-3 3v7a3 3 0 000 6v2h6v-2a3 3 0 000-6V3z" />
+            <path d="M8.5 13A3.5 3.5 0 1 1 12 9.5 3.5 3.5 0 0 1 8.5 13zm7 0a3.5 3.5 0 1 1 3.5-3.5 3.5 3.5 0 0 1-3.5 3.5zm2.8-8.8a4.4 4.4 0 0 0-6.2 0l-1.4 1.4 6.2 6.2 1.4-1.4a4.4 4.4 0 0 0 0-6.2z"/>
         </svg>
         <h3 class="text-xl font-semibold">Manajemen Pernikahan</h3>
     </div>

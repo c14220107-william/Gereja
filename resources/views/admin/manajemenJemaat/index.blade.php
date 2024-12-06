@@ -34,14 +34,14 @@
 
         <section class=" mx-4 mb-4 p-4 bg-white shadow-xl rounded-xl h-screen">
             <!-- Tabel Daftar Nama Anak -->
-            <div class="overflow-x-auto">
-                <table class="table-auto w-full border-collapse border border-gray-200">
-                    <thead class="">
-                        <tr class="bg-gray-100 text-left">
-                            <th class="px-4 py-2 border border-gray-200">No</th>
-                            <th class="px-4 py-2 border border-gray-200">Nama Anak</th>
-                            <th class="px-4 py-2 border border-gray-200">Tanggal Pengisian</th>
-                            <th class="px-4 py-2 border border-gray-200">Aksi</th>
+            <div class="rounded-xl shadow-lg overflow-hidden bg-white">
+                <table class="min-w-full table-auto border-collapse border border-gray-300">
+                    <thead class="bg-[#333333]">
+                        <tr class="">
+                            <th class="py-4 px-3 text-left font-semibold uppercase text-white tracking-wide">No</th>
+                            <th class="py-4 px-3 text-left font-semibold uppercase text-white tracking-wide">Nama Anak</th>
+                            <th class="py-4 px-3 text-left font-semibold uppercase text-white tracking-wide">Tanggal Pengisian</th>
+                            <th class="py-4 px-3 text-center font-semibold uppercase text-white tracking-wide">Aksi</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -62,10 +62,10 @@
                                 </td>
                                 <td class="px-4 py-2 border border-gray-200">{{ $item1->nama_anak }}</td>
                                 <td class="px-4 py-2 border border-gray-200">{{ $item1->created_at }}</td>
-                                <td class="px-4 py-2 border border-gray-200 flex">
+                                <td class="px-4 py-2 border border-gray-200 flex justify-center items-center gap-2">
                                     <!-- Tombol Edit -->
                                     <a href="{{ route('form1.edit', ['id' => $item1->id]) }}" 
-                                    class="px-3 py-1 w-10 m-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 flex items-center">
+                                    class="px-3 py-1 w-10 m-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-600 flex items-center justify-center">
                                         <i class="fas fa-pencil-alt"></i> <!-- Ikon Pensil -->
                                     </a>
 
@@ -74,7 +74,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" 
-                                                class="px-3 py-1 m-2 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center">
+                                                class="px-3 py-1 m-2 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center justify-center">
                                             <i class="fas fa-trash-alt"></i> <!-- Ikon Tong Sampah -->
                                         </button>
                                     </form>

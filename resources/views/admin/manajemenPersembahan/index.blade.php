@@ -1,12 +1,12 @@
 @extends('admin.layouts.app')
 
 @section('content')
-<div class="container mx-auto py-8">
+<div class="container mx-auto p-6">
     <!-- Heading -->
-    <div class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-800">Manajemen Persembahan Gereja</h1>
-        <p class="text-gray-600">Kelola data persembahan dengan mudah.</p>
-    </div>
+    
+        <h1 class="text-4xl font-extrabold text-[#000000] text-left mb-1">Manajemen Persembahan Gereja</h1>
+        <h3 class="text-xl font-semibold text-gray-500">Kelola data persembahan dengan mudah.</h3>
+    
 
     <!-- Form Input -->
     <div class="bg-white shadow-md rounded p-6 mb-8">
@@ -19,7 +19,7 @@
             </div>
             <div>
                 <label for="kategori" class="block text-sm font-medium text-gray-700">Kategori</label>
-                <select id="kategori" name="kategori" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+                <select id="kategori" name="kategori" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2" required>
                     <option value="Umum">Umum</option>
                     <option value="Youth">Youth</option>
                     <option value="Sekolah_Minggu">Sekolah Minggu</option>
@@ -31,13 +31,18 @@
             </div>
             <div>
                 <label for="detail" class="block text-sm font-medium text-gray-700">Detail</label>
-                <textarea id="detail" name="detail" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                <textarea id="detail" name="detail" rows="1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"></textarea>
             </div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md shadow hover:bg-blue-600">Simpan</button>
         </form>
     </div>
 
-    <!-- Filter dan Pengaturan -->
+
+    <!-- Table Display -->
+    <div class="bg-white shadow-md rounded p-6">
+        <h2 class="text-2xl font-bold text-black mb-4">Daftar Persembahan</h2>
+
+        <!-- Filter dan Pengaturan -->
     <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 sm:gap-6">
         <!-- Kolom Pencarian -->
         <input type="text" id="searchInput" onkeyup="searchTable()" 
@@ -69,17 +74,15 @@
         </div>
     </div>
 
-    <!-- Table Display -->
-    <div class="bg-white shadow-md rounded p-6">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4">Daftar Persembahan</h2>
+    <div class="rounded-xl shadow-lg overflow-hidden bg-white">
         <table id="tableDisplay" class="min-w-full table-auto border-collapse border border-gray-300">
-            <thead class="bg-gray-100">
+            <thead class="bg-[#333333]">
                 <tr>
-                    <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Tanggal</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Kategori</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Jumlah</th>
-                    <th class="border border-gray-300 px-4 py-2 text-left text-sm font-medium text-gray-700">Detail</th>
-                    <th class="border border-gray-300 px-4 py-2 text-center text-sm font-medium text-gray-700">Aksi</th>
+                    <th class="py-4 px-3 text-left font-semibold uppercase text-white tracking-wide">Tanggal</th>
+                    <th class="py-4 px-3 text-left font-semibold uppercase text-white tracking-wide">Kategori</th>
+                    <th class="py-4 px-3 text-left font-semibold uppercase text-white tracking-wide">Jumlah</th>
+                    <th class="py-4 px-3 text-left font-semibold uppercase text-white tracking-wide">Detail</th>
+                    <th class="py-4 px-3 text-center font-semibold uppercase text-white tracking-wide">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -90,24 +93,24 @@
                         <td class="px-4 py-2">Rp {{ number_format($persembahan->jumlah, 0, ',', '.') }}</td>
                         <td class="px-4 py-2">{{ $persembahan->detail }}</td>
                         <td class="px-4 py-2 text-center">
-                            <a href="{{ route('admin.manajemenPersembahan.edit', ['id' => $persembahan->id]) }}" class="px-3 py-1 bg-yellow-500 text-white rounded-md hover:bg-yellow-600">
+                            <a href="{{ route('admin.manajemenPersembahan.edit', ['id' => $persembahan->id]) }}" class="px-4 py-2 bg-yellow-500 text-sm text-white rounded-md hover:bg-yellow-600 mr-2 inline-block">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
                             <form action="{{ route('admin.manajemenPersembahan.destroy', $persembahan->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">Hapus</button>
+                                <button type="submit" class="bg-red-500 text-sm text-white px-4 py-2 rounded-md hover:bg-red-600">Hapus</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        
     </div>
+        
     <!-- Total Persembahan per Kategori -->
-    <div class="bg-white shadow-md rounded p-6 mb-8">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4">Total Persembahan per Kategori</h2>
+    <div class="bg-white shadow-md rounded p-6 mt-8">
+        <h2 class="text-xl font-bold text-black mb-4">Total Persembahan per Kategori</h2>
         <div class="grid grid-cols-3 gap-4">
             <div class="text-center">
                 <p class="text-sm font-medium text-gray-700">Umum</p>
@@ -126,7 +129,7 @@
 
     <!-- Chart Display -->
     <div class="bg-white shadow-md rounded p-6 mt-8">
-        <h2 class="text-xl font-semibold text-gray-800 mb-4">Grafik Persembahan</h2>
+        <h2 class="text-2xl font-bold text-black mb-4">Grafik Persembahan</h2>
         <canvas id="chartPersembahan"></canvas>
     </div>
 </div>

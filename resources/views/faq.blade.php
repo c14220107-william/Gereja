@@ -38,6 +38,12 @@
         transform: translateY(0);
         box-shadow: none;
     }
+
+    .bg-cover {
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
 </style>
 
 <section class="relative bg-black">
