@@ -75,16 +75,7 @@
     <a href="{{ route('admin.manajemen_persembahan.index') }}" class="mt-4 inline-block text-gray-700 hover:text-gray-900">View Persembahan</a>
 </div>
 
-<!-- Total Offerings Card -->
-<div data-aos="fade-up" class="bg-[#DADDD8] text-black rounded-lg p-6 shadow-lg hover:scale-105 hover:shadow-xl transition-all transform">
-    <div class="flex items-center mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 mr-2 text-black" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2-8a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd" />
-        </svg>
-        <h3 class="text-xl font-semibold">Total Offerings</h3>
-    </div>
-    <p class="text-3xl mt-4">Rp 18,000</p>
-</div>
+
 
 
 </div>
