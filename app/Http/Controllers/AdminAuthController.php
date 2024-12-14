@@ -21,10 +21,11 @@ class AdminAuthController extends Controller
             if (auth()->user()->role == 'admin') {
                 return redirect()->intended('/admin/dashboard');
             } else {
-                Auth::logout();
-                return redirect('/admin/login')->withErrors('Anda bukan admin.');
+                // Auth::logout();
+                // return redirect('/admin/login')->withErrors('Anda bukan admin.');
+                return redirect('/');
             }
-        }
+        } 
 
         return redirect()->back()->withErrors('Email atau password salah.');
     }
@@ -40,15 +41,21 @@ public function register(Request $request)
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255|unique:users',
-        'password' => 'required|string|min:8|confirmed', // Menggunakan konfirmasi password
+        'password' => 'required|string|min:8|confirmed',
     ]);
+
+
+    $role = 'user';
+    if (strpos($request->email, '@gppsbethlehem.com') !== false) {
+        $role = 'admin';  
+    }
 
     // Buat user baru
     $user = new User();
     $user->name = $request->name;
     $user->email = $request->email;
     $user->password = bcrypt($request->password); // Hash password
-    $user->role = 'admin'; // Set role sebagai admin
+    $user->role = $role; // Set role sebagai admin
     $user->save();
 
     // Redirect ke login setelah registrasi

@@ -43,6 +43,7 @@
             /* Untuk meletakkan konten di tengah secara vertikal */
             height: 100vh;
             /* Memberikan tinggi 100% dari viewport */
+            z-index: 10;
         }
 
         iframe {
@@ -263,30 +264,36 @@
 </head>
 
 <body>
-<section class="relative bg-black text-white min-h-screen flex items-center justify-center">
-        <div class="absolute inset-0 bg-cover bg-center"
-            style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
-            <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+    <section class="relative bg-black text-white min-h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
+                    <div class="absolute inset-0 bg-black bg-opacity-70">
+
+                    </div>
         </div>
-    @if ($isWorshipTime)
-        @if ($youtubeLink)
-            <div class="main-banner flex flex-col items-center bg-gray-100 p-6">
-                <h2 class="text-6xl font-serif font-extrabold text-center -mt-6 mb-4">Live Streaming</h2>
-                <iframe height="400" src="{{ $youtubeLink->url }}" width="100%" style="max-width: 800px;" allowfullscreen></iframe>
-                <p class="text-xl text-center mt-3 text-gray-600">Selamat beribadah, Tuhan Yesus memberkati!</p>
-            </div>
-        @else
-            <p class="text-xl text-center text-gray-600">Link streaming belum tersedia.</p>
-        @endif
-    @else
+                
+                @if ($isWorshipTime)
+                    @if ($youtubeLink)
+                        
+                        <div class="main-banner flex flex-col items-center mt-4 p-6">
+                            <h2 class="text-6xl font-serif font-extrabold text-center mt-12 mb-4">Live Streaming</h2>
+                            <iframe height="400" src="{{ $youtubeLink->url }}" width="100%" style="max-width: 800px;" allowfullscreen></iframe>
+                            <h3 class="text-6xl font-serif font-extrabold text-center mt-12">Selamat beribadah, Tuhan Yesus memberkati!</h3>
+                        </div>
+                    @else
+                        <p class="text-xl text-center text-gray-600">Link streaming belum tersedia.</p>
+                    @endif
+                @else
 
-    <div class="animate-bounce">
-        <h2 class="text-4xl font-serif font-extrabold text-center p-48">Ibadah dimulai pukul 07:45 hingga 09:30 setiap hari Minggu.</h2> 
-    </div>
+                <div>
+                    <h2 class="text-4xl font-serif font-extrabold text-center p-48 relative z-10">
+                    IBADAH DIMULAI PADA<br><br>HARI MINGGU<br><br>SETIAP PUKUL 07:45 AM - 09:30 AM. <br><br>
+                    </h2>
+                </div>
 
-    @endif
+            @endif
+        
 
-</section>
+    </section>
 @include('components.marquee')
 </body>
 @endsection

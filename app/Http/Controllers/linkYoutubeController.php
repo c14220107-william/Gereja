@@ -12,7 +12,7 @@ class linkYoutubeController extends Controller
 
     public function index(){
 
-        $link = YouTubeLink::all();
+        $link = YouTubeLink::latest()->first();
         
 
         return view('admin.manajemen_liveStreaming.index',compact('link'));

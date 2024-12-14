@@ -12,6 +12,26 @@
         </button>
         <div class="hidden w-full md:block md:w-auto mx-auto" id="navbar-default">
             <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
+                @if (Auth::check())
+                    <li>
+                        <a href="{{ route('home') }}" class="block py-2 px-4 rounded {{ Request::is('/') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('service-registration') }}" class="block py-2 px-4 rounded {{ Request::is('service-registration') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">Registration</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('onlineworship') }}" class="block py-2 px-4 rounded {{ Request::is('onlineworship') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">Online Service</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('faq') }}" class="block py-2 px-4 rounded {{ Request::is('faq') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">FAQ</a>
+                    </li>
+                    <li>
+                        <form action="{{ route('admin.logout') }}"  method="POST" class="block py-2 px-4 rounded {{ Request::is('admin.logout') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">
+                            @csrf
+                            <button type="submit" >Logout</button>
+                        </form>
+                    </li>
+                @else
                 <li>
                     <a href="{{ route('home') }}" class="block py-2 px-4 rounded {{ Request::is('/') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}" aria-current="page">Home</a>
                 </li>
@@ -24,7 +44,14 @@
                 <li>
                     <a href="{{ route('faq') }}" class="block py-2 px-4 rounded {{ Request::is('faq') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">FAQ</a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.login') }}" class="block py-2 px-4 rounded {{ Request::is('admin.login') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">Login</a>
+                </li>
+            @endif
+
+                    
             </ul>
+
         </div>
     </div>
 </nav>

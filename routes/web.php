@@ -82,7 +82,7 @@ Route::middleware('admin')->group(function () {
     Route::post('admin/manajemenJemaat/create2', [Form_Controller::class, 'storefromCreate2'])->name('Form2.store');
     Route::get('/admin/manajemenJemaat/edit2/{id}', [Form_Controller::class, 'edit2'])->name('form2.edit');
     Route::put('/admin/manajemenJemaat/edit2/{id}', [Form_Controller::class, 'update2'])->name('form2.update');
-    Route::delete('/admin/manajemenJemaat/{id}', [Form_Controller::class, 'destroy'])->name('manajemenJemaat.destroy');
+    // Route::delete('/admin/manajemenJemaat/{id}', [Form_Controller::class, 'destroy'])->name('manajemenJemaat.destroy'); 
 
     
 
@@ -93,7 +93,7 @@ Route::middleware('admin')->group(function () {
     Route::post('admin/manajemenJemaat/create3', [Form_Controller::class, 'storefromCreate3'])->name('Form3.store');
     Route::get('/admin/manajemenJemaat/edit3/{id}', [Form_Controller::class, 'edit3'])->name('form3.edit');
     Route::put('/admin/manajemenJemaat/edit3/{id}', [Form_Controller::class, 'update3'])->name('form3.update');
-    Route::delete('/admin/manajemenJemaat/{id}', [Form_Controller::class, 'destroy'])->name('manajemenJemaat.destroy');
+    // Route::delete('/admin/manajemenJemaat/{id}', [Form_Controller::class, 'destroy'])->name('manajemenJemaat.destroy');
 
 
 
@@ -129,9 +129,7 @@ Route::middleware('admin')->group(function () {
 
 
 
-Route::post('admin/manajemenJemaat/create1', [Form_Controller::class, 'storefromCreate'])->name('Form1.store');
-Route::post('admin/manajemenJemaat/create2', [Form_Controller::class, 'storefromCreate2'])->name('Form2.store');
-Route::post('admin/manajemenJemaat/create3', [Form_Controller::class, 'storefromCreate3'])->name('Form3.store');
+
 
 
 // Route::get('/admin/manajemenJemaat', [Form_Controller::class, 'index'])->name('manajemenJemaat.index');
