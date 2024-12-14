@@ -4,7 +4,7 @@
 <style>
     /* General Styling */
     body {
-        font-family: 'Inter', sans-serif;
+        /* font-family: 'Inter', sans-serif; */
         background-color: #ffffff;
         color: #000000;
     }

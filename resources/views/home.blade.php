@@ -309,7 +309,7 @@
                         <p class="text-gray-700">Minggu | Pukul 07:45 - 09:30</p>
                         <p class="text-sm text-gray-500">Bergabunglah dalam ibadah utama dengan pujian dan khotbah yang menginspirasi.</p>
                         <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                            <img src="{{ asset('img/umum.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
                         </div>
                     </div>
 
@@ -320,7 +320,7 @@
                         <p class="text-gray-700">Selasa | Pukul 16:30 - 18:00</p>
                         <p class="text-sm text-gray-500">Ibadah khusus wanita dengan suasana sukacita dan pujian menyentuh hati.</p>
                         <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                            <img src="{{ asset('img/KW.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
                         </div>
                     </div>
 
@@ -330,7 +330,7 @@
                         <p class="text-gray-700">Rabu | Pukul 19:00 - 21:00</p>
                         <p class="text-sm text-gray-500">Komunitas muda yang menyenangkan dan penuh semangat.</p>
                         <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                            <img src="{{ asset('img/commcell2.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
                         </div>
                     </div>
 
@@ -341,7 +341,7 @@
                         <p class="text-gray-700">Kamis | Pukul 18:30 - 20:00</p>
                         <p class="text-sm text-gray-500">Akhiri hari dengan doa malam yang penuh damai dan refleksi rohani.</p>
                         <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                            <img src="{{ asset('img/dm2.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
                         </div>
                     </div>
 
@@ -352,7 +352,7 @@
                         <p class="text-gray-700">Sabtu | Pukul 05:30 - 06:30</p>
                         <p class="text-sm text-gray-500">Mulailah pagi Anda dengan doa bersama untuk mendapatkan kekuatan dan berkat.</p>
                         <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                            <img src="{{ asset('img/fajar.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
                         </div>
                     </div>
 
@@ -363,7 +363,7 @@
                         <p class="text-gray-700">Minggu | Pukul 08:00 - 09:30</p>
                         <p class="text-sm text-gray-500">Ibadah anak-anak yang menyenangkan untuk menumbuhkan iman sejak dini.</p>
                         <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                            <img src="{{ asset('img/SM.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
                         </div>
                     </div>
 
@@ -374,7 +374,7 @@
                         <p class="text-gray-700">Minggu | Pukul 10:30 - 12:00</p>
                         <p class="text-sm text-gray-500">Bergabunglah dalam ibadah youth untuk bertumbuh dalam iman dan komunitas.</p>
                         <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/fotodalam.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
+                            <img src="{{ asset('img/youth.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
                         </div>
                     </div>
                 </div>
