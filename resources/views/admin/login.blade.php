@@ -30,13 +30,13 @@
             </div>
         </form>
 
-        <!-- link register -->
+        {{-- <!-- link register -->
         <div class="mt-4 text-center">
             <p class="text-sm text-gray-600">
                 Belum punya akun?
                 <a href="{{ route('admin.register') }}" class="text-black hover:underline">Daftar di sini</a>
             </p>
-        </div>
+        </div> --}}
     </div>
 </div>
 @endsection

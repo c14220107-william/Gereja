@@ -240,7 +240,7 @@
 
                     <div class="mb-4">
                         <label for="kritikSaran" class="block text-gray-700">Kritik dan Saran</label>
-                        <textarea id="kritikSaran" name="kritikSaran" class="form-textarea" rows="4" placeholder="Tulis Kritik dan Saran Anda di sini"></textarea>
+                        <textarea id="kritikSaran" name="kritikSaran" class="form-textarea" rows="4" placeholder="Tulis Kritik dan Saran Anda di sini" required></textarea>
                         <p id="kritikSaranError" class="error-message hidden">Kritik dan Saran wajib diisi.</p>
                     </div>
 
@@ -249,7 +249,7 @@
                         <label for="hideName" class="text-gray-700">Sembunyikan Nama</label>
                     </div>
 
-                    <button type="submit" class="form-button">Kirim</button>
+                    <button type="submit" class="form-button confirmation-button">Kirim</button>
                 </form>
             </div>
         </div>

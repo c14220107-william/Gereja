@@ -47,15 +47,18 @@
                         @foreach($form_pernikahans as $index => $item2)
                             <tr>
                                 <td class="px-4 py-2 border border-gray-200 text-center">
-                                    <button 
-                                    class="text-blue-600 font-semibold hover:text-xl hover:underline relative group" 
-                                    onclick="openModal('modal-{{ $item2->id }}')">
-                                        {{ $index + 1 }}.
-                                        <!-- Tooltip -->
-                                        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-2 z-10 hidden group-hover:block bg-gray-800 text-white text-sm rounded-md px-3 py-2 shadow-lg">
-                                            Detail informasi
-                                        </div>
-                                    </button>
+                                    <div class="relative">
+                                        <button 
+                                            class="text-blue-600 font-semibold hover:text-xl hover:underline relative group" 
+                                            onclick="openModal('modal-{{ $item2->id }}')">
+                                                {{ $index + 1 }}.
+                                                <!-- Tooltip -->
+                                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-2 z-10 hidden group-hover:block bg-gray-800 text-white text-sm rounded-md px-3 py-2 shadow-lg">
+                                                    Detail informasi
+                                                </div>
+                                            </button>   
+                                    </div>
+                                    
                                 </td>
                                 <td class="px-4 py-2 border border-gray-200">{{ $item2->nama_calon_mempelai_pria }}
                                 </td>
@@ -84,7 +87,7 @@
             </div>
             
             <!-- Modal -->
-            @foreach($form_pernikahans as $item2)
+        @foreach($form_pernikahans as $item2)
         <div id="modal-{{ $item2->id }}" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden px-4">                   
             <div class="bg-white rounded-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto p-6 shadow-lg relative">
                 <!-- Tombol Silang -->
@@ -309,7 +312,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="submit" 
-                                class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center">
+                                class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center delete-button">
                             <i class="fas fa-trash-alt"></i> <!-- Ikon Tong Sampah -->
                         </button>
                     </form>
@@ -322,6 +325,7 @@
 </div>
 <script>
     function openModal(id) {
+        console.log(id);
         document.getElementById(id).classList.remove('hidden');
     }
 

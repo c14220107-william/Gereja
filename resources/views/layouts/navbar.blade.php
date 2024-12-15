@@ -44,9 +44,9 @@
                 <li>
                     <a href="{{ route('faq') }}" class="block py-2 px-4 rounded {{ Request::is('faq') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">FAQ</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('admin.login') }}" class="block py-2 px-4 rounded {{ Request::is('admin.login') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">Login</a>
-                </li>
+                </li> --}}
             @endif
 
                     

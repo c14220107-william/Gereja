@@ -176,7 +176,7 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" 
-                                                        class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center">
+                                                        class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 flex items-center delete-button">
                                                     <i class="fas fa-trash-alt"></i> <!-- Ikon Tong Sampah -->
                                                 </button>
                                             </form>
@@ -191,6 +191,7 @@
         </section>
 <script>
     function openModal(id) {
+        console.log(id);
         document.getElementById(id).classList.remove('hidden');
     }
 
@@ -214,5 +215,6 @@
             }
         });
     });
+    
 </script>
 @endsection

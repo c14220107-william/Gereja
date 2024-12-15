@@ -58,10 +58,10 @@
 
         <!-- Filter dan Pengaturan -->
     <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 sm:gap-6">
-        <!-- Kolom Pencarian -->
+        {{-- <!-- Kolom Pencarian -->
         <input type="text" id="searchInput" onkeyup="searchTable()" 
                placeholder="Cari Nama atau Kritik" 
-               class="py-3 px-6 w-full sm:w-128 rounded-lg bg-[#E6E6E9] text-[#000000] border border-[#9999A1] shadow-sm focus:outline-none">
+               class="py-3 px-6 w-full sm:w-128 rounded-lg bg-[#E6E6E9] text-[#000000] border border-[#9999A1] shadow-sm focus:outline-none"> --}}
 
         <!-- Dropdown Filter dan Tampilkan -->
         <div class="flex space-x-4">
@@ -74,7 +74,7 @@
             </select>
 
 
-            <!-- Dropdown Tampilkan Records -->
+            {{-- <!-- Dropdown Tampilkan Records -->
             <div class="flex items-center">
                 <label for="recordsPerPage" class="text-sm font-semibold text-[#000000] mr-2">Tampilkan:</label>
                 <select id="recordsPerPage" class="py-2 px-6 rounded-lg bg-[#E6E6E9] text-[#000000] border border-[#9999A1] shadow-sm text-sm" 
@@ -84,7 +84,7 @@
                     <option value="30" @if(request()->get('per_page') == 30) selected @endif>30</option>
                     <option value="100" @if(request()->get('per_page') == 100) selected @endif>100</option>
                 </select>
-            </div>
+            </div> --}}
         </div>
     </div>
 

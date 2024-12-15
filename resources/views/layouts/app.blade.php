@@ -93,7 +93,7 @@
 
     </script>
      
-     @if (session('error'))
+     {{-- @if (session('error'))
         <script>
             Swal.fire({
                 icon: 'error',
@@ -101,7 +101,7 @@
                 text: '{{ session('error') }}',
             });
         </script>
-    @endif
+    @endif --}}
     
 </body>
 </html>

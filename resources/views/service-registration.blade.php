@@ -428,52 +428,17 @@
     const marriageBlessingModal = document.getElementById('marriageBlessingModal');
     const baptismRequestModal = document.getElementById('baptismRequestModal');
 
-    const isLoggedIn = {{ auth()->check() ? 'true' : 'false' }};
-
-    // Fungsi untuk membuka modal jika sudah login
-    document.getElementById('openChildDedicationModal').onclick = function () {
-        if (isLoggedIn) {
-            childDedicationModal.classList.remove('hidden');
-        } else {
-            Swal.fire({
-                icon: 'info',
-                title: 'Login Diperlukan',
-                text: 'Silakan login terlebih dahulu untuk mengakses fitur ini.',
-                confirmButtonText: 'Login'
-            }).then(() => {
-                window.location.href = 'admin/login';
-            });
-        }
+    // Fungsi untuk membuka modal
+    document.getElementById('openChildDedicationModal').onclick = function() {
+        childDedicationModal.classList.remove('hidden');
     };
 
-    document.getElementById('openMarriageBlessingModal').onclick = function () {
-        if (isLoggedIn) {
-            marriageBlessingModal.classList.remove('hidden');
-        } else {
-            Swal.fire({
-                icon: 'info',
-                title: 'Login Diperlukan',
-                text: 'Silakan login terlebih dahulu untuk mengakses fitur ini.',
-                confirmButtonText: 'Login'
-            }).then(() => {
-                window.location.href = 'admin/login';
-            });
-        }
+    document.getElementById('openMarriageBlessingModal').onclick = function() {
+        marriageBlessingModal.classList.remove('hidden');
     };
 
-    document.getElementById('openBaptismRequestModal').onclick = function () {
-        if (isLoggedIn) {
-            baptismRequestModal.classList.remove('hidden');
-        } else {
-            Swal.fire({
-                icon: 'info',
-                title: 'Login Diperlukan',
-                text: 'Silakan login terlebih dahulu untuk mengakses fitur ini.',
-                confirmButtonText: 'Login'
-            }).then(() => {
-                window.location.href = 'admin/login';
-            });
-        }
+    document.getElementById('openBaptismRequestModal').onclick = function() {
+        baptismRequestModal.classList.remove('hidden');
     };
 
 

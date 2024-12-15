@@ -44,18 +44,14 @@ public function register(Request $request)
         'password' => 'required|string|min:8|confirmed',
     ]);
 
-
-    $role = 'user';
-    if (strpos($request->email, '@gppsbethlehem.com') !== false) {
-        $role = 'admin';  
-    }
+    
 
     // Buat user baru
     $user = new User();
     $user->name = $request->name;
     $user->email = $request->email;
     $user->password = bcrypt($request->password); // Hash password
-    $user->role = $role; // Set role sebagai admin
+    $user->role = 'admin'; // Set role sebagai admin
     $user->save();
 
     // Redirect ke login setelah registrasi
