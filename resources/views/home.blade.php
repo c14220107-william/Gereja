@@ -2,7 +2,6 @@
 
 @section('content')
 
-<!-- Keyframes and Custom Animations (Tailwind Config) -->
 <style>
     @keyframes fade-in-up {
         0% {
@@ -58,13 +57,11 @@
         }
     }
 
-    /* Utility for animation timing delay */
     .animate-fade-in-delay {
         animation: fade-in 1.5s ease-out forwards;
         animation-delay: 0.5s;
     }
 
-    /* Bounce effect on hover */
     .animate-bounce-on-hover:hover {
         animation: bounce-on-hover 1s infinite;
     }
@@ -110,10 +107,339 @@
     .highlight-red {
         color: red;
     }
+
+     .animate-title {
+        animation: slideDown 1s ease-in-out;
+    }
+    
+    .fade-in {
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+    }
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+    .delay-3 { animation-delay: 1.5s; }
+
+    .bounce {
+        display: inline-block;
+        animation: bounce 1.5s infinite;
+        color: #E53935; 
+    }
+
+    .underline-animation {
+        position: relative;
+        color: #E53935;
+    }
+    .underline-animation::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 3px;
+        background-color: #E53935;
+        animation: underlineExpand 1.5s forwards ease-out;
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeInUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes underlineExpand {
+        to { width: 100%; }
+    }
+
+     .animate-title {
+        animation: slideDown 1s ease-in-out;
+    }
+    
+    .fade-in {
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+    }
+    .delay-1 { animation-delay: 0.5s; }
+    .delay-2 { animation-delay: 1s; }
+    .delay-3 { animation-delay: 1.5s; }
+
+    .bounce {
+        display: inline-block;
+        animation: bounce 1.5s infinite;
+        color: #E53935; 
+    }
+
+    .underline-animation {
+        position: relative;
+        color: #E53935;
+    }
+    .underline-animation::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 3px;
+        background-color: #E53935;
+        animation: underlineExpand 1.5s forwards ease-out;
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeInUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes underlineExpand {
+        to { width: 100%; }
+    }
+
+    .bg-opacity-70 {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .pull-up {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(30%);
+        animation: pullUp 1s ease-out forwards;
+    }
+
+    @keyframes pullUp {
+        0% {
+            opacity: 0;
+            transform: translateY(40%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .shiny-button {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        border-radius: 9999px;
+        background-color: #fcd34d;
+        z-index: 1;
+    }
+
+    .shiny-button .shiny {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        transform: skewX(-30deg);
+        transition: left 0.75s ease-in-out;
+    }
+
+    .shiny-button:hover .shiny {
+        left: 125%;
+    }
+
+    .shiny-button:hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+        .shiny-button {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+    }
+
+    .bg-gray-50 {
+        background-color: #FAFAFA;
+    }
+
+    h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: #fbbf24;
+        margin: 10px auto 0;
+    }
+
+    img {
+        transition: transform 0.5s ease-in-out;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+    }
+
+    #motto-text {
+        color: #02006d; 
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        #motto-text {
+            font-size: 2rem;
+        }
+    }
+
+    body {
+            margin: 0;
+            background-color: #f9fafb;
+            color: #333;
+        }
+
+    #sunday-services {
+        position: relative;
+        padding: 2rem 5rem; 
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        color:rgb(0, 0, 0);
+        font-weight: bold; 
+        margin-bottom: 2rem;
+    }
+
+    .swiper-slide {
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .swiper-slide img:hover {
+        transform: scale(1.0);
+    }
+
+    .slide-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        color: #333;
+    }
+
+    .slide-time {
+        color: #555;
+        margin-top: 0.2rem;
+    }
+
+    .lightbox-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .lightbox-overlay.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .lightbox-overlay img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: static;
+        top: 100%; 
+        transform: translateY(0%); 
+        z-index: 70;
+        color:rgb(0, 0, 0);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .swiper-button-prev {
+        left: -20px;
+    }
+
+    .swiper-button-next {
+        right: -20px;
+    }
+
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+        color:rgb(0, 0, 0);
+    }
+
+    .swiper-container {
+        position: static;
+        overflow: hidden;
+        padding-bottom: 4rem; 
+    }
+
+    .swiper-pagination {
+        margin-top: 1rem;
+    }
+
+    .swiper-pagination-bullet {
+        background: #d1d5db;
+        opacity: 0.8;
+        width: 12px;
+        height: 12px;
+        margin: 0 71px;
+        transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+        background:rgb(0, 0, 0);
+        transform: scale(1.0);
+        opacity: 1;
+    }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-<!-- JavaScript untuk animasi saat scroll -->
 <script>
     document.addEventListener('scroll', function() {
         let elements = document.querySelectorAll('.fade-in-up-on-scroll');
@@ -128,27 +454,28 @@
 
 <body class="bg-gray-100">
 
-    <!-- Hero Section -->
-    <section class="relative bg-black text-white min-h-screen flex items-center justify-center">
-        <!-- Gambar Background dengan Overlay -->
+    <section class="relative bg-black text-white min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center"
             style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
-            <div class="absolute inset-0 bg-black bg-opacity-70"></div> <!-- Overlay Lebih Gelap -->
+            <div class="absolute inset-0 bg-black bg-opacity-70"></div>
         </div>
 
-        <!-- Konten Hero -->
-        <div class="relative z-10 text-center max-w-2xl mx-auto">
-            <!-- Animasi Reveal untuk Teks -->
-            <h1 class="text-7xl font-extrabold leading-tight mb-6 animate-reveal-text">
-                Selamat Datang di GPPS Bethlehem Kutisari!
+        <div class="relative z-10 text-center px-6">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white pull-up">
+                Selamat Datang di <br> GPPS Bethlehem Kutisari
             </h1>
 
-            <a href="#tentang" class="bg-yellow-500 text-white px-8 py-4 rounded-full shadow-md text-lg font-semibold 
-            transition-transform transform hover:scale-105 hover:bg-yellow-600">
-                Tentang Kami
-            </a>
+            <div class="mt-12">
+                <a href="#tentang" class="shiny-button relative inline-block px-8 py-4 text-lg font-semibold 
+                    text-black bg-yellow-500 rounded-full overflow-hidden transition-transform duration-300 transform 
+                    hover:scale-105">
+                    Tentang Kami
+                    <div class="shiny"></div>
+                </a>
+            </div>
         </div>
     </section>
+
 
     <script>
         document.querySelector('a[href="#tentang"]').addEventListener('click', function(e) {
@@ -163,50 +490,98 @@
 
     @include('components.marquee')
 
-    <!-- Tentang Gereja Section -->
+  <!-- Tentang Gereja Section -->
     <section id="tentang" class="py-16 bg-gray-100">
         <div class="container mx-auto px-8 md:px-16 lg:px-32 flex flex-col md:flex-row items-center gap-12">
-            <!-- Gambar -->
-            <div class="w-full md:w-1/2 flex justify-center">
-                <img src="{{ asset('img/fotodalam.JPG') }}" alt="Church Logo" class="rounded-lg shadow-lg" />
+            <div class="w-full md:w-1/2 flex justify-center animate-on-scroll fade-in-left">
+                <img src="{{ asset('img/fotodalam.JPG') }}" alt="Church Logo"
+                    class="rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105" />
             </div>
 
-            <!-- Konten Teks -->
-            <div class="w-full md:w-1/2 text-left">
-                <h2 class="text-4xl font-bold mb-6 text-gray-900">
+            <div class="w-full md:w-1/2 text-left animate-on-scroll fade-in-right">
+                <h2 class="text-4xl font-bold mb-6 leading-tight">
                     Tentang Gereja Kami
                 </h2>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
-                    Shallom! GPPS Bethlehem Kutisari hadir untuk bisa bersaksi akan kebaikan Tuhan kita Yesus Kristus. Kesempatan dan momentum yang Tuhan berikan dalam kehidupan kita untuk bersaksi bagi-Nya, hendaknya kita manfaatkan sebaik mungkin dengan penuh kerendahan hati, sukacita, dan pengabdian diri. Semoga dengan hadirnya GPPS Bethlehem Kutisari, kami dapat menjadi terang dan garam buat para saudara-saudari terkasih. Menjadi inspirasi orang percaya untuk terus bertumbuh dalam Tuhan! Salam dalam kasih-Nya, Care Love and Serve!
+                    <span class="block mb-4 text-gray-900 font-semibold">Shallom!</span>
+                    GPPS Bethlehem Kutisari hadir untuk bisa bersaksi akan kebaikan Tuhan kita Yesus Kristus. Kesempatan dan momentum yang Tuhan berikan dalam kehidupan kita untuk bersaksi bagi-Nya, hendaknya kita manfaatkan sebaik mungkin dengan penuh kerendahan hati, sukacita, dan pengabdian diri. <br><br>
+                    Semoga dengan hadirnya GPPS Bethlehem Kutisari, kami dapat menjadi terang dan garam buat para saudara-saudari terkasih. Menjadi inspirasi orang percaya untuk terus bertumbuh dalam Tuhan! 
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Motto Section -->
-    <section class="py-10" style="background-color: #F4F4F4;">
-        <div class="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-center">
-            <div class="flex flex-col text-center">
-                <h2 class="text-5xl font-bold mb-4" style="color: #1C2B2D;">
-                    Motto Kami
-                </h2>
-                <div class="flex justify-center mb-4">
-                    <img src="{{ asset('img/logokutisari.png') }}" alt="Logo Motto"
-                        class="w-1/2 md:w-1/3 rounded-full">
+                <div class="text-lg text-gray-900 font-bold">
+                    Salam dalam kasih-Nya, <br>
+                    <span class="text-yellow-500">Care, Love, and Serve!</span>
                 </div>
-                <p class="text-4xl font-semibold mb-2" style="color: #4A5657;">
-                    <span id="motto-text"></span>
-                </p>
-                <p class="text-lg text-center"
-                    style="">
-                    GPPS Bethlehem Kutisari memiliki jemaat yang saling memperhatikan, mengasihi, dan melayani
-                    dalam rangka menjadi kesatuan jemaat yang kuat dan tidak tergoncangkan. Motto ini diharap
-                    menjadi dasar bagi para jemaat dalam menjalankan kehidupan kekristenannya hari lepas hari.
-                </p>
             </div>
         </div>
     </section>
 
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        animatedElements.forEach(el => observer.observe(el));
+    </script>
+
+   <!-- Motto Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col items-center text-center">
+            <h2 class="text-5xl font-bold text-gray-800 leading-tight relative mb-8">
+                Motto Kami
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-4"></div>
+            </h2>
+
+            <div class="mb-8 transition-transform duration-500 hover:scale-110">
+                <img src="{{ asset('img/logokutisari.png') }}" alt="Logo Motto" class="w-1/2 md:w-1/4 mx-auto">
+            </div>
+
+            <p id="motto-text" class="text-4xl font-semibold text-blue-700 mb-8"></p>
+
+            <p class="text-lg text-gray-600 leading-relaxed max-w-3xl">
+                GPPS Bethlehem Kutisari memiliki jemaat yang saling memperhatikan, mengasihi, dan melayani
+                dalam rangka menjadi kesatuan jemaat yang kuat dan tidak tergoncangkan. Motto ini diharap
+                menjadi dasar bagi para jemaat dalam menjalankan kehidupan kekristenannya hari lepas hari.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const text = "ARE, LOVE, SERVE";
+        let index = 0;
+        let isDeleting = false;
+        const speed = 300; // Kecepatan mengetik (ms)
+        const eraseSpeed = 300; // Kecepatan menghapus (ms)
+        const delayBetweenLoops = 1000; // Jeda sebelum mengetik ulang (ms)
+        const pauseAtEnd = 1000; // Jeda setelah teks selesai (ms)
+
+        function typeWriter() {
+            const mottoText = document.getElementById("motto-text");
+            if (!isDeleting && index <= text.length) {
+                mottoText.innerHTML = "C" + text.substring(0, index++);
+                setTimeout(typeWriter, speed);
+            } else if (isDeleting && index >= 0) {
+                mottoText.innerHTML = "C" + text.substring(0, index--);
+                setTimeout(typeWriter, eraseSpeed);
+            }
+
+            if (index === text.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                    typeWriter();
+                }, pauseAtEnd);
+            } else if (index < 0) {
+                isDeleting = false;
+                setTimeout(typeWriter, delayBetweenLoops);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
 
     <!-- Visi & Misi Section -->
     <section class="py-10" style="background-color: #F4F4F4;">
@@ -243,174 +618,123 @@
         </div>
     </section>
 
-    <!-- Empat Pilar Section -->
+   <!-- Empat Pilar Section -->
     <section class="py-10" style="background-color: #F4F4F4;">
         <div class="container mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-center">
             <div class="flex flex-col text-center">
-                <h2 class="text-5xl font-bold mb-4" style="color: #1C2B2D;">
+                <h2 class="text-5xl font-bold mb-8 animate-title" style="color: #1C2B2D;">
                     Empat Pilar
                 </h2>
-                <div class="text-4xl font-semibold mb-6 text-center" style="color: #4A5657;">
-                    <p>Bertumbuh <strong class="highlight-red">Dewasa</strong> melalui <strong class="highlight-red">Penbinanan</strong></p>
-                    <p>Bertumbuh <strong class="highlight-red">Besar</strong> melalui <strong class="highlight-red">Pelayanan</strong></p>
-                    <p>Bertumbuh <strong class="highlight-red">Kuat</strong> melalui <strong class="highlight-red">Ibadah</strong></p>
-                    <p>Bertambah <strong class="highlight-red">Akrab</strong> melalui <strong class="highlight-red">Persekutuan</strong></p>
+                <div class="text-4xl font-semibold space-y-4">
+                    <p class="fade-in">
+                        Bertumbuh <strong class="highlight-red bounce">Dewasa</strong> melalui 
+                        <strong class="highlight-red underline-animation">Pembinanan</strong>
+                    </p>
+                    <p class="fade-in delay-1">
+                        Bertumbuh <strong class="highlight-red bounce">Besar</strong> melalui 
+                        <strong class="highlight-red underline-animation">Pelayanan</strong>
+                    </p>
+                    <p class="fade-in delay-2">
+                        Bertumbuh <strong class="highlight-red bounce">Kuat</strong> melalui 
+                        <strong class="highlight-red underline-animation">Ibadah</strong>
+                    </p>
+                    <p class="fade-in delay-3">
+                        Bertambah <strong class="highlight-red bounce">Akrab</strong> melalui 
+                        <strong class="highlight-red underline-animation">Persekutuan</strong>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- JavaScript untuk Looping Typing Effect -->
-    <script>
-        const text = "are Love Serve";
-        let index = 0;
-        let isDeleting = false;
-        const speed = 200; // Kecepatan mengetik (ms)
-        const eraseSpeed = 200; // Kecepatan menghapus (ms)
-        const delayBetweenLoops = 3000; // Jeda sebelum mengetik ulang (ms)
-        const pauseAtEnd = 3000; // Jeda setelah teks selesai (ms)
-
-        function typeWriter() {
-            const mottoText = document.getElementById("motto-text");
-            if (!isDeleting && index <= text.length) {
-                mottoText.innerHTML = "C" + text.substring(0, index++);
-                setTimeout(typeWriter, speed);
-            } else if (isDeleting && index >= 0) {
-                mottoText.innerHTML = "C" + text.substring(0, index--);
-                setTimeout(typeWriter, eraseSpeed);
-            }
-
-            if (index === text.length) {
-                setTimeout(() => {
-                    isDeleting = true;
-                    typeWriter();
-                }, pauseAtEnd);
-            } else if (index < 0) {
-                isDeleting = false;
-                setTimeout(typeWriter, delayBetweenLoops);
-            }
-        }
-
-        window.onload = typeWriter;
-    </script>
 
     <!-- Ibadah Sepekan Section -->
-    <section id="sunday-services" class="py-10" style="background-color: #F4F4F4;">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-8" style="color: #1C2B2D;">Ibadah Sepekan</h2>
-
-            <div class="relative swiper">
-                <!-- swiper Container -->
-                <div class="flex items-center swiper-wrapper">
-
-                    <!-- Kartu 1 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
-                        <h3 class="text-xl font-bold mb-2">Ibadah Umum</h3>
-                        <p class="text-gray-700">Minggu | Pukul 07:45 - 09:30</p>
-                        <p class="text-sm text-gray-500">Bergabunglah dalam ibadah utama dengan pujian dan khotbah yang menginspirasi.</p>
-                        <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/umum.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
-                        </div>
-                    </div>
-
-
-                    <!-- Kartu 2 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
-                        <h3 class="text-xl font-bold mb-2">Ibadah Kaum Wanita</h3>
-                        <p class="text-gray-700">Selasa | Pukul 16:30 - 18:00</p>
-                        <p class="text-sm text-gray-500">Ibadah khusus wanita dengan suasana sukacita dan pujian menyentuh hati.</p>
-                        <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/KW.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
-                        </div>
-                    </div>
-
-                    <!-- Kartu 3 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
-                        <h3 class="text-xl font-bold mb-2">Youth Commcell</h3>
-                        <p class="text-gray-700">Rabu | Pukul 19:00 - 21:00</p>
-                        <p class="text-sm text-gray-500">Komunitas muda yang menyenangkan dan penuh semangat.</p>
-                        <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/commcell2.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
-                        </div>
-                    </div>
-
-
-                    <!-- Kartu 4 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
-                        <h3 class="text-xl font-bold mb-2">Doa Malam</h3>
-                        <p class="text-gray-700">Kamis | Pukul 18:30 - 20:00</p>
-                        <p class="text-sm text-gray-500">Akhiri hari dengan doa malam yang penuh damai dan refleksi rohani.</p>
-                        <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/dm2.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
-                        </div>
-                    </div>
-
-
-                    <!-- Kartu 5 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
-                        <h3 class="text-xl font-bold mb-2">Doa Fajar</h3>
-                        <p class="text-gray-700">Sabtu | Pukul 05:30 - 06:30</p>
-                        <p class="text-sm text-gray-500">Mulailah pagi Anda dengan doa bersama untuk mendapatkan kekuatan dan berkat.</p>
-                        <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/fajar.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
-                        </div>
-                    </div>
-
-
-                    <!-- Kartu 6 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
-                        <h3 class="text-xl font-bold mb-2">Sekolah Minggu</h3>
-                        <p class="text-gray-700">Minggu | Pukul 08:00 - 09:30</p>
-                        <p class="text-sm text-gray-500">Ibadah anak-anak yang menyenangkan untuk menumbuhkan iman sejak dini.</p>
-                        <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/SM.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
-                        </div>
-                    </div>
-
-
-                    <!-- Kartu 7 -->
-                    <div class="swiper-slide min-w-[200px] p-6 min-h-[200px] bg-white rounded-lg shadow-lg items-center">
-                        <h3 class="text-xl font-bold mb-2">Ibadah Youth</h3>
-                        <p class="text-gray-700">Minggu | Pukul 10:30 - 12:00</p>
-                        <p class="text-sm text-gray-500">Bergabunglah dalam ibadah youth untuk bertumbuh dalam iman dan komunitas.</p>
-                        <div class="flex justify-center items-center mt-4 mb-3">
-                            <img src="{{ asset('img/youth.JPG') }}" alt="Ibadah Umum" class="rounded-lg shadow-md w-1/3">
-                        </div>
-                    </div>
+    <section id="sunday-services">
+        <h2>Ibadah Sepekan</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Kartu 1 -->
+                <div class="swiper-slide">
+                    <img src="img/umum.JPG" alt="Ibadah Umum" class="lightbox-trigger">
+                    <div class="slide-title">Ibadah Umum</div>
+                    <div class="slide-time">Minggu | Pukul 07:45 - 09:30</div>
                 </div>
-
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-pagination"></div>
+                <!-- Kartu 2 -->
+                <div class="swiper-slide">
+                    <img src="img/KW.JPG" alt="Ibadah Kaum Wanita" class="lightbox-trigger">
+                    <div class="slide-title">Ibadah Kaum Wanita</div>
+                    <div class="slide-time">Selasa | Pukul 16:30 - 18:00</div>
+                </div>
+                <!-- Kartu 3 -->
+                <div class="swiper-slide">
+                    <img src="img/commcell2.JPG" alt="Youth Commcell" class="lightbox-trigger">
+                    <div class="slide-title">Youth Commcell</div>
+                    <div class="slide-time">Rabu | Pukul 19:00 - 21:00</div>
+                </div>
+                <!-- Kartu 4 -->
+                <div class="swiper-slide">
+                    <img src="img/dm2.JPG" alt="Doa Malam" class="lightbox-trigger">
+                    <div class="slide-title">Doa Malam</div>
+                    <div class="slide-time">Kamis | Pukul 18:30 - 20:00</div>
+                </div>
+                <!-- Kartu 5 -->
+                <div class="swiper-slide">
+                    <img src="img/fajar.JPG" alt="Doa Fajar" class="lightbox-trigger">
+                    <div class="slide-title">Doa Fajar</div>
+                    <div class="slide-time">Sabtu | Pukul 05:30 - 06:30</div>
+                </div>
             </div>
+            <!-- Navigasi Panah -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <!-- Pagination Bulat -->
+            <div class="swiper-pagination"></div>
         </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Swiper Javascript -->
-    <script>
-        new Swiper('.swiper', {
-            loop: true,
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox-overlay">
+        <img id="lightbox-image" src="" alt="Enlarged Image">
+    </div>
 
-            // pagination bullets
+    <!-- Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Swiper Initialization
+        new Swiper('.swiper-container', {
+            loop: true,
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true,
             },
-
-            // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+        });
 
-            autoplay: {
-                delay: 4000,
-            }
+        // Lightbox Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
 
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                lightboxImage.src = trigger.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            lightboxImage.src = '';
         });
     </script>
-
-
 
     <!-- Maps Section -->
     <section id="maps" class="py-20 bg-gray-100">
