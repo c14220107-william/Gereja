@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <style>
         /* CSS untuk sticky navbar */
         nav {
@@ -18,6 +18,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-100">
 
     <!-- Navbar -->

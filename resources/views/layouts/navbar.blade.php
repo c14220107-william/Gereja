@@ -25,12 +25,12 @@
                     <li>
                         <a href="{{ route('faq') }}" class="block py-2 px-4 rounded {{ Request::is('faq') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">FAQ</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <form action="{{ route('admin.logout') }}"  method="POST" class="block py-2 px-4 rounded {{ Request::is('admin.logout') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}">
                             @csrf
                             <button type="submit" >Logout</button>
                         </form>
-                    </li>
+                    </li> -->
                 @else
                 <li>
                     <a href="{{ route('home') }}" class="block py-2 px-4 rounded {{ Request::is('/') ? 'text-white bg-gray-800' : 'text-gray-200 hover:bg-gray-800 md:hover:bg-transparent md:hover:text-white transition duration-300' }}" aria-current="page">Home</a>

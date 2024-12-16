@@ -455,22 +455,30 @@
 <body class="bg-gray-100">
 
     <section class="relative bg-black text-white min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
         <div class="absolute inset-0 bg-cover bg-center"
             style="background-image: url('{{ asset('img/fotodepangerejacrop.JPG') }}');">
+            <!-- Overlay -->
             <div class="absolute inset-0 bg-black bg-opacity-70"></div>
         </div>
 
+        <!-- Content -->
         <div class="relative z-10 text-center px-6">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-white pull-up">
-                Selamat Datang di <br> GPPS Bethlehem Kutisari
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+                Selamat Datang di <br> 
+                <span class="block mt-2">GPPS Bethlehem Kutisari!</span>
             </h1>
 
-            <div class="mt-12">
-                <a href="#tentang" class="shiny-button relative inline-block px-8 py-4 text-lg font-semibold 
-                    text-black bg-yellow-500 rounded-full overflow-hidden transition-transform duration-300 transform 
-                    hover:scale-105">
+            <!-- Button -->
+            <div class="mt-8">
+                <a href="#tentang" 
+                class="shiny-button relative inline-block px-8 py-4 text-lg font-semibold text-black 
+                        bg-yellow-500 rounded-full overflow-hidden transition-transform duration-300 transform 
+                        hover:scale-105">
                     Tentang Kami
-                    <div class="shiny"></div>
+                    <div class="shiny absolute top-0 left-0 w-full h-full bg-white opacity-20 
+                                transform -translate-x-full transition-transform duration-700"></div>
                 </a>
             </div>
         </div>
