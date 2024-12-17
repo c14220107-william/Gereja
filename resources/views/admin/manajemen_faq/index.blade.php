@@ -77,51 +77,47 @@
         </div>
 
         <!-- Paginasi -->
-        <div class="mt-6 flex justify-end">
-            {{ $kritik_sarans->links() }}
+        <div class="flex justify-between items-center mt-6">
+            @if ($kritik_sarans->onFirstPage())
+                <span class="text-[#9999A1] py-2 px-4">Sebelumnya</span>
+            @else
+                <a href="{{ $kritik_sarans->previousPageUrl() }}" 
+                   class="bg-[#000000] text-white py-2 px-4 rounded hover:bg-[#66666E]">
+                   Sebelumnya
+                </a>
+            @endif
+
+            <span class="text-[#000000] font-semibold">
+                Halaman {{ $kritik_sarans->currentPage() }} dari {{ $kritik_sarans->lastPage() }}
+            </span>
+
+            @if ($kritik_sarans->hasMorePages())
+                <a href="{{ $kritik_sarans->nextPageUrl() }}" 
+                   class="bg-[#000000] text-white py-2 px-4 rounded hover:bg-[#66666E]">
+                   Selanjutnya
+                </a>
+            @else
+                <span class="text-[#9999A1] py-2 px-4">Selanjutnya</span>
+            @endif
         </div>
     </div>
 </div>
 
 <script>
-    function searchTable() {
-        const input = document.getElementById("searchInput").value.toLowerCase();
-        const rows = document.querySelectorAll("#kritikTable tbody tr");
-        rows.forEach(row => {
-            row.style.display = row.innerText.toLowerCase().includes(input) ? "" : "none";
-        });
-    }
-
     function toggleText(element) {
         const preview = element.querySelector('.kritik-preview');
         const fullText = element.querySelector('.kritik-full');
         const icon = element.querySelector('.icon-detail');
 
         if (fullText.classList.contains('hidden')) {
-            // Expand
             preview.classList.add('hidden');
             fullText.classList.remove('hidden');
-            icon.innerText = '▲'; // Ubah ikon
+            icon.innerText = '▲'; // Ikon Collapse
         } else {
-            // Collapse
             preview.classList.remove('hidden');
             fullText.classList.add('hidden');
-            icon.innerText = '▼'; // Ubah ikon
+            icon.innerText = '▼'; // Ikon Expand
         }
-    }
-
-    function filterType() {
-        const filterType = document.getElementById("filterType").value;
-        const url = new URL(window.location.href);
-        url.searchParams.set('filter_type', filterType);
-        window.location.href = url.toString();
-    }
-
-    function changeRecordsPerPage() {
-        const perPage = document.getElementById("recordsPerPage").value;
-        const url = new URL(window.location.href);
-        url.searchParams.set('per_page', perPage);
-        window.location.href = url.toString();
     }
 </script>
 
@@ -129,17 +125,20 @@
     table.table-fixed {
         table-layout: fixed;
     }
+
     th, td {
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
     .kritik-container {
         white-space: normal;
         word-wrap: break-word;
     }
+
     .icon-detail {
         font-size: 1rem;
-        color: black; /* Ubah warna ikon menjadi hitam */
+        color: black; /* Ikon hitam */
     }
 </style>
 @endsection
