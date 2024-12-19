@@ -44,20 +44,19 @@
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        @foreach($form_pernikahans as $index => $item2)
+                        @foreach($form_pernikahans as $index2 => $item2)
                             <tr>
                                 <td class="px-4 py-2 border border-gray-200 text-center">
-                                    <div class="relative">
-                                        <button 
-                                            class="text-blue-600 font-semibold hover:text-xl hover:underline relative group" 
-                                            onclick="openModal('modal-{{ $item2->id }}')">
-                                                {{ $index + 1 }}.
-                                                <!-- Tooltip -->
-                                                <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-2 z-10 hidden group-hover:block bg-gray-800 text-white text-sm rounded-md px-3 py-2 shadow-lg">
-                                                    Detail informasi
-                                                </div>
-                                            </button>   
+                                
+                                <button 
+                                    class="text-blue-600 font-semibold hover:text-xl hover:underline relative group"
+                                    onclick="openModal('modal-{{ $item2->id }}')">
+                                    {{ $index2 + 1 }}.
+                                    <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-2 z-10 hidden group-hover:block bg-gray-800 text-white text-sm rounded-md px-3 py-2 shadow-lg">
+                                        Detail informasi
                                     </div>
+                                </button>   
+                                
                                     
                                 </td>
                                 <td class="px-4 py-2 border border-gray-200">{{ $item2->nama_calon_mempelai_pria }}
@@ -95,6 +94,7 @@
                     onclick="closeModal('modal-{{ $item2->id }}')" 
                     class="absolute top-3 right-3 text-gray-600 hover:text-gray-800 text-4xl font-semibold">
                     &times;
+                    
                 </button>
 
                 <!-- Header Nama -->
@@ -317,20 +317,29 @@
                         </button>
                     </form>
                 </div>
-                @endforeach
             </div>
         </div>
+        @endforeach
     </section>
     @endif
 </div>
 <script>
     function openModal(id) {
-        console.log(id);
-        document.getElementById(id).classList.remove('hidden');
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.classList.remove('hidden');
+        } else {
+            console.error(`Modal with ID ${id} not found.`);
+        }
     }
 
     function closeModal(id) {
-        document.getElementById(id).classList.add('hidden');
+        const modal = document.getElementById(id);
+        if (modal) {
+            modal.classList.add('hidden');
+        } else {
+            console.error(`Modal with ID ${id} not found.`);
+        }
     }
 
     document.getElementById('searchInput').addEventListener('keyup', function () {
